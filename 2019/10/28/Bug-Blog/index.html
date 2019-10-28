@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Challow&#39;s Blog</title>
+    <title>Bug Blog · Challow&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -77,6 +77,8 @@
 
     <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
@@ -201,14 +203,23 @@
 </head>
 
     
-        <body class="home-body">
+        <body class="post-body">
     
     
-<header class="header index-header">
+<header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Challow&#39;s Blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Bug Blog</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Challow's Blog.</a>
 </header>
@@ -227,17 +238,17 @@ height:50vh;
     <!-- 主页  -->
     
     
-    <!-- 文章页  -->
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/index-bg1.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg1.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Challow's Blog.
-            <!-- 文章页  -->
+            Bug Blog
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
@@ -245,12 +256,49 @@ height:50vh;
             <!-- 主页副标题  -->
             
             
-                Better late than never~
-            
-            <!-- 文章页  -->
+            <!-- 404 -->
             
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Linux">Linux</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">11</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/10/28</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -351,274 +399,56 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/10/28/Ubuntu-Sever命令行换源/" >
-            
-                <span>Ubuntu-Sever 换源</span>
-        </a>
-        <div class="abstract-content">
-            Ubuntu Server 换源
-ubuntu 的默认源是美国的，安装后下载起来特别慢，可以使用下面方法将源更换为国内源:用vi打开 /etc/apt/sources.list 将其中的us.archive 全部替换为 cn.archive即可，这样，以后使用apt-get下载就会使用源自http://cn.archive.ubuntu.com 了。
-
-1.使用vi编辑器的命令为(注意首先切换到root用户)：root@ubuntu :/#vi /etc/apt/sources.list
-2.打开sources.list在vi命令模式下（进入后即是命令行模式，按i后才可进入编辑模式，不过...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/10/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Linux">Linux</a>
-    
-</div>
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <h3 id="Just-test-the-hexo"><a href="#Just-test-the-hexo" class="headerlink" title="Just test the hexo~"></a>Just test the hexo~</h3><hr>
+<h3 id="👶Judging-if-this-blog-can-be-posted"><a href="#👶Judging-if-this-blog-can-be-posted" class="headerlink" title="👶Judging if this blog can be posted!"></a>👶Judging if this blog can be posted!</h3>
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/10/28/Bug-Blog/" >
-            
-                <span>Bug Blog</span>
-        </a>
-        <div class="abstract-content">
-            Just test the hexo~
-👶Judging if this blog can be posted!
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://www.challow.top/child">Challow</a>
+            <p>原文链接：<a href="http://www.challow.top/child/2019/10/28/Bug-Blog/">http://www.challow.top/child/2019/10/28/Bug-Blog/</a>
+            <p>发表日期：<a href="http://www.challow.top/child/2019/10/28/Bug-Blog/">October 28th 2019, 8:38:42 pm</a>
+            <p>更新日期：<a href="http://www.challow.top/child/2019/10/28/Bug-Blog/">October 28th 2019, 8:57:53 pm</a>
+            <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/10/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Linux">Linux</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/10/28/HPL-Openmpi-GOTOBLAS2/" >
-            
-                <span>HPL+Openmpi+GOTOBLAS2</span>
-        </a>
-        <div class="abstract-content">
-            HPL+Openmpi+GOTOBLAS2终于成功了！！！
-废话:之前mpi安装的有问题，编译完之后不能mpirun真的让人头大。。于是我就卸载了之前安装的mpich和lam4-dev,然后安装了openmpi    
-
-本篇参照：这个博客
-Openmpi的安装
-解压tar -zxvf openmpi-3.1.0.tar.gz
-系统配置cd openmpi-3.1.0
-然后./configure --prefix=/opt/openmpi
-
-※：/opt/openmpi是安装路径，打开之后应该有bin  etc  include  lib  share这几个文件夹
-
-编译 make
-安装...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/10/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Linux">Linux</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/07/16/Math-Knowledge-函数空间/" >
-            
-                <span>[Math Knowledge] 函数空间</span>
-        </a>
-        <div class="abstract-content">
-            【数学基础】函数空间​    看了一个上交的公开课，里面把距离的定义讲的非常透彻。
-​    附上：🔗
-距离的定义：​    首先要把自己思想上固化的距离定义抛开，提到两点之间的距离，大家下意识地就想到两点之间线段最短。现在把这个想法抛开。举个栗子：苹果，水果和热带水果，想象一下他们之间的关系。其实就是包含和限制的关系。
-​    两个点之间的距离，可以看作之间对应维度相加减最大值，比如（1，2）和（4，6）之间的距离就可以运算为4-1=3，6-2=4。而4 &gt; 3所以两点之间的距离就是4。
-​    宏观的考虑距离这个问题，就可以抽象出距离的概念：
-
-定义：设X是一个非空集合，...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/16</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Math">Math</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/07/07/hello-world/" >
-            
-                <span>Hello World</span>
-        </a>
-        <div class="abstract-content">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post"
-
-More info: Writing
-Run server1$ hexo server
-
-Mo...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/07</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
-    
-</main>
-            <!-- profile -->
+    <ul class="post-paginator">
+        <li class="next">
             
-            <div class="profile">
-    <img class="profile-avatar" alt="avatar" src= /avatar/Challow.jpg >
-    <div class="profile-name">challow</div>
-    
-    <div class="profile-signature">
-        种一颗树最好的时间是十年前，其次是现在。
-    </div>
-    
-    
-    <div class="profile-social">
-        
-    
-        
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2019/10/28/Ubuntu-Sever命令行换源/" title= "Ubuntu-Sever 换源">
+                    <div class="nextTitle">Ubuntu-Sever 换源</div>
+                </a>
             
-                <a href="mailto:zqm_0011@163.com" class="iconfont-archer email" title=email ></a>
+        </li>
+        <li class="previous">
             
-        
-    
-        
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2019/10/28/HPL-Openmpi-GOTOBLAS2/" title= "HPL+Openmpi+GOTOBLAS2">
+                    <div class="prevTitle">HPL+Openmpi+GOTOBLAS2</div>
+                </a>
             
-                <a href="//github.com/challow0" class="iconfont-archer github" target="_blank" title=github></a>
-            
-        
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
-        
     
-        
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
     
-        
-    
-        
-    
-        
-            
-                <a href="//www.zhihu.com/people/xi-liang-25-28/activities" class="iconfont-archer zhihu" target="_blank" title=zhihu></a>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
 
-    </div>
-    
-    
-        <div class="friends">
-            <div>FRIENDS</div>
-            
-                
-                    <span>
-                        <a href= //www.baidu.com target="_black">Baidu</a>
-                    </span>
-                
-            
-                
-                    <span>
-                        <a href= //www.google.com target="_black">Google</a>
-                    </span>
-                
-            
-                
-            
-        </div>
-    
-    
-        <div class="about-me">
-            <a href = "/about" >ABOUT ME</a>
-        </div>
-    
-</div>
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
             
         </div>
         <footer class="footer footer-unloaded">
@@ -698,6 +528,24 @@ Mo...
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Just-test-the-hexo"><span class="toc-number">1.</span> <span class="toc-text">Just test the hexo~</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#👶Judging-if-this-blog-can-be-posted"><span class="toc-number">2.</span> <span class="toc-text">👶Judging if this blog can be posted!</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -875,6 +723,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
