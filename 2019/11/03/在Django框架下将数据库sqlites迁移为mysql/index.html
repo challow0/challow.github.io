@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Linux命令行下使用ShadowSocks+Privoxy代理 · Challow&#39;s Blog</title>
+    <title>在Django框架下将数据库sqlites迁移为mysql · Challow&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/" >Challow&#39;s Blog.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">Linux命令行下使用ShadowSocks+Privoxy代理</a>
+                <a href="#" class="post-name">在Django框架下将数据库sqlites迁移为mysql</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Linux命令行下使用ShadowSocks+Privoxy代理
+            在Django框架下将数据库sqlites迁移为mysql
             <!-- 404 -->
             
         </h1>
@@ -266,18 +266,20 @@ height:50vh;
                 
                     <div class= post-intro-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Linux">Linux</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Mysql">Mysql</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Django">Django</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">982</span>阅读时长: <span class="post-count reading-time">4 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">356</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/10/28</span>
+                    <span class="post-intro-time">2019/11/03</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -401,82 +403,47 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="Linux中使用ShadowSocks-Privoxy代理"><a href="#Linux中使用ShadowSocks-Privoxy代理" class="headerlink" title="Linux中使用ShadowSocks+Privoxy代理"></a>Linux中使用ShadowSocks+Privoxy代理</h1><blockquote>
-<p>ShadowSocks 最近几年大火, 其简单的配置和优秀的速度让大陆地区的墙内用户爱不释手本篇文章不讨论Mac &amp; Windows 等图形界面下的应用, 而是让 linux 在命令行界面下, http/https 访问也能登上梯子, 看一看外面的大千世界</p>
-</blockquote>
-<p>本篇文章就是介绍如何实现 Linux 中的 http/https 请求翻墙的需求</p>
-<h3 id="安装-ss-客户端"><a href="#安装-ss-客户端" class="headerlink" title="安装 ss 客户端"></a><strong>安装 ss 客户端</strong></h3><p><em>shadowsocks安装时是不分客户端还是服务器端的, 只不过安装后有两个脚本一个是sslocal代表以客户端模式工作，一个是ssserver代表以服务器端模式工作</em></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum install python-pip</span><br><span class="line"></span><br><span class="line">pip install shadowsocks</span><br></pre></td></tr></table></figure>
+        <h1 id="Django-将数据从Sqlite迁移到Mysql数据库"><a href="#Django-将数据从Sqlite迁移到Mysql数据库" class="headerlink" title="Django : 将数据从Sqlite迁移到Mysql数据库"></a>Django : 将数据从Sqlite迁移到Mysql数据库</h1><p>🤔初学 Django, 使用的数据库是默认的 Sqlite 。随着学习知道了 Django存放的数据是在Sqlite下的，但很多情形需要使用其他的数据库。因此下面是如何将Sqlite数据迁移到Mysql的教程： </p>
+<p>底下是需要进行的步骤：（默认已经安装好mysql）👨‍💻</p>
+<h3 id="把SQLite数据导入到MySQL中"><a href="#把SQLite数据导入到MySQL中" class="headerlink" title="把SQLite数据导入到MySQL中"></a>把SQLite数据导入到MySQL中</h3><p>之前我们默认使用的是SQLite数据库，我们开发完成之后，里面有许多数据。如果我们想转换成Mysql数据库，那我们先得把旧数据从SQLite导出，然后再导入到新的Mysql数据库里去。</p>
+<ol>
+<li>SQLite导出数据<br>导出之前，我们先确保settings.py数据库配置选项那里，还是使用的是SQLite配置，如果已经修改了，请先修改回来：</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">DATABASES = &#123;</span><br><span class="line">    <span class="string">'default'</span>: &#123;</span><br><span class="line">        <span class="string">'ENGINE'</span>: <span class="string">'django.db.backends.sqlite3'</span>,</span><br><span class="line">        <span class="string">'NAME'</span>: os.path.join(BASE_DIR, <span class="string">'db.sqlite3'</span>),</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="在后台启动-ss-客户端"><a href="#在后台启动-ss-客户端" class="headerlink" title="在后台启动 ss 客户端"></a><strong>在后台启动 ss 客户端</strong></h3><p>为了更方便, 建议新建一个.json的文件, 将上述信息放里面,如新建<code>/etc/shadowsocks.json</code>文件, 内容为：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    "server":"your_server_ip", #ss服务器IP</span><br><span class="line">    "server_port":your_server_port, #端口</span><br><span class="line">    "local_address": "127.0.0.1", #本地ip</span><br><span class="line">    "local_port":1080, #本地端口</span><br><span class="line">    "password":"your_server_passwd",#连接ss密码</span><br><span class="line">    "timeout":300, #等待超时</span><br><span class="line">    "method":"rc4-md5", #加密方式</span><br><span class="line">    "fast_open": false, # true 或 false。如果你的服务器 Linux 内核在3.7+，可以开启 fast_open 以降低延迟。开启方法： echo 3 &gt; /proc/sys/net/ipv4/tcp_fastopen 开启之后，将 fast_open 的配置设置为 true 即可</span><br><span class="line">    "workers": 1 # 工作线程数</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>   然后在CMD命令行里输入：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py dumpdata &gt; data.json</span><br></pre></td></tr></table></figure>
 
-<p>然后运行一下命令启动shadowsocks</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup sslocal -c /etc/shadowsocks.json /dev/null 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure>
+<p>   这样就将数据导出到Django项目根目录下的data.json文件。</p>
+<ol start="2">
+<li>同样，先将Django的数据库配置改为MySQL的：</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">DATABASES = &#123;</span><br><span class="line">    <span class="string">'default'</span>: &#123;</span><br><span class="line">        <span class="string">'ENGINE'</span>: <span class="string">'django.db.backends.mysql'</span>,</span><br><span class="line">        <span class="string">'NAME'</span>: <span class="string">'你的数据库名'</span>,</span><br><span class="line">        <span class="string">'USER'</span>: <span class="string">'你的MySQL用户名'</span>,</span><br><span class="line">        <span class="string">'PASSWORD'</span>: <span class="string">'你的密码'</span>,</span><br><span class="line">        <span class="string">'HOST'</span>: <span class="string">'localhost'</span>,</span><br><span class="line">        <span class="string">'PORT'</span>: <span class="string">'3306'</span>,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<ul>
-<li><p>如果想增加开启自动启动，执行：<code>echo &quot;nohup sslocal -c /etc/shadowsocks.json /dev/null 2&gt;&amp;1 &amp;&quot; /etc/rc.local</code></p>
+<ol start="3">
+<li><p><code>python manage.py migrate</code></p>
 </li>
-<li><p>执行<code>ps aux |grep sslocal |grep -v &quot;grep&quot;</code>查看后台sslocal是否运行</p>
+<li><p><code>python manage.py shell</code><br>进入python命令行</p>
 </li>
-</ul>
-<h3 id="安装Privoxy"><a href="#安装Privoxy" class="headerlink" title="安装Privoxy"></a><strong>安装Privoxy</strong></h3><p>上述安好了<code>shadowsocks</code>，但它是 <code>socks5</code> 代理，我门在 <code>shell</code> 里执行的命令，发起的网络请求现在还不支持 <code>socks5</code> 代理，只支持 <code>http/https</code> 代理。为了我门需要安装 <code>privoxy</code> 代理，它能把电脑上所有http请求转发给 <code>shadowsocks</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install privoxy -y</span><br></pre></td></tr></table></figure>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib.contenttypes.models <span class="keyword">import</span> ContentType</span><br><span class="line">   ContentType.objects.all().delete()</span><br></pre></td></tr></table></figure>
 
-<ul>
-<li>查看 <code>vim /usr/local/etc/privoxy/config</code> 文件，先搜索关键字 <code>listen-address</code> 找到 <code>listen-address 127.0.0.1:8118</code> 这一句，保证这一句没有注释，8118就是将来http代理要输入的端口。然后搜索 <code>forward-socks5t</code>, 将 <code>#forward-socks5t / 127.0.0.1:1080 .</code> 此句前面的注释去掉, 意思是转发流量到本地的1080端口, 而1080端口正是 ss 监听的端口</li>
-</ul>
-<h3 id="启动privoxy"><a href="#启动privoxy" class="headerlink" title="启动privoxy"></a><strong>启动privoxy</strong></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart privoxy &gt; systemctl enable privoxy</span><br></pre></td></tr></table></figure>
-
-<h3 id="转发配置"><a href="#转发配置" class="headerlink" title="转发配置"></a><strong>转发配置</strong></h3><p>写在 profile 中</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span> vim /etc/profile</span><br><span class="line">export http_proxy=http://127.0.0.1:8118</span><br><span class="line">export https_proxy=http://127.0.0.1:8118</span><br><span class="line"><span class="meta">&gt;</span> source /etc/profile</span><br></pre></td></tr></table></figure>
-
-<p>在当前 session 执行</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export http_proxy=http://127.0.0.1:8118</span><br><span class="line">export https_proxy=http://127.0.0.1:8118</span><br></pre></td></tr></table></figure>
-
-<h3 id="测试翻墙"><a href="#测试翻墙" class="headerlink" title="测试翻墙"></a><strong>测试翻墙</strong></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl www.google.com</span><br></pre></td></tr></table></figure>
-
-<h3 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a><strong>问题解决</strong></h3><p>如果不能访问, 请重启机器, 依次打开shadowsocks和privoxy再测试</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span> nohup sslocal -c /etc/shadowsocks.json /dev/null 2&gt;&amp;1 &amp;</span><br><span class="line"><span class="meta">&gt;</span> privoxy --user privoxy /usr/local/etc/privoxy/config</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://s2.ax1x.com/2019/10/28/Kg6zPH.png" alt="Kg6zPH.png"></p>
-<p><a href="https://keer.me/Using-ShadowSocks-and-Privoxy-proxy-in-Linux/" target="_blank" rel="noopener">Linux中使用ShadowSocks+Privoxy代理</a></p>
-<h3 id="写在最后（libsodium-not-found🤔）"><a href="#写在最后（libsodium-not-found🤔）" class="headerlink" title="写在最后（libsodium not found🤔）"></a>写在最后（<strong>libsodium not found</strong>🤔）</h3><ul>
-<li>如果加密方式为chacha20的话可能出现<strong>libsodium not found</strong>的问题，这时候需要root权限安装</li>
-</ul>
-<h4 id="1-安装依赖"><a href="#1-安装依赖" class="headerlink" title="1. 安装依赖"></a>1. 安装依赖</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install build-essential wget -y</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-下载-libsodium-最新版本"><a href="#2-下载-libsodium-最新版本" class="headerlink" title="2.下载 libsodium 最新版本"></a>2.下载 libsodium 最新版本</h4><blockquote>
-<p>可以从libsodium 官网下，也可以从github 下载。选择速度最快的下载方式。</p>
-</blockquote>
-<p>&lt;1&gt; 从官网下载：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://download.libsodium.org/libsodium/releases/LATEST.tar.gz</span><br></pre></td></tr></table></figure>
-
-<p>&lt;2&gt; 从 github 下载（其中 1.0.10 是 libusodium 的版本号，可以改成最新的）：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/jedisct1/libsodium/releases/download/1.0.10/libsodium-1.0.10.tar.gz</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-解压"><a href="#3-解压" class="headerlink" title="3.解压"></a>3.解压</h4><p>&lt;1&gt;官网下载的：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar xzvf LATEST.tar.gz</span><br></pre></td></tr></table></figure>
-
-<p>&lt;2&gt;github 下载的：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar xzvf libsodium-1.0.10.tar.gz</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-生成配置文件"><a href="#4-生成配置文件" class="headerlink" title="4.生成配置文件"></a>4.生成配置文件</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd libsodium*</span><br><span class="line"></span><br><span class="line">./configure</span><br></pre></td></tr></table></figure>
-
-<h4 id="5-编译并安装"><a href="#5-编译并安装" class="headerlink" title="5.编译并安装"></a>5.编译并安装</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">make -j8 &amp;&amp; make install</span><br><span class="line"><span class="meta">#</span>中间可能报错target '/usr/local/include/sodium' is not a directory...</span><br><span class="line"><span class="meta">#</span>这里的原因是没有使用root权限</span><br></pre></td></tr></table></figure>
-
-<h4 id="6-添加运行库位置并加载运行库："><a href="#6-添加运行库位置并加载运行库：" class="headerlink" title="6.添加运行库位置并加载运行库："></a>6.添加运行库位置并加载运行库：</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo /usr/local/lib &gt; /etc/ld.so.conf.d/usr_local_lib.conf</span><br><span class="line"><span class="meta">#</span> 如果是ubuntu server直接ldconfig</span><br><span class="line">ldconfig</span><br></pre></td></tr></table></figure>
-
-<p>😀😀祝愿大家都能愉快的google~</p>
+<ol start="5">
+<li><p><code>python manage.py loaddata data.json</code></p>
+</li>
+<li><p>👌👌👌</p>
+</li>
+</ol>
+<p>参考：<a href="https://www.django.cn/article/show-17.html#ssl" target="_blank" rel="noopener">博客1</a> <a href="https://www.shubhamdipt.com/blog/django-transfer-data-from-sqlite-to-another-database/" target="_blank" rel="noopener">博客2</a></p>
 
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="http://www.challow.top/child">Challow</a>
-            <p>原文链接：<a href="http://www.challow.top/child/2019/10/28/Linux命令行下使用ShadowSocks-Privoxy代理/">http://www.challow.top/child/2019/10/28/Linux命令行下使用ShadowSocks-Privoxy代理/</a>
-            <p>发表日期：<a href="http://www.challow.top/child/2019/10/28/Linux命令行下使用ShadowSocks-Privoxy代理/">October 28th 2019, 10:30:39 pm</a>
-            <p>更新日期：<a href="http://www.challow.top/child/2019/10/28/Linux命令行下使用ShadowSocks-Privoxy代理/">October 28th 2019, 10:41:18 pm</a>
+            <p>原文链接：<a href="http://www.challow.top/child/2019/11/03/在Django框架下将数据库sqlites迁移为mysql/">http://www.challow.top/child/2019/11/03/在Django框架下将数据库sqlites迁移为mysql/</a>
+            <p>发表日期：<a href="http://www.challow.top/child/2019/11/03/在Django框架下将数据库sqlites迁移为mysql/">November 3rd 2019, 6:02:43 pm</a>
+            <p>更新日期：<a href="http://www.challow.top/child/2019/11/03/在Django框架下将数据库sqlites迁移为mysql/">November 3rd 2019, 6:27:41 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -484,17 +451,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2019/11/03/在Django框架下将数据库sqlites迁移为mysql/" title= "在Django框架下将数据库sqlites迁移为mysql">
-                    <div class="nextTitle">在Django框架下将数据库sqlites迁移为mysql</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2019/10/28/Ubuntu-Sever命令行换源/" title= "Ubuntu Sever 换源">
-                    <div class="prevTitle">Ubuntu Sever 换源</div>
+                <a href= "/2019/10/28/Linux命令行下使用ShadowSocks-Privoxy代理/" title= "Linux命令行下使用ShadowSocks+Privoxy代理">
+                    <div class="prevTitle">Linux命令行下使用ShadowSocks+Privoxy代理</div>
                 </a>
             
         </li>
@@ -610,7 +572,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux中使用ShadowSocks-Privoxy代理"><span class="toc-number">1.</span> <span class="toc-text">Linux中使用ShadowSocks+Privoxy代理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装-ss-客户端"><span class="toc-number">1.0.1.</span> <span class="toc-text">安装 ss 客户端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在后台启动-ss-客户端"><span class="toc-number">1.0.2.</span> <span class="toc-text">在后台启动 ss 客户端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Privoxy"><span class="toc-number">1.0.3.</span> <span class="toc-text">安装Privoxy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启动privoxy"><span class="toc-number">1.0.4.</span> <span class="toc-text">启动privoxy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#转发配置"><span class="toc-number">1.0.5.</span> <span class="toc-text">转发配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试翻墙"><span class="toc-number">1.0.6.</span> <span class="toc-text">测试翻墙</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#问题解决"><span class="toc-number">1.0.7.</span> <span class="toc-text">问题解决</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#写在最后（libsodium-not-found🤔）"><span class="toc-number">1.0.8.</span> <span class="toc-text">写在最后（libsodium not found🤔）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-安装依赖"><span class="toc-number">1.0.8.1.</span> <span class="toc-text">1. 安装依赖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-下载-libsodium-最新版本"><span class="toc-number">1.0.8.2.</span> <span class="toc-text">2.下载 libsodium 最新版本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-解压"><span class="toc-number">1.0.8.3.</span> <span class="toc-text">3.解压</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-生成配置文件"><span class="toc-number">1.0.8.4.</span> <span class="toc-text">4.生成配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-编译并安装"><span class="toc-number">1.0.8.5.</span> <span class="toc-text">5.编译并安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-添加运行库位置并加载运行库："><span class="toc-number">1.0.8.6.</span> <span class="toc-text">6.添加运行库位置并加载运行库：</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Django-将数据从Sqlite迁移到Mysql数据库"><span class="toc-number">1.</span> <span class="toc-text">Django : 将数据从Sqlite迁移到Mysql数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#把SQLite数据导入到MySQL中"><span class="toc-number">1.0.1.</span> <span class="toc-text">把SQLite数据导入到MySQL中</span></a></li></ol></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
