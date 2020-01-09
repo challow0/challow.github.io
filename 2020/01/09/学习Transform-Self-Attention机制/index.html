@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Challow&#39;s Blog</title>
+    <title>学习Transform &amp; Self-Attention机制 · Challow&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Challow&#39;s Blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">学习Transform & Self-Attention机制</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Challow's Blog.</a>
 </header>
@@ -220,24 +231,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg1.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            学习Transform & Self-Attention机制
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "NLP">NLP</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">497</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/01/09</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,47 +399,130 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/12/14/数据库课设的经历/" >
-            
-                <span>数据库课设的经历</span>
-        </a>
-        <div class="abstract-content">
-            数据库课程剽窃的心路历程菜鸡一个，大神勿喷！下载的项目仅供学习。不像某些xx：
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="Transformer"><a href="#Transformer" class="headerlink" title="Transformer"></a>Transformer</h1><h3 id="Self-Attention"><a href="#Self-Attention" class="headerlink" title="Self-Attention"></a>Self-Attention</h3><ul>
+<li>传统RNN不容易平行化，比如b4就得知道a1，a2，a3，a4才能算出来</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2020/01/09/lRovCt.png" alt="lRovCt.png"></p>
+<ul>
+<li>使用CNN可以实现平行化，比如图中的一个黄三角形代表一个filter，他可以并行执行的。<ul>
+<li>在更高层filter的layer可以获取到更长的信息，比如蓝三角形，它的输入时第一层的输出</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2020/01/09/lRTTGq.png" alt="lRTTGq.png"></p>
+<ul>
+<li>Self-Attention可以替代双向RNN</li>
+<li>可以并行计算</li>
+<li>能够获得一个整句的信息</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2020/01/09/lR7FsO.png" alt="lR7FsO.png"></p>
+<blockquote>
+<p>做  attention ： 吃两个向量，输出一个分数，代表它会有多匹配</p>
+</blockquote>
+<h5 id="Scaled-Dot-Product-Attention"><a href="#Scaled-Dot-Product-Attention" class="headerlink" title="Scaled Dot-Product Attention"></a>Scaled Dot-Product Attention</h5><p><img src="https://s2.ax1x.com/2020/01/09/lR7yTJ.png" alt="lR7yTJ.png"></p>
+<h5 id="为什么除以根号d？"><a href="#为什么除以根号d？" class="headerlink" title="为什么除以根号d？"></a>为什么除以根号d？</h5><p>qk的dim越大，想乘之后的varience越大，除以d来平衡。根号d只是作者自己设置的。。</p>
+<p><strong>上面得到的a再做softmax得到a-hat</strong></p>
+<p><img src="https://s2.ax1x.com/2020/01/09/lRHVXT.png" alt="lRHVXT.png"></p>
+<ul>
+<li>输出的b1已经是考虑到句子中所有信息了。如果不想考虑某一个信息只需要让a-hat为0</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2020/01/09/lRbA5d.png" alt="lRbA5d.png"></p>
+<ul>
+<li>在同一时间可以算b2，b3…</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2020/01/09/lRbsi9.png" alt="lRbsi9.png"></p>
+<h4 id="Q-K-V的并行计算"><a href="#Q-K-V的并行计算" class="headerlink" title="Q\K\V的并行计算"></a>Q\K\V的并行计算</h4><p><img src="https://s2.ax1x.com/2020/01/09/lRbcxx.png" alt="lRbcxx.png"></p>
+<ul>
+<li><p>把a1a2a3a4拼接起来就得到一个矩阵，乘以Wq就是Q</p>
+</li>
+<li><p>同理K,V</p>
+<h4 id="a"><a href="#a" class="headerlink" title="a"></a>a</h4></li>
+</ul>
+<p><img src="https://s2.ax1x.com/2020/01/09/lRbvdg.png" alt="lRbvdg.png"></p>
+<h4 id="通过一个矩阵运算得出A"><a href="#通过一个矩阵运算得出A" class="headerlink" title="通过一个矩阵运算得出A"></a>通过一个矩阵运算得出A</h4><p><img src="https://s2.ax1x.com/2020/01/09/lRq8eO.png" alt="lRq8eO.png"></p>
+<blockquote>
+<p>每一列做softmax</p>
+</blockquote>
+<h4 id="通过矩阵运算得出O"><a href="#通过矩阵运算得出O" class="headerlink" title="通过矩阵运算得出O"></a>通过矩阵运算得出O</h4><p><img src="https://s2.ax1x.com/2020/01/09/lRqckQ.png" alt="lRqckQ.png"></p>
+<h4 id="总结一下并行的矩阵运算"><a href="#总结一下并行的矩阵运算" class="headerlink" title="总结一下并行的矩阵运算"></a>总结一下并行的矩阵运算</h4><p><img src="https://s2.ax1x.com/2020/01/09/lRLp7D.png" alt="lRLp7D.png"></p>
+<h4 id="Multi-head-Self-Attention"><a href="#Multi-head-Self-Attention" class="headerlink" title="Multi-head Self-Attention"></a>Multi-head Self-Attention</h4><p><img src="https://s2.ax1x.com/2020/01/09/lRLmB8.png" alt="lRLmB8.png"></p>
+<p>有的head想看local的信息，有的head想看global的信息。它们各司其职</p>
+<h4 id="考虑Input的位置信息"><a href="#考虑Input的位置信息" class="headerlink" title="考虑Input的位置信息"></a>考虑Input的位置信息</h4><ul>
+<li><p>每一个ei都是不同的</p>
+<h5 id="思考：为什么是-不是连接？（其实是一样的）"><a href="#思考：为什么是-不是连接？（其实是一样的）" class="headerlink" title="思考：为什么是+不是连接？（其实是一样的）"></a>思考：为什么是+不是连接？（其实是一样的）</h5><p><img src="https://s2.ax1x.com/2020/01/09/lROvdO.png" alt="lROvdO.png"></p>
+</li>
+</ul>
+<h5 id="WP的样子"><a href="#WP的样子" class="headerlink" title="WP的样子"></a>WP的样子</h5><p><img src="https://s2.ax1x.com/2020/01/09/lRXkOP.png" alt="lRXkOP.png"></p>
+<h4 id="可以替代RNN了"><a href="#可以替代RNN了" class="headerlink" title="可以替代RNN了"></a>可以替代RNN了</h4><p><img src="https://s2.ax1x.com/2020/01/09/lRXQln.png" alt="lRXQln.png"></p>
+<h4 id="Encoder-amp-Decoder"><a href="#Encoder-amp-Decoder" class="headerlink" title="Encoder &amp;  Decoder"></a>Encoder &amp;  Decoder</h4><p><img src="https://s2.ax1x.com/2020/01/09/lRXgte.png" alt="lRXgte.png"></p>
+<h4 id="详细的讲解"><a href="#详细的讲解" class="headerlink" title="详细的讲解"></a>详细的讲解</h4><p><img src="https://s2.ax1x.com/2020/01/09/lRjenx.png" alt="lRjenx.png"></p>
+<p>Encoder部分：</p>
+<ul>
+<li><p>Input  通过一个  Input   Embedding   变成一个  vector</p>
+</li>
+<li><p>vector   加上   Positional   Encoding  之后进入  gray  block（重复N次）</p>
+</li>
+<li><p>通过 Multi-Head  Attention  层得到   b1  b2  b3  b4</p>
+</li>
+<li><p>Add   &amp;   Norm   输入  a  加上输出  b  得到  b’   </p>
+<blockquote>
+<p>Layer   Normlization   各个不同  dim  的  μ   =   0   σ   =  1</p>
+</blockquote>
+</li>
+</ul>
+<p>Decoder部分：</p>
+<ul>
+<li><p>前一个  Encoder  产生的  Outputs   初始为  <bos></bos></p>
+</li>
+<li><p><strong>Masked</strong>    Multi-Head  Attention   做  Self-Attention  时  Decoder 会加到已产生的  Sequence  中</p>
+<blockquote>
+<p>重复部分不再冗余的说</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="Multi-Head-Attention效果"><a href="#Multi-Head-Attention效果" class="headerlink" title="Multi-Head  Attention效果"></a>Multi-Head  Attention效果</h4><p><img src="https://s2.ax1x.com/2020/01/09/lRxtk8.png" alt="lRxtk8.png"></p>
 
-
-种种吧，把别人的劳动成果剽窃还售卖，可耻😡
-0x00 在Github上查找相关资料🤐然后就找到了一个查不多的项目，是用Java写的。这次调试的过程让我对Java的认识有了进步吧！
-其实已经运行了两三个项目了，但是都不理想，所以就编译基于SSH(Spring+SpringMVC+MyBatis)的框架下写的一个项目。其中使用Maven打包了。
-0x01 理解错Maven第一天刚接触到这个Maven名词，我理解的意思是要自己编译等等。到了现在我的理解就是Maven是一个打包项目的工具，它可以帮你解决Jav...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Mysql">Mysql</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Java">Java</a>
-    
-</div>
-            
-        </div>
     </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://www.challow.top/child">Challow</a>
+            <p>原文链接：<a href="http://www.challow.top/child/2020/01/09/学习Transform-Self-Attention机制/">http://www.challow.top/child/2020/01/09/学习Transform-Self-Attention机制/</a>
+            <p>发表日期：<a href="http://www.challow.top/child/2020/01/09/学习Transform-Self-Attention机制/">January 9th 2020, 11:56:36 am</a>
+            <p>更新日期：<a href="http://www.challow.top/child/2020/01/09/学习Transform-Self-Attention机制/">January 9th 2020, 11:57:11 am</a>
+            <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2019/12/14/数据库课设的经历/" title= "数据库课设的经历">
+                    <div class="prevTitle">数据库课设的经历</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -460,6 +604,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Transformer"><span class="toc-number">1.</span> <span class="toc-text">Transformer</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Self-Attention"><span class="toc-number">1.0.1.</span> <span class="toc-text">Self-Attention</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Scaled-Dot-Product-Attention"><span class="toc-number">1.0.1.0.1.</span> <span class="toc-text">Scaled Dot-Product Attention</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#为什么除以根号d？"><span class="toc-number">1.0.1.0.2.</span> <span class="toc-text">为什么除以根号d？</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Q-K-V的并行计算"><span class="toc-number">1.0.1.1.</span> <span class="toc-text">Q\K\V的并行计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#a"><span class="toc-number">1.0.1.2.</span> <span class="toc-text">a</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#通过一个矩阵运算得出A"><span class="toc-number">1.0.1.3.</span> <span class="toc-text">通过一个矩阵运算得出A</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#通过矩阵运算得出O"><span class="toc-number">1.0.1.4.</span> <span class="toc-text">通过矩阵运算得出O</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#总结一下并行的矩阵运算"><span class="toc-number">1.0.1.5.</span> <span class="toc-text">总结一下并行的矩阵运算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Multi-head-Self-Attention"><span class="toc-number">1.0.1.6.</span> <span class="toc-text">Multi-head Self-Attention</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#考虑Input的位置信息"><span class="toc-number">1.0.1.7.</span> <span class="toc-text">考虑Input的位置信息</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#思考：为什么是-不是连接？（其实是一样的）"><span class="toc-number">1.0.1.7.1.</span> <span class="toc-text">思考：为什么是+不是连接？（其实是一样的）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#WP的样子"><span class="toc-number">1.0.1.7.2.</span> <span class="toc-text">WP的样子</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#可以替代RNN了"><span class="toc-number">1.0.1.8.</span> <span class="toc-text">可以替代RNN了</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Encoder-amp-Decoder"><span class="toc-number">1.0.1.9.</span> <span class="toc-text">Encoder &amp;  Decoder</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#详细的讲解"><span class="toc-number">1.0.1.10.</span> <span class="toc-text">详细的讲解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Multi-Head-Attention效果"><span class="toc-number">1.0.1.11.</span> <span class="toc-text">Multi-Head  Attention效果</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -748,6 +910,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
