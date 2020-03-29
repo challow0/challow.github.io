@@ -346,91 +346,32 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2020/01/09/ELMO-BERT-GPT2/" >
+        <a class="abstract-title" href = "/2020/03/29/python的包存在，但是不能import的bug/" >
             
-                <span>ELMO &amp; BERT &amp; GPT2</span>
+                <span>python的包存在，但是不能import的bug</span>
         </a>
         <div class="abstract-content">
-            ELMO &amp;  BERT  &amp;  GPT21  of   N  Encoding
-不能体现词与词之间的联系
+            Importerror: cannot import name ‘lib’报的是这样的一个错误，在import numpy as np的时候出错。网上没有这个错误的…
+原本想的是电脑上的环境冲突了，但是在删除了多余的anaconda后还是不能如愿以偿。
+于是找到了报错文件夹的位置：
 
-Word Class
-有点过于粗糙，哺乳类动物和非哺乳动物的
+C:\Users\10449\AppData\Roaming\Python\Python36\site-packages
 
-Word   Embedding
-这里的 bank 是有4个不同的  token 相同的  type 。  
+这里。
+在这里将文件夹删除之后大功告成，hhh😄
+ps：这个文件夹应该是一些缓存文件，如果上一次的东西没执行完会保留下来，好坑~
 
-Contextualized Word  Embedding
-让三个不同的token都有不同的embedding
-
-
-谁能做到？？？ELMO可以 :)
-
-图中红框框住的就是Contextualized Word  Embedding  （三个退了的释义不同）
-
-现在只有正向的信息，加上反向R...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/09</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/29</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "NLP">NLP</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/01/09/学习Transform-Self-Attention机制/" >
-            
-                <span>学习Transform &amp; Self-Attention机制</span>
-        </a>
-        <div class="abstract-content">
-            Transformer贴一个很好的教程
-Self-Attention
-传统RNN不容易平行化，比如b4就得知道a1，a2，a3，a4才能算出来
-
-
-
-使用CNN可以实现平行化，比如图中的一个黄三角形代表一个filter，他可以并行执行的。
-在更高层filter的layer可以获取到更长的信息，比如蓝三角形，它的输入时第一层的输出
-
-
-
-
-
-Self-Attention可以替代双向RNN
-可以并行计算
-能够获得一个整句的信息
-
-
-
-做  attention ： 吃两个向量，输出一个分数，代表它会有多匹配
-
-Scaled Dot-Product Attention
-为什么除以根号d？qk的d...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "NLP">NLP</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "BUG">BUG</a>
     
 </div>
             
