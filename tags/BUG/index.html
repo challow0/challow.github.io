@@ -346,6 +346,46 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/06/03/Tensorflow无法使用CUDA-VISIBLE-DEVICES参数进行GPU加速/" >
+            
+                <span>Tensorflow无法使用CUDA_VISIBLE_DEVICES参数进行GPU加速</span>
+        </a>
+        <div class="abstract-content">
+            Tensorflow无法使用GPU卡加速问题所在
+笔者的电脑是笔记本，有一块1050Ti的NVIDIA显卡，遇到两次无法使用GPU的命令来加速程序运行的问题。
+即使安装正确的NVIDIA驱动，命令语句完整
+
+错误有些低级。😅 😅 😅
+
+图中的是GPU的编号。
+加速方法经查询发现两种GPU加速的方法
+第一种：12import osos.environ['CUDA_VISIBLE_DEVICES'] = "0"
+
+在调用Tensorflow库函数之前设置这条语句，表明要使用GPU0卡来加速，对应上图的编号。可以指定多块卡！！
+第二种：1CUDA_VISIBLE_DEVICES=0 py...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/06/03</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "BUG">BUG</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/03/29/python的包存在，但是不能import的bug/" >
             
                 <span>python的包存在，但是不能import的bug</span>
@@ -707,9 +747,33 @@ ps：这个文件夹应该是一些缓存文件，如果上一次的东西没执
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 19
+        Total : 21
         </div>
         <!-- search  -->
         
@@ -725,12 +789,27 @@ ps：这个文件夹应该是一些缓存文件，如果上一次的东西没执
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">06/03</span><a class="archive-post-title" href= "/2020/06/03/Anaconda-Command-Record/" >Anaconda-Command-Record</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/03</span><a class="archive-post-title" href= "/2020/06/03/Tensorflow无法使用CUDA-VISIBLE-DEVICES参数进行GPU加速/" >Tensorflow无法使用CUDA_VISIBLE_DEVICES参数进行GPU加速</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">03/29</span><a class="archive-post-title" href= "/2020/03/29/python的包存在，但是不能import的bug/" >python的包存在，但是不能import的bug</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">03/03</span><a class="archive-post-title" href= "/2020/03/03/算法基础：双指针算法/" >算法基础：双指针算法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：前缀和（一维和二维）/" >算法基础：前缀和（一维和二维）</a>
         </li>
     
     
@@ -745,17 +824,12 @@ ps：这个文件夹应该是一些缓存文件，如果上一次的东西没执
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：前缀和（一维和二维）/" >算法基础：前缀和（一维和二维）</a>
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：快速排序/" >算法基础：快速排序</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：归并排序/" >算法基础：归并排序</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：快速排序/" >算法基础：快速排序</a>
         </li>
     
     
@@ -804,12 +878,12 @@ ps：这个文件夹应该是一些缓存文件，如果上一次的东西没执
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/Ubuntu-Sever命令行换源/" >Ubuntu Sever 换源</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/Bug-Blog/" >Bug Blog</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/Bug-Blog/" >Bug Blog</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/Ubuntu-Sever命令行换源/" >Ubuntu Sever 换源</a>
         </li>
     
     
@@ -836,17 +910,19 @@ ps：这个文件夹应该是一些缓存文件，如果上一次的东西没执
     
         <span class="sidebar-tag-name" data-tags="NLP"><span class="iconfont-archer">&#xe606;</span>NLP</span>
     
-        <span class="sidebar-tag-name" data-tags="BUG"><span class="iconfont-archer">&#xe606;</span>BUG</span>
+        <span class="sidebar-tag-name" data-tags="Anaconda"><span class="iconfont-archer">&#xe606;</span>Anaconda</span>
     
         <span class="sidebar-tag-name" data-tags="Math"><span class="iconfont-archer">&#xe606;</span>Math</span>
+    
+        <span class="sidebar-tag-name" data-tags="BUG"><span class="iconfont-archer">&#xe606;</span>BUG</span>
     
         <span class="sidebar-tag-name" data-tags="Mysql"><span class="iconfont-archer">&#xe606;</span>Mysql</span>
     
         <span class="sidebar-tag-name" data-tags="Django"><span class="iconfont-archer">&#xe606;</span>Django</span>
     
-        <span class="sidebar-tag-name" data-tags="算法基础"><span class="iconfont-archer">&#xe606;</span>算法基础</span>
-    
         <span class="sidebar-tag-name" data-tags="Java"><span class="iconfont-archer">&#xe606;</span>Java</span>
+    
+        <span class="sidebar-tag-name" data-tags="算法基础"><span class="iconfont-archer">&#xe606;</span>算法基础</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
