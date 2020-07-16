@@ -11,7 +11,7 @@
 
 
 <head><meta name="generator" content="Hexo 3.9.0">
-    <meta charset="utf-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="author" content="Challow">
     <meta name="renderer" content="webkit">
@@ -196,7 +196,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
     <!-- 百度统计  -->
     
-    <!-- 谷歌统计  -->
+    <!-- 谷歌统计  --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 </head>
 
@@ -204,7 +204,7 @@
         <body class="home-body">
     
     
-<header class="header index-header">
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header index-header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
@@ -359,18 +359,61 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/10/28/HPL-Openmpi-GOTOBLAS2/" >
+            
+                <span>HPL+Openmpi+GOTOBLAS2</span>
+        </a>
+        <div class="abstract-content">
+            HPL+Openmpi+GOTOBLAS2
+终于成功了！！！
+
+废话:之前mpi安装的有问题，编译完之后不能mpirun真的让人头大。。于是我就卸载了之前安装的mpich和lam4-dev,然后安装了openmpi
+
+本篇参照：这个博客
+Openmpi的安装
+
+解压tar -zxvf openmpi-3.1.0.tar.gz
+系统配置cd openmpi-3.1.0
+然后./configure --prefix=/opt/openmpi
+
+※：/opt/openmpi是安装路径，打开之后应该有bin  etc  include  lib  share这几个文件夹...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/10/28</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Linux">Linux</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/07/16/Math-Knowledge-函数空间/" >
             
                 <span>Math Knowledge 函数空间</span>
         </a>
         <div class="abstract-content">
-            【数学基础】函数空间​    看了一个上交的公开课，里面把距离的定义讲的非常透彻。
-​    附上：🔗
-距离的定义：​    首先要把自己思想上固化的距离定义抛开，提到两点之间的距离，大家下意识地就想到两点之间线段最短。现在把这个想法抛开。举个栗子：苹果，水果和热带水果，想象一下他们之间的关系。其实就是包含和限制的关系。
-​    两个点之间的距离，可以看作之间对应维度相加减最大值，比如（1，2）和（4，6）之间的距离就可以运算为4-1=3，6-2=4。而4 &gt; 3所以两点之间的距离就是4。
-​    宏观的考虑距离这个问题，就可以抽象出距离的概念：
+            【数学基础】函数空间
+​ 看了一个上交的公开课，里面把距离的定义讲的非常透彻。
+​ 附上：🔗
+距离的定义：
+​ 首先要把自己思想上固化的距离定义抛开，提到两点之间的距离，大家下意识地就想到两点之间线段最短。现在把这个想法抛开。举个栗子：苹果，水果和热带水果，想象一下他们之间的关系。其实就是包含和限制的关系。
+​ 两个点之间的距离，可以看作之间对应维度相加减最大值，比如（1，2）和（4，6）之间的距离就可以运算为4-1=3，6-2=4。而4 &gt; 3所以两点之间的距离就是4。
+​ 宏观的考虑距离这个问题，就可以抽象出距离的概念：
 
-定义：设X是一个非空集合，...
+定义：设X是一个非空集合，任给一对这...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -400,12 +443,12 @@ height:50vh;
         </a>
         <div class="abstract-content">
             Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post"
-
+Quick Start
+Create a new post
+1$ hexo new "My New Post"
 More info: Writing
-Run server1$ hexo server
-
-Mo...
+Run server
+1$ hexo se...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -891,9 +934,32 @@ Mo...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 22
+        Total : 23
         </div>
         <!-- search  -->
         
@@ -909,17 +975,22 @@ Mo...
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">07/16</span><a class="archive-post-title" href= "/2020/07/16/给Hexo-Archer主题添加LaTeX公式支持/" >给Hexo Archer主题添加LaTeX公式支持</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">07/13</span><a class="archive-post-title" href= "/2020/07/13/算法基础：图论总结/" >算法基础：图论总结</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/03</span><a class="archive-post-title" href= "/2020/06/03/Anaconda-Command-Record/" >Anaconda-Command-Record</a>
+            <span class="archive-post-date">06/03</span><a class="archive-post-title" href= "/2020/06/03/Tensorflow无法使用CUDA-VISIBLE-DEVICES参数进行GPU加速/" >Tensorflow无法使用CUDA_VISIBLE_DEVICES参数进行GPU加速</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/03</span><a class="archive-post-title" href= "/2020/06/03/Tensorflow无法使用CUDA-VISIBLE-DEVICES参数进行GPU加速/" >Tensorflow无法使用CUDA_VISIBLE_DEVICES参数进行GPU加速</a>
+            <span class="archive-post-date">06/03</span><a class="archive-post-title" href= "/2020/06/03/Anaconda-Command-Record/" >Anaconda-Command-Record</a>
         </li>
     
     
@@ -934,6 +1005,11 @@ Mo...
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：二分/" >算法基础：二分</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：差分/" >算法基础：差分</a>
         </li>
     
@@ -944,17 +1020,12 @@ Mo...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：二分/" >算法基础：二分</a>
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：归并排序/" >算法基础：归并排序</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：快速排序/" >算法基础：快速排序</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：归并排序/" >算法基础：归并排序</a>
         </li>
     
     
@@ -1008,12 +1079,12 @@ Mo...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/Ubuntu-Sever命令行换源/" >Ubuntu Sever 换源</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/HPL-Openmpi-GOTOBLAS2/" >HPL+Openmpi+GOTOBLAS2</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/HPL-Openmpi-GOTOBLAS2/" >HPL+Openmpi+GOTOBLAS2</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/Ubuntu-Sever命令行换源/" >Ubuntu Sever 换源</a>
         </li>
     
     
@@ -1031,23 +1102,25 @@ Mo...
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
-    
         <span class="sidebar-tag-name" data-tags="Anaconda"><span class="iconfont-archer">&#xe606;</span>Anaconda</span>
     
         <span class="sidebar-tag-name" data-tags="NLP"><span class="iconfont-archer">&#xe606;</span>NLP</span>
     
-        <span class="sidebar-tag-name" data-tags="BUG"><span class="iconfont-archer">&#xe606;</span>BUG</span>
+        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
     
         <span class="sidebar-tag-name" data-tags="Math"><span class="iconfont-archer">&#xe606;</span>Math</span>
+    
+        <span class="sidebar-tag-name" data-tags="BUG"><span class="iconfont-archer">&#xe606;</span>BUG</span>
     
         <span class="sidebar-tag-name" data-tags="Mysql"><span class="iconfont-archer">&#xe606;</span>Mysql</span>
     
         <span class="sidebar-tag-name" data-tags="Django"><span class="iconfont-archer">&#xe606;</span>Django</span>
     
+        <span class="sidebar-tag-name" data-tags="Java"><span class="iconfont-archer">&#xe606;</span>Java</span>
+    
         <span class="sidebar-tag-name" data-tags="算法基础"><span class="iconfont-archer">&#xe606;</span>算法基础</span>
     
-        <span class="sidebar-tag-name" data-tags="Java"><span class="iconfont-archer">&#xe606;</span>Java</span>
+        <span class="sidebar-tag-name" data-tags="Latex"><span class="iconfont-archer">&#xe606;</span>Latex</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -1113,7 +1186,7 @@ jsonContent:
     <!-- CNZZ  -->
     
     </div>
-    <!-- async load share.js -->
+    <!-- async load share.js --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
      
     </body>
 </html>

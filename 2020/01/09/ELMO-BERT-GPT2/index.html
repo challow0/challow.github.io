@@ -11,7 +11,7 @@
 
 
 <head><meta name="generator" content="Hexo 3.9.0">
-    <meta charset="utf-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="author" content="Challow">
     <meta name="renderer" content="webkit">
@@ -198,7 +198,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
     <!-- 百度统计  -->
     
-    <!-- 谷歌统计  -->
+    <!-- 谷歌统计  --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 </head>
 
@@ -206,7 +206,7 @@
         <body class="post-body">
     
     
-<header class="header">
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
@@ -272,7 +272,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">427</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">467</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -401,65 +401,140 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="ELMO-amp-BERT-amp-GPT2"><a href="#ELMO-amp-BERT-amp-GPT2" class="headerlink" title="ELMO &amp;  BERT  &amp;  GPT2"></a>ELMO &amp;  BERT  &amp;  GPT2</h1><h3 id="1-of-N-Encoding"><a href="#1-of-N-Encoding" class="headerlink" title="1  of   N  Encoding"></a>1  of   N  Encoding</h3><ul>
+        <h1 id="elmo-bert-gpt2">ELMO &amp; BERT &amp; GPT2</h1>
+<h3 id="of-n-encoding">1 of N Encoding</h3>
+<ul>
 <li>不能体现词与词之间的联系</li>
 </ul>
-<h4 id="Word-Class"><a href="#Word-Class" class="headerlink" title="Word Class"></a>Word Class</h4><ul>
+<h4 id="word-class">Word Class</h4>
+<ul>
 <li>有点过于粗糙，哺乳类动物和非哺乳动物的</li>
 </ul>
-<h4 id="Word-Embedding"><a href="#Word-Embedding" class="headerlink" title="Word   Embedding"></a>Word   Embedding</h4><p><img src="https://s2.ax1x.com/2020/01/09/lWGxYV.png" alt="lWGxYV.png"></p>
-<p>这里的 bank 是有4个不同的  token 相同的  type 。  </p>
-<p><img src="https://s2.ax1x.com/2020/01/09/lWJFm9.png" alt="lWJFm9.png"></p>
-<h2 id="Contextualized-Word-Embedding"><a href="#Contextualized-Word-Embedding" class="headerlink" title="Contextualized Word  Embedding"></a>Contextualized Word  Embedding</h2><ul>
+<h4 id="word-embedding">Word Embedding</h4>
+<div class="figure">
+<img src="https://s2.ax1x.com/2020/01/09/lWGxYV.png" alt="lWGxYV.png">
+<p class="caption">lWGxYV.png</p>
+</div>
+<p>这里的 bank 是有4个不同的 token 相同的 type 。</p>
+<div class="figure">
+<img src="https://s2.ax1x.com/2020/01/09/lWJFm9.png" alt="lWJFm9.png">
+<p class="caption">lWJFm9.png</p>
+</div>
+<h2 id="contextualized-word-embedding">Contextualized Word Embedding</h2>
+<ul>
 <li><strong>让三个不同的token都有不同的embedding</strong></li>
 </ul>
-<p><img src="https://s2.ax1x.com/2020/01/09/lWJNp8.png" alt="lWJNp8.png"></p>
-<h2 id="谁能做到？？？"><a href="#谁能做到？？？" class="headerlink" title="谁能做到？？？"></a>谁能做到？？？</h2><h2 id="ELMO可以"><a href="#ELMO可以" class="headerlink" title="ELMO可以 :)"></a>ELMO可以 :)</h2><p><img src="https://s2.ax1x.com/2020/01/09/lWYVBj.png" alt="lWYVBj.png"></p>
+<div class="figure">
+<img src="https://s2.ax1x.com/2020/01/09/lWJNp8.png" alt="lWJNp8.png">
+<p class="caption">lWJNp8.png</p>
+</div>
+<h2 id="谁能做到">谁能做到？？？</h2>
+<h2 id="elmo可以">ELMO可以 :)</h2>
+<div class="figure">
+<img src="https://s2.ax1x.com/2020/01/09/lWYVBj.png" alt="lWYVBj.png">
+<p class="caption">lWYVBj.png</p>
+</div>
 <ul>
-<li>图中红框框住的就是Contextualized Word  Embedding  （三个退了的释义不同）</li>
+<li>图中红框框住的就是Contextualized Word Embedding （三个退了的释义不同）</li>
 </ul>
 <p>现在只有正向的信息，加上反向RNN就有反向的信息了</p>
-<p><img src="https://s2.ax1x.com/2020/01/09/lWYJb9.png" alt="lWYJb9.png"></p>
-<h1 id="Deep"><a href="#Deep" class="headerlink" title="Deep@@"></a>Deep@@</h1><p><img src="https://s2.ax1x.com/2020/01/09/lWYw8K.png" alt="lWYw8K.png"></p>
-<h3 id="得到多个Embedding-要哪一个呢？？"><a href="#得到多个Embedding-要哪一个呢？？" class="headerlink" title="得到多个Embedding   要哪一个呢？？"></a>得到多个Embedding   要哪一个呢？？</h3><h1 id="我全都要！！"><a href="#我全都要！！" class="headerlink" title="我全都要！！"></a>我全都要！！</h1><p><img src="https://s2.ax1x.com/2020/01/09/lWYWPP.png" alt="lWYWPP.png"></p>
+<div class="figure">
+<img src="https://s2.ax1x.com/2020/01/09/lWYJb9.png" alt="lWYJb9.png">
+<p class="caption">lWYJb9.png</p>
+</div>
+<h1 id="deep">Deep@@</h1>
+<div class="figure">
+<img src="https://s2.ax1x.com/2020/01/09/lWYw8K.png" alt="lWYw8K.png">
+<p class="caption">lWYw8K.png</p>
+</div>
+<h3 id="得到多个embedding-要哪一个呢">得到多个Embedding 要哪一个呢？？</h3>
+<h1 id="我全都要">我全都要！！</h1>
+<div class="figure">
+<img src="https://s2.ax1x.com/2020/01/09/lWYWPP.png" alt="lWYWPP.png">
+<p class="caption">lWYWPP.png</p>
+</div>
 <ul>
-<li>ELMO吐出来两层的  Embedding  乘以 a1  和  a2  就得到最终的结果，这里  a1  和  a2  是根据不同的任务学出来的！</li>
+<li>ELMO吐出来两层的 Embedding 乘以 a1 和 a2 就得到最终的结果，这里 a1 和 a2 是根据不同的任务学出来的！</li>
 </ul>
-<h1 id="BERT是Transformer的Encoder"><a href="#BERT是Transformer的Encoder" class="headerlink" title="BERT是Transformer的Encoder"></a>BERT是Transformer的Encoder</h1><blockquote>
+<h1 id="bert是transformer的encoder">BERT是Transformer的Encoder</h1>
+<blockquote>
 <p>BERT做的事情就是给BERT喂句子，它能给你吐出来这个句子的Embedding。按照单词吐</p>
 </blockquote>
-<p><img src="https://s2.ax1x.com/2020/01/09/lWNZYq.png" alt="lWNZYq.png"></p>
-<h3 id="使用character更恰当，因为中文中的词语很多，但是字是可以穷举的"><a href="#使用character更恰当，因为中文中的词语很多，但是字是可以穷举的" class="headerlink" title="使用character更恰当，因为中文中的词语很多，但是字是可以穷举的"></a>使用character更恰当，因为中文中的词语很多，但是字是可以穷举的</h3><h2 id="训练BERT"><a href="#训练BERT" class="headerlink" title="训练BERT"></a>训练BERT</h2><p>有15%的词语会被盖住</p>
-<p><img src="https://s2.ax1x.com/2020/01/09/lWU8KS.png" alt="lWU8KS.png"></p>
-<h2 id="CLS-二分类，两个句子是否接在一起"><a href="#CLS-二分类，两个句子是否接在一起" class="headerlink" title="[CLS]二分类，两个句子是否接在一起"></a>[CLS]二分类，两个句子是否接在一起</h2><p><img src="https://s2.ax1x.com/2020/01/09/lWUyb4.png" alt="lWUyb4.png"></p>
-<h2 id="四种不同的任务"><a href="#四种不同的任务" class="headerlink" title="四种不同的任务"></a>四种不同的任务</h2><blockquote>
-<p>Case1  :  文章的分类（财经、新闻），句子是正面的还是负面的</p>
+<div class="figure">
+<img src="https://s2.ax1x.com/2020/01/09/lWNZYq.png" alt="lWNZYq.png">
+<p class="caption">lWNZYq.png</p>
+</div>
+<h3 id="使用character更恰当因为中文中的词语很多但是字是可以穷举的">使用character更恰当，因为中文中的词语很多，但是字是可以穷举的</h3>
+<h2 id="训练bert">训练BERT</h2>
+<p>有15%的词语会被盖住</p>
+<div class="figure">
+<img src="https://s2.ax1x.com/2020/01/09/lWU8KS.png" alt="lWU8KS.png">
+<p class="caption">lWU8KS.png</p>
+</div>
+<h2 id="cls二分类两个句子是否接在一起">[CLS]二分类，两个句子是否接在一起</h2>
+<div class="figure">
+<img src="https://s2.ax1x.com/2020/01/09/lWUyb4.png" alt="lWUyb4.png">
+<p class="caption">lWUyb4.png</p>
+</div>
+<h2 id="四种不同的任务">四种不同的任务</h2>
+<blockquote>
+<p>Case1 : 文章的分类（财经、新闻），句子是正面的还是负面的</p>
 </blockquote>
 <p>线性分类的参数是随机初始化的。随着BERT一起训练得到参数</p>
-<p><img src="https://s2.ax1x.com/2020/01/09/lWaER0.png" alt="lWaER0.png"></p>
+<div class="figure">
+<img src="https://s2.ax1x.com/2020/01/09/lWaER0.png" alt="lWaER0.png">
+<p class="caption">lWaER0.png</p>
+</div>
 <blockquote>
-<p>Case2  :   输入一个句子，输出每一个词汇的类别</p>
+<p>Case2 : 输入一个句子，输出每一个词汇的类别</p>
 </blockquote>
-<p><img src="https://s2.ax1x.com/2020/01/09/lWawod.png" alt="lWawod.png"></p>
-<p>输入一个句子，每个单词输出的  Embedding  进行线性分类得到类别</p>
+<div class="figure">
+<img src="https://s2.ax1x.com/2020/01/09/lWawod.png" alt="lWawod.png">
+<p class="caption">lWawod.png</p>
+</div>
+<p>输入一个句子，每个单词输出的 Embedding 进行线性分类得到类别</p>
 <blockquote>
-<p>Case3  :  输入两个句子，输出一个类别。（前提假设）</p>
+<p>Case3 : 输入两个句子，输出一个类别。（前提假设）</p>
 </blockquote>
-<p><img src="https://s2.ax1x.com/2020/01/09/lWafoj.png" alt="lWafoj.png"></p>
+<div class="figure">
+<img src="https://s2.ax1x.com/2020/01/09/lWafoj.png" alt="lWafoj.png">
+<p class="caption">lWafoj.png</p>
+</div>
 <blockquote>
-<p>Case4  ：  Extraction-based  Question</p>
+<p>Case4 ： Extraction-based Question</p>
 </blockquote>
-<p><img src="https://s2.ax1x.com/2020/01/09/lWd9l6.png" alt="lWd9l6.png"></p>
-<p><img src="https://s2.ax1x.com/2020/01/09/lWd37Q.png" alt="lWd37Q.png"></p>
-<p><img src="https://s2.ax1x.com/2020/01/09/lWdsAJ.png" alt="lWdsAJ.png"></p>
-<p>如果  s  &gt;  e  那么输出没有答案</p>
-<h2 id="ERNIE也可以"><a href="#ERNIE也可以" class="headerlink" title="ERNIE也可以"></a>ERNIE也可以</h2><p><img src="https://s2.ax1x.com/2020/01/09/lWrySs.png" alt="lWrySs.png"></p>
+<div class="figure">
+<img src="https://s2.ax1x.com/2020/01/09/lWd9l6.png" alt="lWd9l6.png">
+<p class="caption">lWd9l6.png</p>
+</div>
+<div class="figure">
+<img src="https://s2.ax1x.com/2020/01/09/lWd37Q.png" alt="lWd37Q.png">
+<p class="caption">lWd37Q.png</p>
+</div>
+<div class="figure">
+<img src="https://s2.ax1x.com/2020/01/09/lWdsAJ.png" alt="lWdsAJ.png">
+<p class="caption">lWdsAJ.png</p>
+</div>
+<p>如果 s &gt; e 那么输出没有答案</p>
+<h2 id="ernie也可以">ERNIE也可以</h2>
+<div class="figure">
+<img src="https://s2.ax1x.com/2020/01/09/lWrySs.png" alt="lWrySs.png">
+<p class="caption">lWrySs.png</p>
+</div>
 <p>ERNIE特别为了中文而设计！</p>
-<h2 id="BERT一共24层，那么它的每一层输出对应做什么任务？？"><a href="#BERT一共24层，那么它的每一层输出对应做什么任务？？" class="headerlink" title="BERT一共24层，那么它的每一层输出对应做什么任务？？"></a>BERT一共24层，那么它的每一层输出对应做什么任务？？<img src="https://s2.ax1x.com/2020/01/09/lW0nL8.png" alt="lW0nL8.png"></h2><h1 id="GPT2"><a href="#GPT2" class="headerlink" title="GPT2"></a>GPT2</h1><blockquote>
+<h2 id="bert一共24层那么它的每一层输出对应做什么任务lw0nl8.png">BERT一共24层，那么它的每一层输出对应做什么任务？？<img src="https://s2.ax1x.com/2020/01/09/lW0nL8.png" alt="lW0nL8.png"></h2>
+<h1 id="gpt2">GPT2</h1>
+<blockquote>
 <p>GPT2对应的就是Decoder</p>
 </blockquote>
-<p><img src="https://s2.ax1x.com/2020/01/09/lWBFmT.png" alt="lWBFmT.png"></p>
-<p><img src="https://s2.ax1x.com/2020/01/09/lWBU1I.png" alt="lWBU1I.png"></p>
+<div class="figure">
+<img src="https://s2.ax1x.com/2020/01/09/lWBFmT.png" alt="lWBFmT.png">
+<p class="caption">lWBFmT.png</p>
+</div>
+<div class="figure">
+<img src="https://s2.ax1x.com/2020/01/09/lWBU1I.png" alt="lWBU1I.png">
+<p class="caption">lWBU1I.png</p>
+</div>
 
     </article>
     <!-- license  -->
@@ -602,7 +677,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ELMO-amp-BERT-amp-GPT2"><span class="toc-number">1.</span> <span class="toc-text">ELMO &amp;  BERT  &amp;  GPT2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-of-N-Encoding"><span class="toc-number">1.0.1.</span> <span class="toc-text">1  of   N  Encoding</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Word-Class"><span class="toc-number">1.0.1.1.</span> <span class="toc-text">Word Class</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Word-Embedding"><span class="toc-number">1.0.1.2.</span> <span class="toc-text">Word   Embedding</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Contextualized-Word-Embedding"><span class="toc-number">1.1.</span> <span class="toc-text">Contextualized Word  Embedding</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#谁能做到？？？"><span class="toc-number">1.2.</span> <span class="toc-text">谁能做到？？？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ELMO可以"><span class="toc-number">1.3.</span> <span class="toc-text">ELMO可以 :)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Deep"><span class="toc-number">2.</span> <span class="toc-text">Deep@@</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#得到多个Embedding-要哪一个呢？？"><span class="toc-number">2.0.1.</span> <span class="toc-text">得到多个Embedding   要哪一个呢？？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#我全都要！！"><span class="toc-number">3.</span> <span class="toc-text">我全都要！！</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#BERT是Transformer的Encoder"><span class="toc-number">4.</span> <span class="toc-text">BERT是Transformer的Encoder</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用character更恰当，因为中文中的词语很多，但是字是可以穷举的"><span class="toc-number">4.0.1.</span> <span class="toc-text">使用character更恰当，因为中文中的词语很多，但是字是可以穷举的</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#训练BERT"><span class="toc-number">4.1.</span> <span class="toc-text">训练BERT</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CLS-二分类，两个句子是否接在一起"><span class="toc-number">4.2.</span> <span class="toc-text">[CLS]二分类，两个句子是否接在一起</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四种不同的任务"><span class="toc-number">4.3.</span> <span class="toc-text">四种不同的任务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ERNIE也可以"><span class="toc-number">4.4.</span> <span class="toc-text">ERNIE也可以</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BERT一共24层，那么它的每一层输出对应做什么任务？？"><span class="toc-number">4.5.</span> <span class="toc-text">BERT一共24层，那么它的每一层输出对应做什么任务？？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#GPT2"><span class="toc-number">5.</span> <span class="toc-text">GPT2</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#elmo-bert-gpt2"><span class="toc-number">1.</span> <span class="toc-text">ELMO &amp; BERT &amp; GPT2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#of-n-encoding"><span class="toc-number">1.0.1.</span> <span class="toc-text">1 of N Encoding</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#word-class"><span class="toc-number">1.0.1.1.</span> <span class="toc-text">Word Class</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#word-embedding"><span class="toc-number">1.0.1.2.</span> <span class="toc-text">Word Embedding</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#contextualized-word-embedding"><span class="toc-number">1.1.</span> <span class="toc-text">Contextualized Word Embedding</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#谁能做到"><span class="toc-number">1.2.</span> <span class="toc-text">谁能做到？？？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#elmo可以"><span class="toc-number">1.3.</span> <span class="toc-text">ELMO可以 :)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#deep"><span class="toc-number">2.</span> <span class="toc-text">Deep@@</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#得到多个embedding-要哪一个呢"><span class="toc-number">2.0.1.</span> <span class="toc-text">得到多个Embedding 要哪一个呢？？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#我全都要"><span class="toc-number">3.</span> <span class="toc-text">我全都要！！</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bert是transformer的encoder"><span class="toc-number">4.</span> <span class="toc-text">BERT是Transformer的Encoder</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用character更恰当因为中文中的词语很多但是字是可以穷举的"><span class="toc-number">4.0.1.</span> <span class="toc-text">使用character更恰当，因为中文中的词语很多，但是字是可以穷举的</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#训练bert"><span class="toc-number">4.1.</span> <span class="toc-text">训练BERT</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cls二分类两个句子是否接在一起"><span class="toc-number">4.2.</span> <span class="toc-text">[CLS]二分类，两个句子是否接在一起</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四种不同的任务"><span class="toc-number">4.3.</span> <span class="toc-text">四种不同的任务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ernie也可以"><span class="toc-number">4.4.</span> <span class="toc-text">ERNIE也可以</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bert一共24层那么它的每一层输出对应做什么任务lw0nl8.png"><span class="toc-number">4.5.</span> <span class="toc-text">BERT一共24层，那么它的每一层输出对应做什么任务？？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#gpt2"><span class="toc-number">5.</span> <span class="toc-text">GPT2</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -897,9 +972,32 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 22
+        Total : 23
         </div>
         <!-- search  -->
         
@@ -915,17 +1013,22 @@ top:50vh;
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">07/16</span><a class="archive-post-title" href= "/2020/07/16/给Hexo-Archer主题添加LaTeX公式支持/" >给Hexo Archer主题添加LaTeX公式支持</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">07/13</span><a class="archive-post-title" href= "/2020/07/13/算法基础：图论总结/" >算法基础：图论总结</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/03</span><a class="archive-post-title" href= "/2020/06/03/Anaconda-Command-Record/" >Anaconda-Command-Record</a>
+            <span class="archive-post-date">06/03</span><a class="archive-post-title" href= "/2020/06/03/Tensorflow无法使用CUDA-VISIBLE-DEVICES参数进行GPU加速/" >Tensorflow无法使用CUDA_VISIBLE_DEVICES参数进行GPU加速</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/03</span><a class="archive-post-title" href= "/2020/06/03/Tensorflow无法使用CUDA-VISIBLE-DEVICES参数进行GPU加速/" >Tensorflow无法使用CUDA_VISIBLE_DEVICES参数进行GPU加速</a>
+            <span class="archive-post-date">06/03</span><a class="archive-post-title" href= "/2020/06/03/Anaconda-Command-Record/" >Anaconda-Command-Record</a>
         </li>
     
     
@@ -940,6 +1043,11 @@ top:50vh;
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：二分/" >算法基础：二分</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：差分/" >算法基础：差分</a>
         </li>
     
@@ -950,17 +1058,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：二分/" >算法基础：二分</a>
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：归并排序/" >算法基础：归并排序</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：快速排序/" >算法基础：快速排序</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：归并排序/" >算法基础：归并排序</a>
         </li>
     
     
@@ -1014,12 +1117,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/Ubuntu-Sever命令行换源/" >Ubuntu Sever 换源</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/HPL-Openmpi-GOTOBLAS2/" >HPL+Openmpi+GOTOBLAS2</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/HPL-Openmpi-GOTOBLAS2/" >HPL+Openmpi+GOTOBLAS2</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/Ubuntu-Sever命令行换源/" >Ubuntu Sever 换源</a>
         </li>
     
     
@@ -1037,23 +1140,25 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
-    
         <span class="sidebar-tag-name" data-tags="Anaconda"><span class="iconfont-archer">&#xe606;</span>Anaconda</span>
     
         <span class="sidebar-tag-name" data-tags="NLP"><span class="iconfont-archer">&#xe606;</span>NLP</span>
     
-        <span class="sidebar-tag-name" data-tags="BUG"><span class="iconfont-archer">&#xe606;</span>BUG</span>
+        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
     
         <span class="sidebar-tag-name" data-tags="Math"><span class="iconfont-archer">&#xe606;</span>Math</span>
+    
+        <span class="sidebar-tag-name" data-tags="BUG"><span class="iconfont-archer">&#xe606;</span>BUG</span>
     
         <span class="sidebar-tag-name" data-tags="Mysql"><span class="iconfont-archer">&#xe606;</span>Mysql</span>
     
         <span class="sidebar-tag-name" data-tags="Django"><span class="iconfont-archer">&#xe606;</span>Django</span>
     
+        <span class="sidebar-tag-name" data-tags="Java"><span class="iconfont-archer">&#xe606;</span>Java</span>
+    
         <span class="sidebar-tag-name" data-tags="算法基础"><span class="iconfont-archer">&#xe606;</span>算法基础</span>
     
-        <span class="sidebar-tag-name" data-tags="Java"><span class="iconfont-archer">&#xe606;</span>Java</span>
+        <span class="sidebar-tag-name" data-tags="Latex"><span class="iconfont-archer">&#xe606;</span>Latex</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -1121,7 +1226,7 @@ jsonContent:
     </div>
     <!-- async load share.js -->
     
-        <script src="/scripts/share.js" async></script>    
+        <script src="/scripts/share.js" async></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->    
      
     </body>
 </html>

@@ -351,11 +351,12 @@
                 <span>python的包存在，但是不能import的bug</span>
         </a>
         <div class="abstract-content">
-            Importerror: cannot import name ‘lib’报的是这样的一个错误，在import numpy as np的时候出错。网上没有这个错误的…
+            Importerror: cannot import name 'lib'
+报的是这样的一个错误，在import numpy as np的时候出错。网上没有这个错误的...
 原本想的是电脑上的环境冲突了，但是在删除了多余的anaconda后还是不能如愿以偿。
 于是找到了报错文件夹的位置：
 
-C:\Users\10449\AppData\Roaming\Python\Python36\site-packages
+C:044936-packages
 
 这里。
 在这里将文件夹删除之后大功告成，hhh😄
@@ -389,17 +390,23 @@ ps：这个文件夹应该是一些缓存文件，如果上一次的东西没执
                 <span>算法基础：双指针算法</span>
         </a>
         <div class="abstract-content">
-            算法基础：双指针算法给定一个长度为n的整数序列，请找出最长的不包含重复数字的连续区间，输出它的长度。
-输入格式第一行包含整数n。
+            算法基础：双指针算法
+给定一个长度为n的整数序列，请找出最长的不包含重复数字的连续区间，输出它的长度。
+输入格式
+第一行包含整数n。
 第二行包含n个整数（均在0~100000范围内），表示整数序列。
-输出格式共一行，包含一个整数，表示最长的不包含重复数字的连续子序列的长度。
-数据范围1≤n≤1000001≤n≤100000
-输入样例：1251 2 2 3 5
-
-输出样例：13
-
-思路：i 为快指针， j 为慢指针
-代码：123456789101112131415161718192021222324252627282930313233#include&lt;iostream&gt;#inclu...
+输出格式
+共一行，包含一个整数，表示最长的不包含重复数字的连续子序列的长度。
+数据范围
+1≤n≤1000001≤n≤100000
+输入样例：
+1251 2 2 3 5
+输出样例：
+13
+思路：
+i 为快指针， j 为慢指针
+代码：
+123456789101112131415161718192021222324252627282930313233#include...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -428,15 +435,18 @@ ps：这个文件夹应该是一些缓存文件，如果上一次的东西没执
                 <span>算法基础：差分</span>
         </a>
         <div class="abstract-content">
-            算法基础：差分输入一个长度为n的整数序列。
+            算法基础：差分
+输入一个长度为n的整数序列。
 接下来输入m个操作，每个操作包含三个整数l, r, c，表示将序列中[l, r]之间的每个数加上c。
 请你输出进行完所有操作后的序列。
-输入格式第一行包含两个整数n和m。
+输入格式
+第一行包含两个整数n和m。
 第二行包含n个整数，表示整数序列。
 接下来m行，每行包含三个整数l，r，c，表示一个操作。
-输出格式共一行，包含n个整数，表示最终序列。
-数据范围1≤n,m≤1000001≤n,m≤100000,1≤l≤r≤n1≤l≤r≤n,−1000≤c≤1000−1000≤c≤1000,−1000≤整数序列中元素的值≤1000−1000≤整数序列中元素的值≤1000
-输入样例：12345...
+输出格式
+共一行，包含n个整数，表示最终序列。
+数据范围
+1≤n,m≤1000001≤n,m≤100000, 1≤l≤r≤n1≤l≤r≤n, −1000≤c≤1000−1000≤c≤1000, −1000≤整数序列中元素的值≤1000−1000≤整数序列中元素...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -465,19 +475,21 @@ ps：这个文件夹应该是一些缓存文件，如果上一次的东西没执
                 <span>算法基础：前缀和（一维和二维）</span>
         </a>
         <div class="abstract-content">
-            算法基础：前缀和一维！输入一个长度为n的整数序列。
+            算法基础：前缀和
+一维！
+输入一个长度为n的整数序列。
 接下来再输入m个询问，每个询问输入一对l, r。
 对于每个询问，输出原序列中从第l个数到第r个数的和。
-输入格式第一行包含两个整数n和m。
+输入格式
+第一行包含两个整数n和m。
 第二行包含n个整数，表示整数数列。
 接下来m行，每行包含两个整数l和r，表示一个询问的区间范围。
-输出格式共m行，每行输出一个询问的结果。
-数据范围1≤l≤r≤n1≤l≤r≤n,1≤n,m≤1000001≤n,m≤100000,−1000≤数列中元素的值≤1000−1000≤数列中元素的值≤1000
-输入样例：123455 32 1 3 6 41 21 32 4
-
-输出样例：1233610
-
-思想：...
+输出格式
+共m行，每行输出一个询问的结果。
+数据范围
+1≤l≤r≤n1≤l≤r≤n, 1≤n,m≤1000001≤n,m≤100000, −1000≤数列中元素的值≤1000−1000≤数列中元素的值≤1000
+输入样例：
+123455 32 1 3 6 41 21 3...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -506,15 +518,19 @@ ps：这个文件夹应该是一些缓存文件，如果上一次的东西没执
                 <span>算法基础：二分</span>
         </a>
         <div class="abstract-content">
-            算法基础：二分给定一个按照升序排列的长度为n的整数数组，以及 q 个查询。
+            算法基础：二分
+给定一个按照升序排列的长度为n的整数数组，以及 q 个查询。
 对于每个查询，返回一个元素k的起始位置和终止位置（位置从0开始计数）。
 如果数组中不存在该元素，则返回“-1 -1”。
-输入格式第一行包含整数n和q，表示数组长度和询问个数。
+输入格式
+第一行包含整数n和q，表示数组长度和询问个数。
 第二行包含n个整数（均在1~10000范围内），表示完整数组。
 接下来q行，每行包含一个整数k，表示一个询问元素。
-输出格式共q行，每行包含两个整数，表示所求元素的起始位置和终止位置。
+输出格式
+共q行，每行包含两个整数，表示所求元素的起始位置和终止位置。
 如果数组中不存在该元素，则返回“-1 -1”。
-数据范围1≤n≤1000001≤n≤1000001≤q≤100001≤q≤100001≤k≤100001≤k...
+数据范围
+1≤n≤1000001≤n≤100000 1≤q≤100001≤q≤...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -543,18 +559,22 @@ ps：这个文件夹应该是一些缓存文件，如果上一次的东西没执
                 <span>算法基础：归并排序</span>
         </a>
         <div class="abstract-content">
-            算法基础：归并排序给定你一个长度为n的整数数列。
+            算法基础：归并排序
+给定你一个长度为n的整数数列。
 请你使用归并排序对这个数列按照从小到大进行排序。
 并将排好序的数列按顺序输出。
-输入格式输入共两行，第一行包含整数 n。
+输入格式
+输入共两行，第一行包含整数 n。
 第二行包含 n 个整数（所有整数均在1~109109范围内），表示整个数列。
-输出格式输出共一行，包含 n 个整数，表示排好序的数列。
-数据范围1≤n≤1000001≤n≤100000
-输入样例：1253 1 2 4 5
-
-输出样例：11 2 3 4 5
-
-1234567891011121314151617181920212223242526272829303132333435363738394041#include&...
+输出格式
+输出共一行，包含 n 个整数，表示排好序的数列。
+数据范围
+1≤n≤1000001≤n≤100000
+输入样例：
+1253 1 2 4 5
+输出样例：
+11 2 3 4 5
+123456789101112131415161718192021222324252627282930313233343536...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -583,18 +603,22 @@ ps：这个文件夹应该是一些缓存文件，如果上一次的东西没执
                 <span>算法基础：快速排序</span>
         </a>
         <div class="abstract-content">
-            算法基础：快速排序给定你一个长度为n的整数数列。
+            算法基础：快速排序
+给定你一个长度为n的整数数列。
 请你使用快速排序对这个数列按照从小到大进行排序。
 并将排好序的数列按顺序输出。
-输入格式输入共两行，第一行包含整数 n。
+输入格式
+输入共两行，第一行包含整数 n。
 第二行包含 n 个整数（所有整数均在1~109109范围内），表示整个数列。
-输出格式输出共一行，包含 n 个整数，表示排好序的数列。
-数据范围1≤n≤1000001≤n≤100000
-输入样例：1253 1 2 4 5
-
-输出样例：11 2 3 4 5
-
-123456789101112131415161718192021222324252627282930313233343536373839404142#includ...
+输出格式
+输出共一行，包含 n 个整数，表示排好序的数列。
+数据范围
+1≤n≤1000001≤n≤100000
+输入样例：
+1253 1 2 4 5
+输出样例：
+11 2 3 4 5
+123456789101112131415161718192021222324252627282930313233343536...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -988,9 +1012,32 @@ ps：这个文件夹应该是一些缓存文件，如果上一次的东西没执
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 22
+        Total : 23
         </div>
         <!-- search  -->
         
@@ -1006,17 +1053,22 @@ ps：这个文件夹应该是一些缓存文件，如果上一次的东西没执
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">07/16</span><a class="archive-post-title" href= "/2020/07/16/给Hexo-Archer主题添加LaTeX公式支持/" >给Hexo Archer主题添加LaTeX公式支持</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">07/13</span><a class="archive-post-title" href= "/2020/07/13/算法基础：图论总结/" >算法基础：图论总结</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/03</span><a class="archive-post-title" href= "/2020/06/03/Anaconda-Command-Record/" >Anaconda-Command-Record</a>
+            <span class="archive-post-date">06/03</span><a class="archive-post-title" href= "/2020/06/03/Tensorflow无法使用CUDA-VISIBLE-DEVICES参数进行GPU加速/" >Tensorflow无法使用CUDA_VISIBLE_DEVICES参数进行GPU加速</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/03</span><a class="archive-post-title" href= "/2020/06/03/Tensorflow无法使用CUDA-VISIBLE-DEVICES参数进行GPU加速/" >Tensorflow无法使用CUDA_VISIBLE_DEVICES参数进行GPU加速</a>
+            <span class="archive-post-date">06/03</span><a class="archive-post-title" href= "/2020/06/03/Anaconda-Command-Record/" >Anaconda-Command-Record</a>
         </li>
     
     
@@ -1031,6 +1083,11 @@ ps：这个文件夹应该是一些缓存文件，如果上一次的东西没执
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：二分/" >算法基础：二分</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：差分/" >算法基础：差分</a>
         </li>
     
@@ -1041,17 +1098,12 @@ ps：这个文件夹应该是一些缓存文件，如果上一次的东西没执
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：二分/" >算法基础：二分</a>
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：归并排序/" >算法基础：归并排序</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：快速排序/" >算法基础：快速排序</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：归并排序/" >算法基础：归并排序</a>
         </li>
     
     
@@ -1105,12 +1157,12 @@ ps：这个文件夹应该是一些缓存文件，如果上一次的东西没执
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/Ubuntu-Sever命令行换源/" >Ubuntu Sever 换源</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/HPL-Openmpi-GOTOBLAS2/" >HPL+Openmpi+GOTOBLAS2</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/HPL-Openmpi-GOTOBLAS2/" >HPL+Openmpi+GOTOBLAS2</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/Ubuntu-Sever命令行换源/" >Ubuntu Sever 换源</a>
         </li>
     
     
@@ -1128,23 +1180,25 @@ ps：这个文件夹应该是一些缓存文件，如果上一次的东西没执
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
-    
         <span class="sidebar-tag-name" data-tags="Anaconda"><span class="iconfont-archer">&#xe606;</span>Anaconda</span>
     
         <span class="sidebar-tag-name" data-tags="NLP"><span class="iconfont-archer">&#xe606;</span>NLP</span>
     
-        <span class="sidebar-tag-name" data-tags="BUG"><span class="iconfont-archer">&#xe606;</span>BUG</span>
+        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
     
         <span class="sidebar-tag-name" data-tags="Math"><span class="iconfont-archer">&#xe606;</span>Math</span>
+    
+        <span class="sidebar-tag-name" data-tags="BUG"><span class="iconfont-archer">&#xe606;</span>BUG</span>
     
         <span class="sidebar-tag-name" data-tags="Mysql"><span class="iconfont-archer">&#xe606;</span>Mysql</span>
     
         <span class="sidebar-tag-name" data-tags="Django"><span class="iconfont-archer">&#xe606;</span>Django</span>
     
+        <span class="sidebar-tag-name" data-tags="Java"><span class="iconfont-archer">&#xe606;</span>Java</span>
+    
         <span class="sidebar-tag-name" data-tags="算法基础"><span class="iconfont-archer">&#xe606;</span>算法基础</span>
     
-        <span class="sidebar-tag-name" data-tags="Java"><span class="iconfont-archer">&#xe606;</span>Java</span>
+        <span class="sidebar-tag-name" data-tags="Latex"><span class="iconfont-archer">&#xe606;</span>Latex</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
