@@ -429,7 +429,7 @@ height:50vh;
 <h3 id="启动privoxy"><a href="#启动privoxy" class="headerlink" title="启动privoxy"></a><strong>启动privoxy</strong></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart privoxy &gt; systemctl enable privoxy</span><br></pre></td></tr></table></figure>
 
 <h3 id="转发配置"><a href="#转发配置" class="headerlink" title="转发配置"></a><strong>转发配置</strong></h3><p>写在 profile 中</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span> vim /etc/profile</span><br><span class="line">export http_proxy=http://127.0.0.1:8118</span><br><span class="line">export https_proxy=http://127.0.0.1:8118</span><br><span class="line"><span class="meta">&gt;</span> source /etc/profile</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> vim /etc/profile</span></span><br><span class="line">export http_proxy=http://127.0.0.1:8118</span><br><span class="line">export https_proxy=http://127.0.0.1:8118</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> <span class="built_in">source</span> /etc/profile</span></span><br></pre></td></tr></table></figure>
 
 <p>在当前 session 执行</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export http_proxy=http://127.0.0.1:8118</span><br><span class="line">export https_proxy=http://127.0.0.1:8118</span><br></pre></td></tr></table></figure>
@@ -437,7 +437,7 @@ height:50vh;
 <h3 id="测试翻墙"><a href="#测试翻墙" class="headerlink" title="测试翻墙"></a><strong>测试翻墙</strong></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl www.google.com</span><br></pre></td></tr></table></figure>
 
 <h3 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a><strong>问题解决</strong></h3><p>如果不能访问, 请重启机器, 依次打开shadowsocks和privoxy再测试</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span> nohup sslocal -c /etc/shadowsocks.json /dev/null 2&gt;&amp;1 &amp;</span><br><span class="line"><span class="meta">&gt;</span> privoxy --user privoxy /usr/local/etc/privoxy/config</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> nohup sslocal -c /etc/shadowsocks.json /dev/null 2&gt;&amp;1 &amp;</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> privoxy --user privoxy /usr/<span class="built_in">local</span>/etc/privoxy/config</span></span><br></pre></td></tr></table></figure>
 
 <p><img src="https://s2.ax1x.com/2019/10/28/Kg6zPH.png" alt="Kg6zPH.png"></p>
 <p><a href="https://keer.me/Using-ShadowSocks-and-Privoxy-proxy-in-Linux/" target="_blank" rel="noopener">Linux中使用ShadowSocks+Privoxy代理</a></p>
@@ -463,9 +463,9 @@ height:50vh;
 
 <h4 id="4-生成配置文件"><a href="#4-生成配置文件" class="headerlink" title="4.生成配置文件"></a>4.生成配置文件</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd libsodium*</span><br><span class="line"></span><br><span class="line">./configure</span><br></pre></td></tr></table></figure>
 
-<h4 id="5-编译并安装"><a href="#5-编译并安装" class="headerlink" title="5.编译并安装"></a>5.编译并安装</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">make -j8 &amp;&amp; make install</span><br><span class="line"><span class="meta">#</span>中间可能报错target '/usr/local/include/sodium' is not a directory...</span><br><span class="line"><span class="meta">#</span>这里的原因是没有使用root权限</span><br></pre></td></tr></table></figure>
+<h4 id="5-编译并安装"><a href="#5-编译并安装" class="headerlink" title="5.编译并安装"></a>5.编译并安装</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">make -j8 &amp;&amp; make install</span><br><span class="line"><span class="meta">#</span><span class="bash">中间可能报错target <span class="string">'/usr/local/include/sodium'</span> is not a directory...</span></span><br><span class="line"><span class="meta">#</span><span class="bash">这里的原因是没有使用root权限</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="6-添加运行库位置并加载运行库："><a href="#6-添加运行库位置并加载运行库：" class="headerlink" title="6.添加运行库位置并加载运行库："></a>6.添加运行库位置并加载运行库：</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo /usr/local/lib &gt; /etc/ld.so.conf.d/usr_local_lib.conf</span><br><span class="line"><span class="meta">#</span> 如果是ubuntu server直接ldconfig</span><br><span class="line">ldconfig</span><br></pre></td></tr></table></figure>
+<h4 id="6-添加运行库位置并加载运行库："><a href="#6-添加运行库位置并加载运行库：" class="headerlink" title="6.添加运行库位置并加载运行库："></a>6.添加运行库位置并加载运行库：</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo /usr/local/lib &gt; /etc/ld.so.conf.d/usr_local_lib.conf</span><br><span class="line"><span class="meta">#</span><span class="bash"> 如果是ubuntu server直接ldconfig</span></span><br><span class="line">ldconfig</span><br></pre></td></tr></table></figure>
 
 <p>😀😀祝愿大家都能愉快的google~</p>
 
@@ -882,9 +882,32 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 21
+        Total : 22
         </div>
         <!-- search  -->
         
@@ -897,6 +920,11 @@ top:50vh;
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/13</span><a class="archive-post-title" href= "/2020/07/13/算法基础：图论总结/" >算法基础：图论总结</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -920,17 +948,17 @@ top:50vh;
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：差分/" >算法基础：差分</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：前缀和（一维和二维）/" >算法基础：前缀和（一维和二维）</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：二分/" >算法基础：二分</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：差分/" >算法基础：差分</a>
         </li>
     
     
@@ -1019,21 +1047,21 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
     
-        <span class="sidebar-tag-name" data-tags="NLP"><span class="iconfont-archer">&#xe606;</span>NLP</span>
-    
         <span class="sidebar-tag-name" data-tags="Anaconda"><span class="iconfont-archer">&#xe606;</span>Anaconda</span>
     
-        <span class="sidebar-tag-name" data-tags="Math"><span class="iconfont-archer">&#xe606;</span>Math</span>
+        <span class="sidebar-tag-name" data-tags="NLP"><span class="iconfont-archer">&#xe606;</span>NLP</span>
     
         <span class="sidebar-tag-name" data-tags="BUG"><span class="iconfont-archer">&#xe606;</span>BUG</span>
+    
+        <span class="sidebar-tag-name" data-tags="Math"><span class="iconfont-archer">&#xe606;</span>Math</span>
     
         <span class="sidebar-tag-name" data-tags="Mysql"><span class="iconfont-archer">&#xe606;</span>Mysql</span>
     
         <span class="sidebar-tag-name" data-tags="Django"><span class="iconfont-archer">&#xe606;</span>Django</span>
     
-        <span class="sidebar-tag-name" data-tags="Java"><span class="iconfont-archer">&#xe606;</span>Java</span>
-    
         <span class="sidebar-tag-name" data-tags="算法基础"><span class="iconfont-archer">&#xe606;</span>算法基础</span>
+    
+        <span class="sidebar-tag-name" data-tags="Java"><span class="iconfont-archer">&#xe606;</span>Java</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
