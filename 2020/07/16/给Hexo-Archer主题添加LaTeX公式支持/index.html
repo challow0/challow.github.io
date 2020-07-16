@@ -272,7 +272,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">380</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">496</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -434,6 +434,9 @@ height:50vh;
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; var args = [ <span class="string">'-f'</span>, <span class="string">'markdown'</span>+extensions, <span class="string">'-t'</span>, <span class="string">'html'</span>, math]</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
 <h4 id="Kramed"><a href="#Kramed" class="headerlink" title="Kramed"></a>Kramed</h4><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure>
+<p>本人采用此种方式，但还是有无法渲染的问题</p>
+<p>执行上述操作后，虽然块状公式的渲染问题解决了，但发现行内公式仍然是老样子，无法成功渲染，这是因为<code>hexo-renderer-kramed</code>也有语义冲突的问题，这里我们直接修改转义即可。打开文件<code>\node_modules\kramed\lib\rules\inline.js</code>，修改其中一行</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span></span><br><span class="line">  em: <span class="regexp">/^\*((?:\*\*|[\s\S])+?)\*(?!\*)/</span>,</span><br></pre></td></tr></table></figure>
 <h3 id="OVER"><a href="#OVER" class="headerlink" title="OVER !"></a>OVER !</h3>
     </article>
     <!-- license  -->
@@ -442,7 +445,7 @@ height:50vh;
             <p>原文作者：<a href="http://www.challow.top/child">Challow</a>
             <p>原文链接：<a href="http://www.challow.top/child/2020/07/16/给Hexo-Archer主题添加LaTeX公式支持/">http://www.challow.top/child/2020/07/16/给Hexo-Archer主题添加LaTeX公式支持/</a>
             <p>发表日期：<a href="http://www.challow.top/child/2020/07/16/给Hexo-Archer主题添加LaTeX公式支持/">July 16th 2020, 4:59:35 pm</a>
-            <p>更新日期：<a href="http://www.challow.top/child/2020/07/16/给Hexo-Archer主题添加LaTeX公式支持/">July 16th 2020, 5:08:55 pm</a>
+            <p>更新日期：<a href="http://www.challow.top/child/2020/07/16/给Hexo-Archer主题添加LaTeX公式支持/">July 16th 2020, 5:28:28 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -889,6 +892,12 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 23
@@ -937,17 +946,17 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：差分/" >算法基础：差分</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：前缀和（一维和二维）/" >算法基础：前缀和（一维和二维）</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：二分/" >算法基础：二分</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：差分/" >算法基础：差分</a>
         </li>
     
     
@@ -1006,12 +1015,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/HPL-Openmpi-GOTOBLAS2/" >HPL+Openmpi+GOTOBLAS2</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/Bug-Blog/" >Bug Blog</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/Bug-Blog/" >Bug Blog</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/HPL-Openmpi-GOTOBLAS2/" >HPL+Openmpi+GOTOBLAS2</a>
         </li>
     
     
@@ -1048,9 +1057,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Django"><span class="iconfont-archer">&#xe606;</span>Django</span>
     
-        <span class="sidebar-tag-name" data-tags="算法基础"><span class="iconfont-archer">&#xe606;</span>算法基础</span>
-    
         <span class="sidebar-tag-name" data-tags="Java"><span class="iconfont-archer">&#xe606;</span>Java</span>
+    
+        <span class="sidebar-tag-name" data-tags="算法基础"><span class="iconfont-archer">&#xe606;</span>算法基础</span>
     
         <span class="sidebar-tag-name" data-tags="Latex"><span class="iconfont-archer">&#xe606;</span>Latex</span>
     
