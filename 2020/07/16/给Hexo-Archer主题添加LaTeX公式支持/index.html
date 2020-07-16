@@ -401,47 +401,40 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="解决方案">解决方案</h2>
-<h3 id="x00">0x00</h3>
-<ul>
+        <h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="0x00"><a href="#0x00" class="headerlink" title="0x00"></a>0x00</h3><ul>
 <li>在<code>themes/Your-Theme-Name/layout/</code>下新建文件<code>mathjax.ejs</code>：</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span> (theme.mathjax.enable)&#123; %&gt;</span><br><span class="line">    &lt;script type=<span class="string">"text/x-mathjax-config"</span>&gt;</span><br><span class="line">      MathJax.Hub.Config(&#123;</span><br><span class="line">          tex2jax: &#123;</span><br><span class="line">            inlineMath: [ [<span class="string">'$'</span>,<span class="string">'$'</span>], [<span class="string">"\\("</span>,<span class="string">"\\)"</span>] ],</span><br><span class="line">            processEscapes: <span class="literal">true</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">      &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    &lt;script type="text/</span>x-mathjax-config<span class="string">"&gt;</span></span><br><span class="line"><span class="string">      MathJax.Hub.Config(&#123;</span></span><br><span class="line"><span class="string">            tex2jax: &#123;</span></span><br><span class="line"><span class="string">              skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']</span></span><br><span class="line"><span class="string">            &#125;</span></span><br><span class="line"><span class="string">          &#125;);</span></span><br><span class="line"><span class="string">      &lt;/script&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &lt;script type="</span>text/x-mathjax-config<span class="string">"&gt;</span></span><br><span class="line"><span class="string">      MathJax.Hub.Queue(function() &#123;</span></span><br><span class="line"><span class="string">              var all = MathJax.Hub.getAllJax(), i;</span></span><br><span class="line"><span class="string">              for(i=0; i &lt; all.length; i += 1) &#123;</span></span><br><span class="line"><span class="string">                  all[i].SourceElement().parentNode.className += ' has-jax';</span></span><br><span class="line"><span class="string">              &#125;</span></span><br><span class="line"><span class="string">          &#125;);</span></span><br><span class="line"><span class="string">      &lt;/script&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &lt;script type="</span>text/javascript<span class="string">" src="</span>&lt;%- theme.mathjax.cdn %&gt;<span class="string">"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string">&lt;% &#125; %&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="x01">0x01</h3>
-<ul>
+<h3 id="0x01"><a href="#0x01" class="headerlink" title="0x01"></a>0x01</h3><ul>
 <li>在主题的<code>_config.yml</code>文件末尾添加：</li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># MathJax Support</span><br><span class="line">mathjax:</span><br><span class="line">  enable: <span class="literal">true</span></span><br><span class="line">  cdn: https:<span class="comment">//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML</span></span><br></pre></td></tr></table></figure>
-<h3 id="x02">0x02</h3>
-<ul>
+<h3 id="0x02"><a href="#0x02" class="headerlink" title="0x02"></a>0x02</h3><ul>
 <li>修改<code>themes/Your-Theme-Name/layout/post.ejs</code>, 在文件的<code>&lt;main&gt;</code>标签块中加入：</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span> (page.mathjax == <span class="literal">true</span>)&#123; %&gt;</span><br><span class="line">    &lt;%- partial(<span class="string">'mathjax'</span>) %&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="x03">0x03</h3>
-<ul>
+<h3 id="0x03"><a href="#0x03" class="headerlink" title="0x03"></a>0x03</h3><ul>
 <li>如果你之前使用了hexo-math，请记得卸载，因为我们下面会替换渲染引擎，所以并不需要它。</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-math</span><br></pre></td></tr></table></figure>
-<h3 id="x04-替换渲染引擎">0x04 替换渲染引擎</h3>
-<p>Hexo默认使用<code>hexo-renderer-marked</code>来渲染Markdown。推荐最便捷的方法是直接换一个渲染器。下面两个渲染器可以<strong>二选一</strong>：</p>
-<h4 id="pandoc">Pandoc</h4>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-pandoc --save</span><br></pre></td></tr></table></figure>
+<h3 id="0x04-替换渲染引擎"><a href="#0x04-替换渲染引擎" class="headerlink" title="0x04 替换渲染引擎"></a>0x04 替换渲染引擎</h3><p>Hexo默认使用<code>hexo-renderer-marked</code>来渲染Markdown。推荐最便捷的方法是直接换一个渲染器。下面两个渲染器可以<strong>二选一</strong>：</p>
+<h4 id="Pandoc"><a href="#Pandoc" class="headerlink" title="Pandoc"></a>Pandoc</h4><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-pandoc --save</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>这里可能会出现一个问题</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; [ERROR][hexo-renderer-pandoc] pandoc exited with code <span class="number">9</span>: pandoc: Unknown extension: smart</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
+<p>&gt;</p>
 <blockquote>
 <p>将<code>node_modules\hexo-renderer-pandoc\index.js</code>中的</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; var args = [ <span class="string">'-f'</span>, <span class="string">'markdown-smart'</span>+extensions, <span class="string">'-t'</span>, <span class="string">'html-smart'</span>, math]</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
+<p>&gt;</p>
 <blockquote>
 <p>更改为</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; var args = [ <span class="string">'-f'</span>, <span class="string">'markdown'</span>+extensions, <span class="string">'-t'</span>, <span class="string">'html'</span>, math]</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
-<h4 id="kramed">Kramed</h4>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure>
-<h3 id="over">OVER !</h3>
-
+<h4 id="Kramed"><a href="#Kramed" class="headerlink" title="Kramed"></a>Kramed</h4><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure>
+<h3 id="OVER"><a href="#OVER" class="headerlink" title="OVER !"></a>OVER !</h3>
     </article>
     <!-- license  -->
     
@@ -578,7 +571,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方案"><span class="toc-number">1.</span> <span class="toc-text">解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#x00"><span class="toc-number">1.1.</span> <span class="toc-text">0x00</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#x01"><span class="toc-number">1.2.</span> <span class="toc-text">0x01</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#x02"><span class="toc-number">1.3.</span> <span class="toc-text">0x02</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#x03"><span class="toc-number">1.4.</span> <span class="toc-text">0x03</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#x04-替换渲染引擎"><span class="toc-number">1.5.</span> <span class="toc-text">0x04 替换渲染引擎</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#pandoc"><span class="toc-number">1.5.1.</span> <span class="toc-text">Pandoc</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#kramed"><span class="toc-number">1.5.2.</span> <span class="toc-text">Kramed</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#over"><span class="toc-number">1.6.</span> <span class="toc-text">OVER !</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方案"><span class="toc-number">1.</span> <span class="toc-text">解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#0x00"><span class="toc-number">1.1.</span> <span class="toc-text">0x00</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#0x01"><span class="toc-number">1.2.</span> <span class="toc-text">0x01</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#0x02"><span class="toc-number">1.3.</span> <span class="toc-text">0x02</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#0x03"><span class="toc-number">1.4.</span> <span class="toc-text">0x03</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#0x04-替换渲染引擎"><span class="toc-number">1.5.</span> <span class="toc-text">0x04 替换渲染引擎</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Pandoc"><span class="toc-number">1.5.1.</span> <span class="toc-text">Pandoc</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Kramed"><span class="toc-number">1.5.2.</span> <span class="toc-text">Kramed</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OVER"><span class="toc-number">1.6.</span> <span class="toc-text">OVER !</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -591,6 +584,10 @@ top:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
     
     
     
@@ -949,22 +946,22 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：差分/" >算法基础：差分</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：前缀和（一维和二维）/" >算法基础：前缀和（一维和二维）</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：归并排序/" >算法基础：归并排序</a>
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：差分/" >算法基础：差分</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：快速排序/" >算法基础：快速排序</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：归并排序/" >算法基础：归并排序</a>
         </li>
     
     
@@ -1013,12 +1010,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/Bug-Blog/" >Bug Blog</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/HPL-Openmpi-GOTOBLAS2/" >HPL+Openmpi+GOTOBLAS2</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/HPL-Openmpi-GOTOBLAS2/" >HPL+Openmpi+GOTOBLAS2</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/Bug-Blog/" >Bug Blog</a>
         </li>
     
     
@@ -1047,9 +1044,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
     
-        <span class="sidebar-tag-name" data-tags="Math"><span class="iconfont-archer">&#xe606;</span>Math</span>
-    
         <span class="sidebar-tag-name" data-tags="BUG"><span class="iconfont-archer">&#xe606;</span>BUG</span>
+    
+        <span class="sidebar-tag-name" data-tags="Math"><span class="iconfont-archer">&#xe606;</span>Math</span>
     
         <span class="sidebar-tag-name" data-tags="Mysql"><span class="iconfont-archer">&#xe606;</span>Mysql</span>
     
@@ -1127,9 +1124,24 @@ jsonContent:
     </div>
     <!-- async load share.js -->
     
-        <script src="/scripts/share.js" async></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->    
+        <script src="/scripts/share.js" async></script>    
      
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
 </html>
 
 

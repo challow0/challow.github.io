@@ -401,18 +401,15 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="ubuntu-server-换源">Ubuntu Server 换源</h2>
-<blockquote>
-<p>ubuntu 的默认源是美国的，安装后下载起来特别慢，可以使用下面方法将源更换为国内源: 用vi打开 /etc/apt/sources.list 将其中的us.archive 全部替换为 cn.archive即可，这样，以后使用apt-get下载就会使用源自<a href="http://cn.archive.ubuntu.com/" target="_blank" rel="noopener">http://cn.archive.ubuntu.com</a> 了。</p>
+        <h2 id="Ubuntu-Server-换源"><a href="#Ubuntu-Server-换源" class="headerlink" title="Ubuntu Server 换源"></a>Ubuntu Server 换源</h2><blockquote>
+<p>ubuntu 的默认源是美国的，安装后下载起来特别慢，可以使用下面方法将源更换为国内源:<br>用vi打开 /etc/apt/sources.list 将其中的us.archive 全部替换为 cn.archive即可，这样，以后使用apt-get下载就会使用源自<a href="http://cn.archive.ubuntu.com/" target="_blank" rel="noopener">http://cn.archive.ubuntu.com</a> 了。</p>
 </blockquote>
-<h5 id="使用vi编辑器的命令为注意首先切换到root用户">1.使用vi编辑器的命令为(注意首先切换到root用户)：</h5>
-<p><code>root@ubuntu :/#vi /etc/apt/sources.list</code> <img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9zMi5heDF4LmNvbS8yMDE5LzEwLzI4L0tnVmpTSy5tZC5wbmc?x-oss-process=image/format,png" alt="KgVjSK.md.png"> ##### 2.打开<code>sources.list</code>在vi命令模式下（进入后即是命令行模式，按i后才可进入编辑模式，不过这里不需要编辑模式），输入</p>
-<p><code>:%s/us.archive/cn.archive/g</code></p>
+<h5 id="1-使用vi编辑器的命令为-注意首先切换到root用户-："><a href="#1-使用vi编辑器的命令为-注意首先切换到root用户-：" class="headerlink" title="1.使用vi编辑器的命令为(注意首先切换到root用户)："></a>1.使用vi编辑器的命令为(注意首先切换到root用户)：</h5><p><code>root@ubuntu :/#vi /etc/apt/sources.list</code><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9zMi5heDF4LmNvbS8yMDE5LzEwLzI4L0tnVmpTSy5tZC5wbmc?x-oss-process=image/format,png" alt="KgVjSK.md.png"></p>
+<h5 id="2-打开sources-list在vi命令模式下（进入后即是命令行模式，按i后才可进入编辑模式，不过这里不需要编辑模式），输入"><a href="#2-打开sources-list在vi命令模式下（进入后即是命令行模式，按i后才可进入编辑模式，不过这里不需要编辑模式），输入" class="headerlink" title="2.打开sources.list在vi命令模式下（进入后即是命令行模式，按i后才可进入编辑模式，不过这里不需要编辑模式），输入"></a>2.打开<code>sources.list</code>在vi命令模式下（进入后即是命令行模式，按i后才可进入编辑模式，不过这里不需要编辑模式），输入</h5><p><code>:%s/us.archive/cn.archive/g</code></p>
 <p>替换完毕，输入</p>
 <p><code>:wq!</code></p>
 <p>保存退出。</p>
-<h5 id="命令中的符号解释">3.命令中的符号解释：</h5>
-<p><code>：（冒号）</code>，表示后面是命令 <code>%（百分号）</code>，表示修改缓冲区中的文件内容；也就是说如果不保存，源文件不会改变；所以之后要用：<code>wq!</code>命令保存退出 <code>s（字母s）</code>，表示替换 <code>/us.archive/cn.archive</code>，表示将文件中的us.archive 替换为cn.archive <code>/g（撇加字母g）</code>，表示替换所有内容</p>
+<h5 id="3-命令中的符号解释："><a href="#3-命令中的符号解释：" class="headerlink" title="3.命令中的符号解释："></a>3.命令中的符号解释：</h5><p><code>：（冒号）</code>，表示后面是命令<br><code>%（百分号）</code>，表示修改缓冲区中的文件内容；也就是说如果不保存，源文件不会改变；所以之后要用：<code>wq!</code>命令保存退出<br><code>s（字母s）</code>，表示替换<br><code>/us.archive/cn.archive</code>，表示将文件中的us.archive 替换为cn.archive<br><code>/g（撇加字母g）</code>，表示替换所有内容</p>
 <hr>
 <p>这样，就将apt-get的源更改为国内的源了。</p>
 <p>下面必须重起下apt-get，命令<code>apt-get update</code>更换完毕。</p>
@@ -558,7 +555,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ubuntu-server-换源"><span class="toc-number">1.</span> <span class="toc-text">Ubuntu Server 换源</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#使用vi编辑器的命令为注意首先切换到root用户"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">1.使用vi编辑器的命令为(注意首先切换到root用户)：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#命令中的符号解释"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">3.命令中的符号解释：</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ubuntu-Server-换源"><span class="toc-number">1.</span> <span class="toc-text">Ubuntu Server 换源</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-使用vi编辑器的命令为-注意首先切换到root用户-："><span class="toc-number">1.0.0.1.</span> <span class="toc-text">1.使用vi编辑器的命令为(注意首先切换到root用户)：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-打开sources-list在vi命令模式下（进入后即是命令行模式，按i后才可进入编辑模式，不过这里不需要编辑模式），输入"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">2.打开sources.list在vi命令模式下（进入后即是命令行模式，按i后才可进入编辑模式，不过这里不需要编辑模式），输入</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-命令中的符号解释："><span class="toc-number">1.0.0.3.</span> <span class="toc-text">3.命令中的符号解释：</span></a></li></ol></li></ol></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -571,6 +568,10 @@ top:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
     
     
     
@@ -929,22 +930,22 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：差分/" >算法基础：差分</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：前缀和（一维和二维）/" >算法基础：前缀和（一维和二维）</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：归并排序/" >算法基础：归并排序</a>
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：差分/" >算法基础：差分</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：快速排序/" >算法基础：快速排序</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：归并排序/" >算法基础：归并排序</a>
         </li>
     
     
@@ -993,12 +994,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/Bug-Blog/" >Bug Blog</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/HPL-Openmpi-GOTOBLAS2/" >HPL+Openmpi+GOTOBLAS2</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/HPL-Openmpi-GOTOBLAS2/" >HPL+Openmpi+GOTOBLAS2</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/Bug-Blog/" >Bug Blog</a>
         </li>
     
     
@@ -1027,9 +1028,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
     
-        <span class="sidebar-tag-name" data-tags="Math"><span class="iconfont-archer">&#xe606;</span>Math</span>
-    
         <span class="sidebar-tag-name" data-tags="BUG"><span class="iconfont-archer">&#xe606;</span>BUG</span>
+    
+        <span class="sidebar-tag-name" data-tags="Math"><span class="iconfont-archer">&#xe606;</span>Math</span>
     
         <span class="sidebar-tag-name" data-tags="Mysql"><span class="iconfont-archer">&#xe606;</span>Mysql</span>
     
@@ -1107,9 +1108,24 @@ jsonContent:
     </div>
     <!-- async load share.js -->
     
-        <script src="/scripts/share.js" async></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->    
+        <script src="/scripts/share.js" async></script>    
      
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
 </html>
 
 

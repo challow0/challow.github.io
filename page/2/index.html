@@ -364,22 +364,16 @@ height:50vh;
                 <span>算法基础：快速排序</span>
         </a>
         <div class="abstract-content">
-            算法基础：快速排序
-给定你一个长度为n的整数数列。
+            算法基础：快速排序给定你一个长度为n的整数数列。
 请你使用快速排序对这个数列按照从小到大进行排序。
 并将排好序的数列按顺序输出。
-输入格式
-输入共两行，第一行包含整数 n。
+输入格式输入共两行，第一行包含整数 n。
 第二行包含 n 个整数（所有整数均在1~109109范围内），表示整个数列。
-输出格式
-输出共一行，包含 n 个整数，表示排好序的数列。
-数据范围
-1≤n≤1000001≤n≤100000
-输入样例：
-1253 1 2 4 5
-输出样例：
-11 2 3 4 5
-123456789101112131415161718192021222324252627282930313233343536...
+输出格式输出共一行，包含 n 个整数，表示排好序的数列。
+数据范围1≤n≤1000001≤n≤100000
+输入样例：1253 1 2 4 5
+输出样例：11 2 3 4 5
+123456789101112131415161718192021222324252627282930313233343536373839404142#include&...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -408,38 +402,24 @@ height:50vh;
                 <span>ELMO &amp; BERT &amp; GPT2</span>
         </a>
         <div class="abstract-content">
-            ELMO &amp; BERT &amp; GPT2
-1 of N Encoding
-
+            ELMO &amp;  BERT  &amp;  GPT21  of   N  Encoding
 不能体现词与词之间的联系
 
 Word Class
-
 有点过于粗糙，哺乳类动物和非哺乳动物的
 
-Word Embedding
+Word   Embedding
+这里的 bank 是有4个不同的  token 相同的  type 。  
 
-
-lWGxYV.png
-
-这里的 bank 是有4个不同的 token 相同的 type 。
-
-
-lWJFm9.png
-
-Contextualized Word Embedding
-
+Contextualized Word  Embedding
 让三个不同的token都有不同的embedding
 
 
+谁能做到？？？ELMO可以 :)
 
-lWJNp8.png
+图中红框框住的就是Contextualized Word  Embedding  （三个退了的释义不同）
 
-谁能做到？？？
-ELMO可以 :)
-
-
-lWYVBj...
+现在只有正向的信息，加上反向R...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -468,15 +448,10 @@ lWYVBj...
                 <span>学习Transform &amp; Self-Attention机制</span>
         </a>
         <div class="abstract-content">
-            Transformer
-贴一个很好的教程
+            Transformer贴一个很好的教程
 Self-Attention
-
 传统RNN不容易平行化，比如b4就得知道a1，a2，a3，a4才能算出来
 
-
-
-lRovCt.png
 
 
 使用CNN可以实现平行化，比如图中的一个黄三角形代表一个filter，他可以并行执行的。
@@ -484,7 +459,6 @@ lRovCt.png
 
 
 
-lRTTGq.png
 
 
 Self-Attention可以替代双向RNN
@@ -493,10 +467,10 @@ Self-Attention可以替代双向RNN
 
 
 
-lR7FsO.png
+做  attention ： 吃两个向量，输出一个分数，代表它会有多匹配
 
-
-做 attention ：...
+Scaled Dot-Product Attention
+为什么除以根号d？qk的d...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -525,22 +499,13 @@ lR7FsO.png
                 <span>数据库课设的经历</span>
         </a>
         <div class="abstract-content">
-            数据库课程剽窃的心路历程
-菜鸡一个，大神勿喷！下载的项目仅供学习。不像某些xx：
+            数据库课程剽窃的心路历程菜鸡一个，大神勿喷！下载的项目仅供学习。不像某些xx：
 
-
-QRopKP.png
-
-
-
-QRoZ2n.png
 
 种种吧，把别人的劳动成果剽窃还售卖，可耻😡
-0x00 在Github上查找相关资料🤐
-然后就找到了一个查不多的项目，是用Java写的。这次调试的过程让我对Java的认识有了进步吧！
+0x00 在Github上查找相关资料🤐然后就找到了一个查不多的项目，是用Java写的。这次调试的过程让我对Java的认识有了进步吧！
 其实已经运行了两三个项目了，但是都不理想，所以就编译基于SSH(Spring+SpringMVC+MyBatis)的框架下写的一个项目。其中使用Maven打包了。
-0x01 理解错Maven
-第一天刚接触到这个Maven名词，我理解的意思是...
+0x01 理解错Maven第一天刚接触到这个Maven名词，我理解的意思是要自己编译等等。到了现在我的理解就是Maven是一个打包项目的工具，它可以帮你解决Jav...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -572,18 +537,17 @@ QRoZ2n.png
         </a>
         <div class="abstract-content">
             记编译Linux内核
-
 这个过程就是填坑的过程~
 
-1.下载Linux内核版本
-官网地址：http://www.kernel.org
+1.下载Linux内核版本官网地址：http://www.kernel.org 
 选择了一个LST版本的。3.16.78
 刚开始下载了最新的5.x.x，为了编译我gcc又更新了一次。
 升级gcc
 然而，出现的
 1./include/linux/compiler-gcc.h:14:3: error: #error Sorry, your compiler is too old - please upgrade it.
 让我的心态崩了，错误是在新的版本中不支持4.6.0以下的gcc编译，但我升级了啊？？
-还是低版本的...
+还是低版本的练手吧~~
+2.解压学了一...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -613,18 +577,19 @@ QRoZ2n.png
         </a>
         <div class="abstract-content">
             使用virtualenv为每一个项目创建不同的开发环境
-
 以下说明针对的都是Windows开发环境：
 
 
 安装pip install virtualenv
+
 创建项目之后命令行进入相应的目录下virtualenv virtualenv -p python .
+
 .\Scripts\activate激发相应的开发环境
+
 pip install django==2.0.7就可以安装不同版本的Django
 使用命令deavtivate退出当前的开发环境
 
 Finshed~~
-
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -653,13 +618,11 @@ Finshed~~
                 <span>在Django框架下将数据库sqlites迁移为mysql</span>
         </a>
         <div class="abstract-content">
-            Django : 将数据从Sqlite迁移到Mysql数据库
-🤔初学 Django, 使用的数据库是默认的 Sqlite 。随着学习知道了 Django存放的数据是在Sqlite下的，但很多情形需要使用其他的数据库。因此下面是如何将Sqlite数据迁移到Mysql的教程：
+            Django : 将数据从Sqlite迁移到Mysql数据库🤔初学 Django, 使用的数据库是默认的 Sqlite 。随着学习知道了 Django存放的数据是在Sqlite下的，但很多情形需要使用其他的数据库。因此下面是如何将Sqlite数据迁移到Mysql的教程： 
 底下是需要进行的步骤：（默认已经安装好mysql）👨‍💻
-把SQLite数据导入到MySQL中
-之前我们默认使用的是SQLite数据库，我们开发完成之后，里面有许多数据。如果我们想转换成Mysql数据库，那我们先得把旧数据从SQLite导出，然后再导入到新的Mysql数据库里去。
+把SQLite数据导入到MySQL中之前我们默认使用的是SQLite数据库，我们开发完成之后，里面有许多数据。如果我们想转换成Mysql数据库，那我们先得把旧数据从SQLite导出，然后再导入到新的Mysql数据库里去。
 
-SQLite导出数...
+SQLite导出数据导出之前，我...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -691,12 +654,10 @@ SQLite导出数...
         </a>
         <div class="abstract-content">
             Linux中使用ShadowSocks+Privoxy代理
-
 ShadowSocks 最近几年大火, 其简单的配置和优秀的速度让大陆地区的墙内用户爱不释手本篇文章不讨论Mac &amp; Windows 等图形界面下的应用, 而是让 linux 在命令行界面下, http/https 访问也能登上梯子, 看一看外面的大千世界
 
 本篇文章就是介绍如何实现 Linux 中的 http/https 请求翻墙的需求
-安装 ss 客户端
-shadowsocks安装时是不分客户端还是服务器端的, 只不过安装后有两个脚本一个是sslocal代表以客户端模式工作，一个是ssserver代表以...
+安装 ss 客户端shadowsocks安装时是不分客户端还是服务器端的, 只不过安装后有两个脚本一个是sslocal代表以客户端模式工作，一个是ssserver代表以服务器端模式工作...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -726,11 +687,10 @@ shadowsocks安装时是不分客户端还是服务器端的, 只不过安装后�
         </a>
         <div class="abstract-content">
             Ubuntu Server 换源
+ubuntu 的默认源是美国的，安装后下载起来特别慢，可以使用下面方法将源更换为国内源:用vi打开 /etc/apt/sources.list 将其中的us.archive 全部替换为 cn.archive即可，这样，以后使用apt-get下载就会使用源自http://cn.archive.ubuntu.com 了。
 
-ubuntu 的默认源是美国的，安装后下载起来特别慢，可以使用下面方法将源更换为国内源: 用vi打开 /etc/apt/sources.list 将其中的us.archive 全部替换为 cn.archive即可，这样，以后使用apt-get下载就会使用源自http://cn.archive.ubuntu.com 了。
-
-1.使用vi编辑器的命令为(注意首先切换到root用户)：
-root@ubuntu :/#vi /etc/apt/sources.list  ##### 2.打开sources.list在vi命令模式下（进入后即是命令行模式...
+1.使用vi编辑器的命令为(注意首先切换到root用户)：root@ubuntu :/#vi /etc/apt/sources.list
+2.打开sources.list在vi命令模式下（进入后即是命令行模式，按i后才可进入编辑模式，不过...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -760,9 +720,7 @@ root@ubuntu :/#vi /etc/apt/sources.list  ##### 2.打开sources.list在vi命令�
         </a>
         <div class="abstract-content">
             Just test the hexo~
-
 👶Judging if this blog can be posted!
-
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -1277,6 +1235,10 @@ root@ubuntu :/#vi /etc/apt/sources.list  ##### 2.打开sources.list在vi命令�
     
     
     
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 23
@@ -1330,22 +1292,22 @@ root@ubuntu :/#vi /etc/apt/sources.list  ##### 2.打开sources.list在vi命令�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：差分/" >算法基础：差分</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：前缀和（一维和二维）/" >算法基础：前缀和（一维和二维）</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：归并排序/" >算法基础：归并排序</a>
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：差分/" >算法基础：差分</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：快速排序/" >算法基础：快速排序</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：归并排序/" >算法基础：归并排序</a>
         </li>
     
     
@@ -1394,12 +1356,12 @@ root@ubuntu :/#vi /etc/apt/sources.list  ##### 2.打开sources.list在vi命令�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/Bug-Blog/" >Bug Blog</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/HPL-Openmpi-GOTOBLAS2/" >HPL+Openmpi+GOTOBLAS2</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/HPL-Openmpi-GOTOBLAS2/" >HPL+Openmpi+GOTOBLAS2</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/Bug-Blog/" >Bug Blog</a>
         </li>
     
     
@@ -1428,9 +1390,9 @@ root@ubuntu :/#vi /etc/apt/sources.list  ##### 2.打开sources.list在vi命令�
     
         <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
     
-        <span class="sidebar-tag-name" data-tags="Math"><span class="iconfont-archer">&#xe606;</span>Math</span>
-    
         <span class="sidebar-tag-name" data-tags="BUG"><span class="iconfont-archer">&#xe606;</span>BUG</span>
+    
+        <span class="sidebar-tag-name" data-tags="Math"><span class="iconfont-archer">&#xe606;</span>Math</span>
     
         <span class="sidebar-tag-name" data-tags="Mysql"><span class="iconfont-archer">&#xe606;</span>Mysql</span>
     
@@ -1506,9 +1468,24 @@ jsonContent:
     <!-- CNZZ  -->
     
     </div>
-    <!-- async load share.js --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <!-- async load share.js -->
      
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
 </html>
 
 

@@ -351,22 +351,17 @@
                 <span>Tensorflow无法使用CUDA_VISIBLE_DEVICES参数进行GPU加速</span>
         </a>
         <div class="abstract-content">
-            Tensorflow无法使用GPU卡加速
-问题所在
-
+            Tensorflow无法使用GPU卡加速问题所在
 笔者的电脑是笔记本，有一块1050Ti的NVIDIA显卡，遇到两次无法使用GPU的命令来加速程序运行的问题。
 即使安装正确的NVIDIA驱动，命令语句完整
 
 错误有些低级。😅 😅 😅
 
 图中的是GPU的编号。
-加速方法
-经查询发现两种GPU加速的方法
-第一种：
-12import osos.environ['CUDA_VISIBLE_DEVICES'] = "0"
+加速方法经查询发现两种GPU加速的方法
+第一种：12import osos.environ['CUDA_VISIBLE_DEVICES'] = "0"
 在调用Tensorflow库函数之前设置这条语句，表明要使用GPU0卡来加速，对应上图的编号。可以指定多块卡！！
-第二种：
-1CUDA_V...
+第二种：1CUDA_VISIBLE_DEVICES=0 pyt...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -395,16 +390,15 @@
                 <span>python的包存在，但是不能import的bug</span>
         </a>
         <div class="abstract-content">
-            Importerror: cannot import name 'lib'
-报的是这样的一个错误，在import numpy as np的时候出错。网上没有这个错误的...
+            Importerror: cannot import name ‘lib’报的是这样的一个错误，在import numpy as np的时候出错。网上没有这个错误的…
 原本想的是电脑上的环境冲突了，但是在删除了多余的anaconda后还是不能如愿以偿。
 于是找到了报错文件夹的位置：
 
-C:044936-packages
+C:\Users\10449\AppData\Roaming\Python\Python36\site-packages
 
 这里。
 在这里将文件夹删除之后大功告成，hhh😄
-ps：这个文件夹应该是一些缓存文件，如果上一次的东西没执行完会保留下来，好坑~
+ps：这个文件夹应该是一些缓存文件，如果上一次的东西没执行完会保留下来，好坑~~~
 
         </div>
         <div class="abstract-post-meta">
@@ -822,6 +816,10 @@ ps：这个文件夹应该是一些缓存文件，如果上一次的东西没执
     
     
     
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 23
@@ -875,22 +873,22 @@ ps：这个文件夹应该是一些缓存文件，如果上一次的东西没执
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：差分/" >算法基础：差分</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：前缀和（一维和二维）/" >算法基础：前缀和（一维和二维）</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：归并排序/" >算法基础：归并排序</a>
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：差分/" >算法基础：差分</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：快速排序/" >算法基础：快速排序</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：归并排序/" >算法基础：归并排序</a>
         </li>
     
     
@@ -939,12 +937,12 @@ ps：这个文件夹应该是一些缓存文件，如果上一次的东西没执
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/Bug-Blog/" >Bug Blog</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/HPL-Openmpi-GOTOBLAS2/" >HPL+Openmpi+GOTOBLAS2</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/HPL-Openmpi-GOTOBLAS2/" >HPL+Openmpi+GOTOBLAS2</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/Bug-Blog/" >Bug Blog</a>
         </li>
     
     
@@ -973,9 +971,9 @@ ps：这个文件夹应该是一些缓存文件，如果上一次的东西没执
     
         <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
     
-        <span class="sidebar-tag-name" data-tags="Math"><span class="iconfont-archer">&#xe606;</span>Math</span>
-    
         <span class="sidebar-tag-name" data-tags="BUG"><span class="iconfont-archer">&#xe606;</span>BUG</span>
+    
+        <span class="sidebar-tag-name" data-tags="Math"><span class="iconfont-archer">&#xe606;</span>Math</span>
     
         <span class="sidebar-tag-name" data-tags="Mysql"><span class="iconfont-archer">&#xe606;</span>Mysql</span>
     
@@ -1053,7 +1051,22 @@ jsonContent:
     </div>
     <!-- async load share.js -->
      
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>
 
 

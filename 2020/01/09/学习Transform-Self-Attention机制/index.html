@@ -272,7 +272,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">537</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">506</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -401,152 +401,89 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="transformer">Transformer</h1>
-<p><a href="http://jalammar.github.io/illustrated-transformer/" target="_blank" rel="noopener">贴一个很好的教程</a></p>
-<h3 id="self-attention">Self-Attention</h3>
-<ul>
+        <h1 id="Transformer"><a href="#Transformer" class="headerlink" title="Transformer"></a>Transformer</h1><p><a href="http://jalammar.github.io/illustrated-transformer/" target="_blank" rel="noopener">贴一个很好的教程</a></p>
+<h3 id="Self-Attention"><a href="#Self-Attention" class="headerlink" title="Self-Attention"></a>Self-Attention</h3><ul>
 <li>传统RNN不容易平行化，比如b4就得知道a1，a2，a3，a4才能算出来</li>
 </ul>
-<div class="figure">
-<img src="https://s2.ax1x.com/2020/01/09/lRovCt.png" alt="lRovCt.png">
-<p class="caption">lRovCt.png</p>
-</div>
+<p><img src="https://s2.ax1x.com/2020/01/09/lRovCt.png" alt="lRovCt.png"></p>
 <ul>
-<li>使用CNN可以实现平行化，比如图中的一个黄三角形代表一个filter，他可以并行执行的。</li>
+<li>使用CNN可以实现平行化，比如图中的一个黄三角形代表一个filter，他可以并行执行的。<ul>
 <li>在更高层filter的layer可以获取到更长的信息，比如蓝三角形，它的输入时第一层的输出</li>
 </ul>
-<div class="figure">
-<img src="https://s2.ax1x.com/2020/01/09/lRTTGq.png" alt="lRTTGq.png">
-<p class="caption">lRTTGq.png</p>
-</div>
+</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2020/01/09/lRTTGq.png" alt="lRTTGq.png"></p>
 <ul>
 <li>Self-Attention可以替代双向RNN</li>
 <li>可以并行计算</li>
 <li>能够获得一个整句的信息</li>
 </ul>
-<div class="figure">
-<img src="https://s2.ax1x.com/2020/01/09/lR7FsO.png" alt="lR7FsO.png">
-<p class="caption">lR7FsO.png</p>
-</div>
+<p><img src="https://s2.ax1x.com/2020/01/09/lR7FsO.png" alt="lR7FsO.png"></p>
 <blockquote>
-<p>做 attention ： 吃两个向量，输出一个分数，代表它会有多匹配</p>
+<p>做  attention ： 吃两个向量，输出一个分数，代表它会有多匹配</p>
 </blockquote>
-<h5 id="scaled-dot-product-attention">Scaled Dot-Product Attention</h5>
-<div class="figure">
-<img src="https://s2.ax1x.com/2020/01/09/lR7yTJ.png" alt="lR7yTJ.png">
-<p class="caption">lR7yTJ.png</p>
-</div>
-<h5 id="为什么除以根号d">为什么除以根号d？</h5>
-<p>qk的dim越大，想乘之后的varience越大，除以d来平衡。根号d只是作者自己设置的。。</p>
+<h5 id="Scaled-Dot-Product-Attention"><a href="#Scaled-Dot-Product-Attention" class="headerlink" title="Scaled Dot-Product Attention"></a>Scaled Dot-Product Attention</h5><p><img src="https://s2.ax1x.com/2020/01/09/lR7yTJ.png" alt="lR7yTJ.png"></p>
+<h5 id="为什么除以根号d？"><a href="#为什么除以根号d？" class="headerlink" title="为什么除以根号d？"></a>为什么除以根号d？</h5><p>qk的dim越大，想乘之后的varience越大，除以d来平衡。根号d只是作者自己设置的。。</p>
 <p><strong>上面得到的a再做softmax得到a-hat</strong></p>
-<div class="figure">
-<img src="https://s2.ax1x.com/2020/01/09/lRHVXT.png" alt="lRHVXT.png">
-<p class="caption">lRHVXT.png</p>
-</div>
+<p><img src="https://s2.ax1x.com/2020/01/09/lRHVXT.png" alt="lRHVXT.png"></p>
 <ul>
 <li>输出的b1已经是考虑到句子中所有信息了。如果不想考虑某一个信息只需要让a-hat为0</li>
 </ul>
-<div class="figure">
-<img src="https://s2.ax1x.com/2020/01/09/lRbA5d.png" alt="lRbA5d.png">
-<p class="caption">lRbA5d.png</p>
-</div>
+<p><img src="https://s2.ax1x.com/2020/01/09/lRbA5d.png" alt="lRbA5d.png"></p>
 <ul>
-<li>在同一时间可以算b2，b3...</li>
+<li>在同一时间可以算b2，b3…</li>
 </ul>
-<div class="figure">
-<img src="https://s2.ax1x.com/2020/01/09/lRbsi9.png" alt="lRbsi9.png">
-<p class="caption">lRbsi9.png</p>
-</div>
-<h4 id="q">Q</h4>
-<div class="figure">
-<img src="https://s2.ax1x.com/2020/01/09/lRbcxx.png" alt="lRbcxx.png">
-<p class="caption">lRbcxx.png</p>
-</div>
+<p><img src="https://s2.ax1x.com/2020/01/09/lRbsi9.png" alt="lRbsi9.png"></p>
+<h4 id="Q-K-V的并行计算"><a href="#Q-K-V的并行计算" class="headerlink" title="Q\K\V的并行计算"></a>Q\K\V的并行计算</h4><p><img src="https://s2.ax1x.com/2020/01/09/lRbcxx.png" alt="lRbcxx.png"></p>
 <ul>
-<li><p>把a1a2a3a4拼接起来就得到一个矩阵，乘以Wq就是Q</p></li>
-<li><p>同理K,V</p></li>
+<li><p>把a1a2a3a4拼接起来就得到一个矩阵，乘以Wq就是Q</p>
+</li>
+<li><p>同理K,V</p>
+<h4 id="a"><a href="#a" class="headerlink" title="a"></a>a</h4></li>
 </ul>
-<p>#### a</p>
-<div class="figure">
-<img src="https://s2.ax1x.com/2020/01/09/lRbvdg.png" alt="lRbvdg.png">
-<p class="caption">lRbvdg.png</p>
-</div>
-<h4 id="通过一个矩阵运算得出a">通过一个矩阵运算得出A</h4>
-<div class="figure">
-<img src="https://s2.ax1x.com/2020/01/09/lRq8eO.png" alt="lRq8eO.png">
-<p class="caption">lRq8eO.png</p>
-</div>
+<p><img src="https://s2.ax1x.com/2020/01/09/lRbvdg.png" alt="lRbvdg.png"></p>
+<h4 id="通过一个矩阵运算得出A"><a href="#通过一个矩阵运算得出A" class="headerlink" title="通过一个矩阵运算得出A"></a>通过一个矩阵运算得出A</h4><p><img src="https://s2.ax1x.com/2020/01/09/lRq8eO.png" alt="lRq8eO.png"></p>
 <blockquote>
 <p>每一列做softmax</p>
 </blockquote>
-<h4 id="通过矩阵运算得出o">通过矩阵运算得出O</h4>
-<div class="figure">
-<img src="https://s2.ax1x.com/2020/01/09/lRqckQ.png" alt="lRqckQ.png">
-<p class="caption">lRqckQ.png</p>
-</div>
-<h4 id="总结一下并行的矩阵运算">总结一下并行的矩阵运算</h4>
-<div class="figure">
-<img src="https://s2.ax1x.com/2020/01/09/lRLp7D.png" alt="lRLp7D.png">
-<p class="caption">lRLp7D.png</p>
-</div>
-<h4 id="multi-head-self-attention">Multi-head Self-Attention</h4>
-<div class="figure">
-<img src="https://s2.ax1x.com/2020/01/09/lRLmB8.png" alt="lRLmB8.png">
-<p class="caption">lRLmB8.png</p>
-</div>
+<h4 id="通过矩阵运算得出O"><a href="#通过矩阵运算得出O" class="headerlink" title="通过矩阵运算得出O"></a>通过矩阵运算得出O</h4><p><img src="https://s2.ax1x.com/2020/01/09/lRqckQ.png" alt="lRqckQ.png"></p>
+<h4 id="总结一下并行的矩阵运算"><a href="#总结一下并行的矩阵运算" class="headerlink" title="总结一下并行的矩阵运算"></a>总结一下并行的矩阵运算</h4><p><img src="https://s2.ax1x.com/2020/01/09/lRLp7D.png" alt="lRLp7D.png"></p>
+<h4 id="Multi-head-Self-Attention"><a href="#Multi-head-Self-Attention" class="headerlink" title="Multi-head Self-Attention"></a>Multi-head Self-Attention</h4><p><img src="https://s2.ax1x.com/2020/01/09/lRLmB8.png" alt="lRLmB8.png"></p>
 <p>有的head想看local的信息，有的head想看global的信息。它们各司其职</p>
-<h4 id="考虑input的位置信息">考虑Input的位置信息</h4>
-<ul>
-<li>每一个ei都是不同的</li>
+<h4 id="考虑Input的位置信息"><a href="#考虑Input的位置信息" class="headerlink" title="考虑Input的位置信息"></a>考虑Input的位置信息</h4><ul>
+<li><p>每一个ei都是不同的</p>
+<h5 id="思考：为什么是-不是连接？（其实是一样的）"><a href="#思考：为什么是-不是连接？（其实是一样的）" class="headerlink" title="思考：为什么是+不是连接？（其实是一样的）"></a>思考：为什么是+不是连接？（其实是一样的）</h5><p><img src="https://s2.ax1x.com/2020/01/09/lROvdO.png" alt="lROvdO.png"></p>
+</li>
 </ul>
-<p>##### 思考：为什么是+不是连接？（其实是一样的）</p>
-<div class="figure">
-<img src="https://s2.ax1x.com/2020/01/09/lROvdO.png" alt="lROvdO.png">
-<p class="caption">lROvdO.png</p>
-</div>
-<h5 id="wp的样子">WP的样子</h5>
-<div class="figure">
-<img src="https://s2.ax1x.com/2020/01/09/lRXkOP.png" alt="lRXkOP.png">
-<p class="caption">lRXkOP.png</p>
-</div>
-<h4 id="可以替代rnn了">可以替代RNN了</h4>
-<div class="figure">
-<img src="https://s2.ax1x.com/2020/01/09/lRXQln.png" alt="lRXQln.png">
-<p class="caption">lRXQln.png</p>
-</div>
-<h4 id="encoder-decoder">Encoder &amp; Decoder</h4>
-<div class="figure">
-<img src="https://s2.ax1x.com/2020/01/09/lRXgte.png" alt="lRXgte.png">
-<p class="caption">lRXgte.png</p>
-</div>
-<h4 id="详细的讲解">详细的讲解</h4>
-<div class="figure">
-<img src="https://s2.ax1x.com/2020/01/09/lRjenx.png" alt="lRjenx.png">
-<p class="caption">lRjenx.png</p>
-</div>
+<h5 id="WP的样子"><a href="#WP的样子" class="headerlink" title="WP的样子"></a>WP的样子</h5><p><img src="https://s2.ax1x.com/2020/01/09/lRXkOP.png" alt="lRXkOP.png"></p>
+<h4 id="可以替代RNN了"><a href="#可以替代RNN了" class="headerlink" title="可以替代RNN了"></a>可以替代RNN了</h4><p><img src="https://s2.ax1x.com/2020/01/09/lRXQln.png" alt="lRXQln.png"></p>
+<h4 id="Encoder-amp-Decoder"><a href="#Encoder-amp-Decoder" class="headerlink" title="Encoder &amp;  Decoder"></a>Encoder &amp;  Decoder</h4><p><img src="https://s2.ax1x.com/2020/01/09/lRXgte.png" alt="lRXgte.png"></p>
+<h4 id="详细的讲解"><a href="#详细的讲解" class="headerlink" title="详细的讲解"></a>详细的讲解</h4><p><img src="https://s2.ax1x.com/2020/01/09/lRjenx.png" alt="lRjenx.png"></p>
 <p>Encoder部分：</p>
 <ul>
-<li><p>Input 通过一个 Input Embedding 变成一个 vector</p></li>
-<li><p>vector 加上 Positional Encoding 之后进入 gray block（重复N次）</p></li>
-<li><p>通过 Multi-Head Attention 层得到 b1 b2 b3 b4</p></li>
-<li><p>Add &amp; Norm 输入 a 加上输出 b 得到 b'</p></li>
-</ul>
+<li><p>Input  通过一个  Input   Embedding   变成一个  vector</p>
+</li>
+<li><p>vector   加上   Positional   Encoding  之后进入  gray  block（重复N次）</p>
+</li>
+<li><p>通过 Multi-Head  Attention  层得到   b1  b2  b3  b4</p>
+</li>
+<li><p>Add   &amp;   Norm   输入  a  加上输出  b  得到  b’   </p>
 <blockquote>
-<p>Layer Normlization 各个不同 dim 的 μ = 0 σ = 1</p>
+<p>Layer   Normlization   各个不同  dim  的  μ   =   0   σ   =  1</p>
 </blockquote>
+</li>
+</ul>
 <p>Decoder部分：</p>
 <ul>
-<li><p>前一个 Encoder 产生的 Outputs 初始为 <bos></bos></p></li>
-<li><p><strong>Masked</strong> Multi-Head Attention 做 Self-Attention 时 Decoder 会加到已产生的 Sequence 中</p></li>
-</ul>
+<li><p>前一个  Encoder  产生的  Outputs   初始为  <bos></bos></p>
+</li>
+<li><p><strong>Masked</strong>    Multi-Head  Attention   做  Self-Attention  时  Decoder 会加到已产生的  Sequence  中</p>
 <blockquote>
 <p>重复部分不再冗余的说</p>
 </blockquote>
-<h4 id="multi-head-attention效果">Multi-Head Attention效果</h4>
-<div class="figure">
-<img src="https://s2.ax1x.com/2020/01/09/lRxtk8.png" alt="lRxtk8.png">
-<p class="caption">lRxtk8.png</p>
-</div>
+</li>
+</ul>
+<h4 id="Multi-Head-Attention效果"><a href="#Multi-Head-Attention效果" class="headerlink" title="Multi-Head  Attention效果"></a>Multi-Head  Attention效果</h4><p><img src="https://s2.ax1x.com/2020/01/09/lRxtk8.png" alt="lRxtk8.png"></p>
 
     </article>
     <!-- license  -->
@@ -689,7 +626,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#transformer"><span class="toc-number">1.</span> <span class="toc-text">Transformer</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#self-attention"><span class="toc-number">1.0.1.</span> <span class="toc-text">Self-Attention</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#scaled-dot-product-attention"><span class="toc-number">1.0.1.0.1.</span> <span class="toc-text">Scaled Dot-Product Attention</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#为什么除以根号d"><span class="toc-number">1.0.1.0.2.</span> <span class="toc-text">为什么除以根号d？</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#q"><span class="toc-number">1.0.1.1.</span> <span class="toc-text">Q</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#通过一个矩阵运算得出a"><span class="toc-number">1.0.1.2.</span> <span class="toc-text">通过一个矩阵运算得出A</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#通过矩阵运算得出o"><span class="toc-number">1.0.1.3.</span> <span class="toc-text">通过矩阵运算得出O</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#总结一下并行的矩阵运算"><span class="toc-number">1.0.1.4.</span> <span class="toc-text">总结一下并行的矩阵运算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#multi-head-self-attention"><span class="toc-number">1.0.1.5.</span> <span class="toc-text">Multi-head Self-Attention</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#考虑input的位置信息"><span class="toc-number">1.0.1.6.</span> <span class="toc-text">考虑Input的位置信息</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#wp的样子"><span class="toc-number">1.0.1.6.1.</span> <span class="toc-text">WP的样子</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#可以替代rnn了"><span class="toc-number">1.0.1.7.</span> <span class="toc-text">可以替代RNN了</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#encoder-decoder"><span class="toc-number">1.0.1.8.</span> <span class="toc-text">Encoder &amp; Decoder</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#详细的讲解"><span class="toc-number">1.0.1.9.</span> <span class="toc-text">详细的讲解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#multi-head-attention效果"><span class="toc-number">1.0.1.10.</span> <span class="toc-text">Multi-Head Attention效果</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Transformer"><span class="toc-number">1.</span> <span class="toc-text">Transformer</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Self-Attention"><span class="toc-number">1.0.1.</span> <span class="toc-text">Self-Attention</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Scaled-Dot-Product-Attention"><span class="toc-number">1.0.1.0.1.</span> <span class="toc-text">Scaled Dot-Product Attention</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#为什么除以根号d？"><span class="toc-number">1.0.1.0.2.</span> <span class="toc-text">为什么除以根号d？</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Q-K-V的并行计算"><span class="toc-number">1.0.1.1.</span> <span class="toc-text">Q\K\V的并行计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#a"><span class="toc-number">1.0.1.2.</span> <span class="toc-text">a</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#通过一个矩阵运算得出A"><span class="toc-number">1.0.1.3.</span> <span class="toc-text">通过一个矩阵运算得出A</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#通过矩阵运算得出O"><span class="toc-number">1.0.1.4.</span> <span class="toc-text">通过矩阵运算得出O</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#总结一下并行的矩阵运算"><span class="toc-number">1.0.1.5.</span> <span class="toc-text">总结一下并行的矩阵运算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Multi-head-Self-Attention"><span class="toc-number">1.0.1.6.</span> <span class="toc-text">Multi-head Self-Attention</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#考虑Input的位置信息"><span class="toc-number">1.0.1.7.</span> <span class="toc-text">考虑Input的位置信息</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#思考：为什么是-不是连接？（其实是一样的）"><span class="toc-number">1.0.1.7.1.</span> <span class="toc-text">思考：为什么是+不是连接？（其实是一样的）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#WP的样子"><span class="toc-number">1.0.1.7.2.</span> <span class="toc-text">WP的样子</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#可以替代RNN了"><span class="toc-number">1.0.1.8.</span> <span class="toc-text">可以替代RNN了</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Encoder-amp-Decoder"><span class="toc-number">1.0.1.9.</span> <span class="toc-text">Encoder &amp;  Decoder</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#详细的讲解"><span class="toc-number">1.0.1.10.</span> <span class="toc-text">详细的讲解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Multi-Head-Attention效果"><span class="toc-number">1.0.1.11.</span> <span class="toc-text">Multi-Head  Attention效果</span></a></li></ol></li></ol></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -702,6 +639,10 @@ top:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
     
     
     
@@ -1060,22 +1001,22 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：差分/" >算法基础：差分</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：前缀和（一维和二维）/" >算法基础：前缀和（一维和二维）</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：归并排序/" >算法基础：归并排序</a>
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：差分/" >算法基础：差分</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：快速排序/" >算法基础：快速排序</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：归并排序/" >算法基础：归并排序</a>
         </li>
     
     
@@ -1124,12 +1065,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/Bug-Blog/" >Bug Blog</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/HPL-Openmpi-GOTOBLAS2/" >HPL+Openmpi+GOTOBLAS2</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/HPL-Openmpi-GOTOBLAS2/" >HPL+Openmpi+GOTOBLAS2</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/Bug-Blog/" >Bug Blog</a>
         </li>
     
     
@@ -1158,9 +1099,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
     
-        <span class="sidebar-tag-name" data-tags="Math"><span class="iconfont-archer">&#xe606;</span>Math</span>
-    
         <span class="sidebar-tag-name" data-tags="BUG"><span class="iconfont-archer">&#xe606;</span>BUG</span>
+    
+        <span class="sidebar-tag-name" data-tags="Math"><span class="iconfont-archer">&#xe606;</span>Math</span>
     
         <span class="sidebar-tag-name" data-tags="Mysql"><span class="iconfont-archer">&#xe606;</span>Mysql</span>
     
@@ -1238,9 +1179,24 @@ jsonContent:
     </div>
     <!-- async load share.js -->
     
-        <script src="/scripts/share.js" async></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->    
+        <script src="/scripts/share.js" async></script>    
      
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
 </html>
 
 

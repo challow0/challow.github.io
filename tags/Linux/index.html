@@ -352,18 +352,17 @@
         </a>
         <div class="abstract-content">
             记编译Linux内核
-
 这个过程就是填坑的过程~
 
-1.下载Linux内核版本
-官网地址：http://www.kernel.org
+1.下载Linux内核版本官网地址：http://www.kernel.org 
 选择了一个LST版本的。3.16.78
 刚开始下载了最新的5.x.x，为了编译我gcc又更新了一次。
 升级gcc
 然而，出现的
 1./include/linux/compiler-gcc.h:14:3: error: #error Sorry, your compiler is too old - please upgrade it.
 让我的心态崩了，错误是在新的版本中不支持4.6.0以下的gcc编译，但我升级了啊？？
-还是低版本的...
+还是低版本的练手吧~~
+2.解压学了一...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -393,12 +392,10 @@
         </a>
         <div class="abstract-content">
             Linux中使用ShadowSocks+Privoxy代理
-
 ShadowSocks 最近几年大火, 其简单的配置和优秀的速度让大陆地区的墙内用户爱不释手本篇文章不讨论Mac &amp; Windows 等图形界面下的应用, 而是让 linux 在命令行界面下, http/https 访问也能登上梯子, 看一看外面的大千世界
 
 本篇文章就是介绍如何实现 Linux 中的 http/https 请求翻墙的需求
-安装 ss 客户端
-shadowsocks安装时是不分客户端还是服务器端的, 只不过安装后有两个脚本一个是sslocal代表以客户端模式工作，一个是ssserver代表以...
+安装 ss 客户端shadowsocks安装时是不分客户端还是服务器端的, 只不过安装后有两个脚本一个是sslocal代表以客户端模式工作，一个是ssserver代表以服务器端模式工作...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -428,11 +425,10 @@ shadowsocks安装时是不分客户端还是服务器端的, 只不过安装后�
         </a>
         <div class="abstract-content">
             Ubuntu Server 换源
+ubuntu 的默认源是美国的，安装后下载起来特别慢，可以使用下面方法将源更换为国内源:用vi打开 /etc/apt/sources.list 将其中的us.archive 全部替换为 cn.archive即可，这样，以后使用apt-get下载就会使用源自http://cn.archive.ubuntu.com 了。
 
-ubuntu 的默认源是美国的，安装后下载起来特别慢，可以使用下面方法将源更换为国内源: 用vi打开 /etc/apt/sources.list 将其中的us.archive 全部替换为 cn.archive即可，这样，以后使用apt-get下载就会使用源自http://cn.archive.ubuntu.com 了。
-
-1.使用vi编辑器的命令为(注意首先切换到root用户)：
-root@ubuntu :/#vi /etc/apt/sources.list  ##### 2.打开sources.list在vi命令模式下（进入后即是命令行模式...
+1.使用vi编辑器的命令为(注意首先切换到root用户)：root@ubuntu :/#vi /etc/apt/sources.list
+2.打开sources.list在vi命令模式下（进入后即是命令行模式，按i后才可进入编辑模式，不过...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -462,9 +458,7 @@ root@ubuntu :/#vi /etc/apt/sources.list  ##### 2.打开sources.list在vi命令�
         </a>
         <div class="abstract-content">
             Just test the hexo~
-
 👶Judging if this blog can be posted!
-
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -493,19 +487,19 @@ root@ubuntu :/#vi /etc/apt/sources.list  ##### 2.打开sources.list在vi命令�
                 <span>HPL+Openmpi+GOTOBLAS2</span>
         </a>
         <div class="abstract-content">
-            HPL+Openmpi+GOTOBLAS2
-终于成功了！！！
-
-废话:之前mpi安装的有问题，编译完之后不能mpirun真的让人头大。。于是我就卸载了之前安装的mpich和lam4-dev,然后安装了openmpi
+            HPL+Openmpi+GOTOBLAS2终于成功了！！！
+废话:之前mpi安装的有问题，编译完之后不能mpirun真的让人头大。。于是我就卸载了之前安装的mpich和lam4-dev,然后安装了openmpi    
 
 本篇参照：这个博客
 Openmpi的安装
-
 解压tar -zxvf openmpi-3.1.0.tar.gz
 系统配置cd openmpi-3.1.0
 然后./configure --prefix=/opt/openmpi
 
-※：/opt/openmpi是安装路径，打开之后应该有bin  etc  include  lib  share这几个文件夹...
+※：/opt/openmpi是安装路径，打开之后应该有bin  etc  include  lib  share这几个文件夹
+
+编译 make
+安装...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -922,6 +916,10 @@ Openmpi的安装
     
     
     
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 23
@@ -975,22 +973,22 @@ Openmpi的安装
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：差分/" >算法基础：差分</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：前缀和（一维和二维）/" >算法基础：前缀和（一维和二维）</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：归并排序/" >算法基础：归并排序</a>
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：差分/" >算法基础：差分</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：快速排序/" >算法基础：快速排序</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：归并排序/" >算法基础：归并排序</a>
         </li>
     
     
@@ -1039,12 +1037,12 @@ Openmpi的安装
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/Bug-Blog/" >Bug Blog</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/HPL-Openmpi-GOTOBLAS2/" >HPL+Openmpi+GOTOBLAS2</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/HPL-Openmpi-GOTOBLAS2/" >HPL+Openmpi+GOTOBLAS2</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/Bug-Blog/" >Bug Blog</a>
         </li>
     
     
@@ -1073,9 +1071,9 @@ Openmpi的安装
     
         <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
     
-        <span class="sidebar-tag-name" data-tags="Math"><span class="iconfont-archer">&#xe606;</span>Math</span>
-    
         <span class="sidebar-tag-name" data-tags="BUG"><span class="iconfont-archer">&#xe606;</span>BUG</span>
+    
+        <span class="sidebar-tag-name" data-tags="Math"><span class="iconfont-archer">&#xe606;</span>Math</span>
     
         <span class="sidebar-tag-name" data-tags="Mysql"><span class="iconfont-archer">&#xe606;</span>Mysql</span>
     
@@ -1153,7 +1151,22 @@ jsonContent:
     </div>
     <!-- async load share.js -->
      
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>
 
 

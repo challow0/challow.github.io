@@ -272,7 +272,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">495</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">481</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -401,12 +401,10 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="记编译linux内核">记编译Linux内核</h1>
-<blockquote>
+        <h1 id="记编译Linux内核"><a href="#记编译Linux内核" class="headerlink" title="记编译Linux内核"></a>记编译Linux内核</h1><blockquote>
 <p>这个过程就是填坑的过程~</p>
 </blockquote>
-<h3 id="下载linux内核版本">1.下载Linux内核版本</h3>
-<p>官网地址：http://www.kernel.org</p>
+<h3 id="1-下载Linux内核版本"><a href="#1-下载Linux内核版本" class="headerlink" title="1.下载Linux内核版本"></a>1.下载Linux内核版本</h3><p>官网地址：<a href="http://www.kernel.org" target="_blank" rel="noopener">http://www.kernel.org</a> </p>
 <p>选择了一个LST版本的。<a href="https://cdn.kernel.org/pub/linux/kernel/v3.x/linux-3.16.78.tar.xz" target="_blank" rel="noopener">3.16.78</a></p>
 <p>刚开始下载了最新的5.x.x，为了编译我gcc又更新了一次。</p>
 <p><a href="https://www.cnblogs.com/lzpong/p/5755678.html" target="_blank" rel="noopener">升级gcc</a></p>
@@ -414,66 +412,41 @@ height:50vh;
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./include/linux/compiler-gcc.h:14:3: error: #error Sorry, your compiler is too old - please upgrade it.</span><br></pre></td></tr></table></figure>
 <p>让我的心态崩了，错误是在新的版本中不支持4.6.0以下的gcc编译，但我升级了啊？？</p>
 <p>还是低版本的练手吧~~</p>
-<h3 id="解压">2.解压</h3>
-<p>学了一手<code>tar.xz</code>后缀压缩文件的解压方式</p>
+<h3 id="2-解压"><a href="#2-解压" class="headerlink" title="2.解压"></a>2.解压</h3><p>学了一手<code>tar.xz</code>后缀压缩文件的解压方式</p>
 <p><code>xz -d  linux-3.16.78.tar.xz</code></p>
 <p><code>tar -xvf linux-3.16.78.tar</code></p>
-<h3 id="配置内核生成配置文件.config">3.配置内核生成配置文件.config</h3>
-<p>为了能够打开<code>make xconfig</code></p>
+<h3 id="3-配置内核生成配置文件-config"><a href="#3-配置内核生成配置文件-config" class="headerlink" title="3.配置内核生成配置文件.config"></a>3.配置内核生成配置文件.config</h3><p>为了能够打开<code>make xconfig</code></p>
 <p><a href="https://blog.csdn.net/jerry890130/article/details/85108632" target="_blank" rel="noopener">安装QT</a></p>
 <p><a href="https://stackoverflow.com/questions/22825771/install-qt-5-2-1-and-make-pkg-config-to-recognize-it" target="_blank" rel="noopener">设置PKG_CONFIG_PATH</a></p>
-<div class="figure">
-<img src="https://s2.ax1x.com/2019/12/06/QYsG6I.png" alt="QYsG6I.png">
-<p class="caption">QYsG6I.png</p>
-</div>
+<p><img src="https://s2.ax1x.com/2019/12/06/QYsG6I.png" alt="QYsG6I.png"></p>
 <p>为了能够打开<code>make menuconfig</code></p>
 <p><code>sudo yum install openssl-devel</code></p>
-<div class="figure">
-<img src="https://s2.ax1x.com/2019/12/06/QYs3pd.png" alt="QYs3pd.png">
-<p class="caption">QYs3pd.png</p>
-</div>
+<p><img src="https://s2.ax1x.com/2019/12/06/QYs3pd.png" alt="QYs3pd.png"></p>
 <p>然而！</p>
 <p>最后使用了</p>
 <p><code>cp /boot/config-$(uname -r) .config</code></p>
 <p>从本地的配置文件拷贝。hhh</p>
-<h3 id="开始编译内核">4.开始编译内核</h3>
-<p><code>make -j 4</code> 启动 4 个线程编译内核</p>
-<div class="figure">
-<img src="https://s2.ax1x.com/2019/12/06/QYyt29.png" alt="QYyt29.png">
-<p class="caption">QYyt29.png</p>
-</div>
+<h3 id="4-开始编译内核"><a href="#4-开始编译内核" class="headerlink" title="4.开始编译内核"></a>4.开始编译内核</h3><p><code>make -j 4</code> 启动 4 个线程编译内核</p>
+<p><img src="https://s2.ax1x.com/2019/12/06/QYyt29.png" alt="QYyt29.png"></p>
 <p>枯燥又漫长的过程，跟编译gcc一个德行。但好歹能编译了，哈哈</p>
-<h3 id="bug-bug-bug">BUG BUG BUG</h3>
-<p>F*CK~</p>
+<h3 id="BUG-BUG-BUG"><a href="#BUG-BUG-BUG" class="headerlink" title="BUG BUG BUG"></a>BUG BUG BUG</h3><p>F*CK~</p>
 <p>编译的过程中因为在虚拟机导致磁盘的空间不足，然后它竟然GG了。不能正常开启</p>
-<p>各种报错服务也Failed<sub>~</sub></p>
+<p>各种报错服务也Failed~~~</p>
 <p>幸好能进文本命令行，删除了编译的linux-3.x.x</p>
 <p>重新进来。</p>
-<div class="figure">
-<img src="https://s2.ax1x.com/2019/12/07/Qt3C4K.png" alt="Qt3C4K.png">
-<p class="caption">Qt3C4K.png</p>
-</div>
-<p><code>du -sh *</code>查看当前目录下文件夹占的大小。</p>
+<p><img src="https://s2.ax1x.com/2019/12/07/Qt3C4K.png" alt="Qt3C4K.png"></p>
+<p> <code>du -sh *</code>查看当前目录下文件夹占的大小。</p>
 <p><a href="https://blog.csdn.net/weixin_30292745/article/details/95257327" target="_blank" rel="noopener">扩容虚拟机大小</a></p>
 <p><a href="https://www.cnblogs.com/Sungeek/p/9084510.html" target="_blank" rel="noopener">扩容虚拟机大小</a></p>
-<h3 id="安装内核模块">5.安装内核模块</h3>
-<p>使用命令：<code>make modules</code>新的模块都会放 在/lib/modules 目录下对应的内核版本目录中。</p>
-<h3 id="make-install">6.make install</h3>
-<p><a href="https://stackoverflow.com/questions/15719669/kernel-compilation-missing-modules-error-after-make-install" target="_blank" rel="noopener">出现错误</a></p>
-<div class="figure">
-<img src="https://s2.ax1x.com/2019/12/07/Qt8sW8.png" alt="Qt8sW8.png">
-<p class="caption">Qt8sW8.png</p>
-</div>
+<h3 id="5-安装内核模块"><a href="#5-安装内核模块" class="headerlink" title="5.安装内核模块"></a>5.安装内核模块</h3><p>使用命令：<code>make modules</code>新的模块都会放<br>在/lib/modules 目录下对应的内核版本目录中。</p>
+<h3 id="6-make-install"><a href="#6-make-install" class="headerlink" title="6.make install"></a>6.make install</h3><p><a href="https://stackoverflow.com/questions/15719669/kernel-compilation-missing-modules-error-after-make-install" target="_blank" rel="noopener">出现错误</a></p>
+<p><img src="https://s2.ax1x.com/2019/12/07/Qt8sW8.png" alt="Qt8sW8.png"></p>
 <p>发现是vmware的原因但是无关紧要。因为对应文件夹/boot下生成了三个相关文件。</p>
-<div class="figure">
-<img src="https://s2.ax1x.com/2019/12/07/Qt3Vud.png" alt="Qt3Vud.png">
-<p class="caption">Qt3Vud.png</p>
-</div>
+<p><img src="https://s2.ax1x.com/2019/12/07/Qt3Vud.png" alt="Qt3Vud.png"></p>
 <p>登录后：</p>
-<p><a href="https://imgse.com/i/Qt8hoq" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/12/07/Qt8hoq.png" alt="Qt8hoq.png"></a> <a href="https://imgse.com/i/Qt82Lj" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/12/07/Qt82Lj.png" alt="Qt82Lj.png"></a></p>
+<p><a href="https://imgse.com/i/Qt8hoq" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/12/07/Qt8hoq.png" alt="Qt8hoq.png"></a><br><a href="https://imgse.com/i/Qt82Lj" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/12/07/Qt82Lj.png" alt="Qt82Lj.png"></a></p>
 <p>成功获取Linux版本3.16.78</p>
-<h3 id="结束">结束</h3>
-<p>编译花费一个晚上，加小半个上午~~</p>
+<h3 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h3><p>编译花费一个晚上，加小半个上午~~</p>
 
     </article>
     <!-- license  -->
@@ -616,7 +589,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#记编译linux内核"><span class="toc-number">1.</span> <span class="toc-text">记编译Linux内核</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#下载linux内核版本"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.下载Linux内核版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解压"><span class="toc-number">1.0.2.</span> <span class="toc-text">2.解压</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置内核生成配置文件.config"><span class="toc-number">1.0.3.</span> <span class="toc-text">3.配置内核生成配置文件.config</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开始编译内核"><span class="toc-number">1.0.4.</span> <span class="toc-text">4.开始编译内核</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bug-bug-bug"><span class="toc-number">1.0.5.</span> <span class="toc-text">BUG BUG BUG</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装内核模块"><span class="toc-number">1.0.6.</span> <span class="toc-text">5.安装内核模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#make-install"><span class="toc-number">1.0.7.</span> <span class="toc-text">6.make install</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结束"><span class="toc-number">1.0.8.</span> <span class="toc-text">结束</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#记编译Linux内核"><span class="toc-number">1.</span> <span class="toc-text">记编译Linux内核</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-下载Linux内核版本"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.下载Linux内核版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-解压"><span class="toc-number">1.0.2.</span> <span class="toc-text">2.解压</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-配置内核生成配置文件-config"><span class="toc-number">1.0.3.</span> <span class="toc-text">3.配置内核生成配置文件.config</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-开始编译内核"><span class="toc-number">1.0.4.</span> <span class="toc-text">4.开始编译内核</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BUG-BUG-BUG"><span class="toc-number">1.0.5.</span> <span class="toc-text">BUG BUG BUG</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-安装内核模块"><span class="toc-number">1.0.6.</span> <span class="toc-text">5.安装内核模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-make-install"><span class="toc-number">1.0.7.</span> <span class="toc-text">6.make install</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结束"><span class="toc-number">1.0.8.</span> <span class="toc-text">结束</span></a></li></ol></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -629,6 +602,10 @@ top:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
     
     
     
@@ -987,22 +964,22 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：差分/" >算法基础：差分</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：前缀和（一维和二维）/" >算法基础：前缀和（一维和二维）</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：归并排序/" >算法基础：归并排序</a>
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：差分/" >算法基础：差分</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：快速排序/" >算法基础：快速排序</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：归并排序/" >算法基础：归并排序</a>
         </li>
     
     
@@ -1051,12 +1028,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/Bug-Blog/" >Bug Blog</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/HPL-Openmpi-GOTOBLAS2/" >HPL+Openmpi+GOTOBLAS2</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/HPL-Openmpi-GOTOBLAS2/" >HPL+Openmpi+GOTOBLAS2</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/Bug-Blog/" >Bug Blog</a>
         </li>
     
     
@@ -1085,9 +1062,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
     
-        <span class="sidebar-tag-name" data-tags="Math"><span class="iconfont-archer">&#xe606;</span>Math</span>
-    
         <span class="sidebar-tag-name" data-tags="BUG"><span class="iconfont-archer">&#xe606;</span>BUG</span>
+    
+        <span class="sidebar-tag-name" data-tags="Math"><span class="iconfont-archer">&#xe606;</span>Math</span>
     
         <span class="sidebar-tag-name" data-tags="Mysql"><span class="iconfont-archer">&#xe606;</span>Mysql</span>
     
@@ -1165,9 +1142,24 @@ jsonContent:
     </div>
     <!-- async load share.js -->
     
-        <script src="/scripts/share.js" async></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->    
+        <script src="/scripts/share.js" async></script>    
      
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
 </html>
 
 

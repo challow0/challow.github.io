@@ -351,11 +351,9 @@
                 <span>算法基础：图论总结</span>
         </a>
         <div class="abstract-content">
-            模板总结
-Dijkstra
-算法用来求解最短路径，不能求带负权边的，因为会使得dist越来越小
-时间复杂度：\(o(n^2)\)
-12345678910111213141516171819int g[N][N]; // 存储每条边int dist[N]; // 1号点到每个点的距离bool st[N];  // 每个点的最短路是否确定int dijkstra()&#123;	memset(dist, 0x3f, sizeof dist);    dist[1] = 0;    for (int i = 0; i &lt; n ; i ++ )    &#123;        i...
+            模板总结Dijkstra算法用来求解最短路径，不能求带负权边的，因为会使得dist越来越小
+时间复杂度：$o(n^2)$
+12345678910111213141516171819int g[N][N]; // 存储每条边int dist[N]; // 1号点到每个点的距离bool st[N];  // 每个点的最短路是否确定int dijkstra()&#123;	memset(dist, 0x3f, sizeof dist);    dist[1] = 0;    for (int i = 0; i &lt; n ; i ++ )    &#123;        int t = -...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -384,23 +382,15 @@ Dijkstra
                 <span>算法基础：双指针算法</span>
         </a>
         <div class="abstract-content">
-            算法基础：双指针算法
-给定一个长度为n的整数序列，请找出最长的不包含重复数字的连续区间，输出它的长度。
-输入格式
-第一行包含整数n。
+            算法基础：双指针算法给定一个长度为n的整数序列，请找出最长的不包含重复数字的连续区间，输出它的长度。
+输入格式第一行包含整数n。
 第二行包含n个整数（均在0~100000范围内），表示整数序列。
-输出格式
-共一行，包含一个整数，表示最长的不包含重复数字的连续子序列的长度。
-数据范围
-1≤n≤1000001≤n≤100000
-输入样例：
-1251 2 2 3 5
-输出样例：
-13
-思路：
-i 为快指针， j 为慢指针
-代码：
-123456789101112131415161718192021222324252627282930313233#include...
+输出格式共一行，包含一个整数，表示最长的不包含重复数字的连续子序列的长度。
+数据范围1≤n≤1000001≤n≤100000
+输入样例：1251 2 2 3 5
+输出样例：13
+思路：i 为快指针， j 为慢指针
+代码：123456789101112131415161718192021222324252627282930313233#include&lt;iostream&gt;#include...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -429,18 +419,15 @@ i 为快指针， j 为慢指针
                 <span>算法基础：差分</span>
         </a>
         <div class="abstract-content">
-            算法基础：差分
-输入一个长度为n的整数序列。
+            算法基础：差分输入一个长度为n的整数序列。
 接下来输入m个操作，每个操作包含三个整数l, r, c，表示将序列中[l, r]之间的每个数加上c。
 请你输出进行完所有操作后的序列。
-输入格式
-第一行包含两个整数n和m。
+输入格式第一行包含两个整数n和m。
 第二行包含n个整数，表示整数序列。
 接下来m行，每行包含三个整数l，r，c，表示一个操作。
-输出格式
-共一行，包含n个整数，表示最终序列。
-数据范围
-1≤n,m≤1000001≤n,m≤100000, 1≤l≤r≤n1≤l≤r≤n, −1000≤c≤1000−1000≤c≤1000, −1000≤整数序列中元素的值≤1000−1000≤整数序列中元素...
+输出格式共一行，包含n个整数，表示最终序列。
+数据范围1≤n,m≤1000001≤n,m≤100000,1≤l≤r≤n1≤l≤r≤n,−1000≤c≤1000−1000≤c≤1000,−1000≤整数序列中元素的值≤1000−1000≤整数序列中元素的值≤1000
+输入样例：12345...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -469,21 +456,17 @@ i 为快指针， j 为慢指针
                 <span>算法基础：前缀和（一维和二维）</span>
         </a>
         <div class="abstract-content">
-            算法基础：前缀和
-一维！
-输入一个长度为n的整数序列。
+            算法基础：前缀和一维！输入一个长度为n的整数序列。
 接下来再输入m个询问，每个询问输入一对l, r。
 对于每个询问，输出原序列中从第l个数到第r个数的和。
-输入格式
-第一行包含两个整数n和m。
+输入格式第一行包含两个整数n和m。
 第二行包含n个整数，表示整数数列。
 接下来m行，每行包含两个整数l和r，表示一个询问的区间范围。
-输出格式
-共m行，每行输出一个询问的结果。
-数据范围
-1≤l≤r≤n1≤l≤r≤n, 1≤n,m≤1000001≤n,m≤100000, −1000≤数列中元素的值≤1000−1000≤数列中元素的值≤1000
-输入样例：
-123455 32 1 3 6 41 21 3...
+输出格式共m行，每行输出一个询问的结果。
+数据范围1≤l≤r≤n1≤l≤r≤n,1≤n,m≤1000001≤n,m≤100000,−1000≤数列中元素的值≤1000−1000≤数列中元素的值≤1000
+输入样例：123455 32 1 3 6 41 21 32 4
+输出样例：1233610
+思想：主要...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -512,19 +495,15 @@ i 为快指针， j 为慢指针
                 <span>算法基础：二分</span>
         </a>
         <div class="abstract-content">
-            算法基础：二分
-给定一个按照升序排列的长度为n的整数数组，以及 q 个查询。
+            算法基础：二分给定一个按照升序排列的长度为n的整数数组，以及 q 个查询。
 对于每个查询，返回一个元素k的起始位置和终止位置（位置从0开始计数）。
 如果数组中不存在该元素，则返回“-1 -1”。
-输入格式
-第一行包含整数n和q，表示数组长度和询问个数。
+输入格式第一行包含整数n和q，表示数组长度和询问个数。
 第二行包含n个整数（均在1~10000范围内），表示完整数组。
 接下来q行，每行包含一个整数k，表示一个询问元素。
-输出格式
-共q行，每行包含两个整数，表示所求元素的起始位置和终止位置。
+输出格式共q行，每行包含两个整数，表示所求元素的起始位置和终止位置。
 如果数组中不存在该元素，则返回“-1 -1”。
-数据范围
-1≤n≤1000001≤n≤100000 1≤q≤100001≤q≤...
+数据范围1≤n≤1000001≤n≤1000001≤q≤100001≤q≤100001≤k≤100001≤k...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -553,22 +532,16 @@ i 为快指针， j 为慢指针
                 <span>算法基础：归并排序</span>
         </a>
         <div class="abstract-content">
-            算法基础：归并排序
-给定你一个长度为n的整数数列。
+            算法基础：归并排序给定你一个长度为n的整数数列。
 请你使用归并排序对这个数列按照从小到大进行排序。
 并将排好序的数列按顺序输出。
-输入格式
-输入共两行，第一行包含整数 n。
+输入格式输入共两行，第一行包含整数 n。
 第二行包含 n 个整数（所有整数均在1~109109范围内），表示整个数列。
-输出格式
-输出共一行，包含 n 个整数，表示排好序的数列。
-数据范围
-1≤n≤1000001≤n≤100000
-输入样例：
-1253 1 2 4 5
-输出样例：
-11 2 3 4 5
-123456789101112131415161718192021222324252627282930313233343536...
+输出格式输出共一行，包含 n 个整数，表示排好序的数列。
+数据范围1≤n≤1000001≤n≤100000
+输入样例：1253 1 2 4 5
+输出样例：11 2 3 4 5
+1234567891011121314151617181920212223242526272829303132333435363738394041#include&lt...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -597,22 +570,16 @@ i 为快指针， j 为慢指针
                 <span>算法基础：快速排序</span>
         </a>
         <div class="abstract-content">
-            算法基础：快速排序
-给定你一个长度为n的整数数列。
+            算法基础：快速排序给定你一个长度为n的整数数列。
 请你使用快速排序对这个数列按照从小到大进行排序。
 并将排好序的数列按顺序输出。
-输入格式
-输入共两行，第一行包含整数 n。
+输入格式输入共两行，第一行包含整数 n。
 第二行包含 n 个整数（所有整数均在1~109109范围内），表示整个数列。
-输出格式
-输出共一行，包含 n 个整数，表示排好序的数列。
-数据范围
-1≤n≤1000001≤n≤100000
-输入样例：
-1253 1 2 4 5
-输出样例：
-11 2 3 4 5
-123456789101112131415161718192021222324252627282930313233343536...
+输出格式输出共一行，包含 n 个整数，表示排好序的数列。
+数据范围1≤n≤1000001≤n≤100000
+输入样例：1253 1 2 4 5
+输出样例：11 2 3 4 5
+123456789101112131415161718192021222324252627282930313233343536373839404142#include&...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -1029,6 +996,10 @@ i 为快指针， j 为慢指针
     
     
     
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 23
@@ -1082,22 +1053,22 @@ i 为快指针， j 为慢指针
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：差分/" >算法基础：差分</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：前缀和（一维和二维）/" >算法基础：前缀和（一维和二维）</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：归并排序/" >算法基础：归并排序</a>
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：差分/" >算法基础：差分</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：快速排序/" >算法基础：快速排序</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：归并排序/" >算法基础：归并排序</a>
         </li>
     
     
@@ -1146,12 +1117,12 @@ i 为快指针， j 为慢指针
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/Bug-Blog/" >Bug Blog</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/HPL-Openmpi-GOTOBLAS2/" >HPL+Openmpi+GOTOBLAS2</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/HPL-Openmpi-GOTOBLAS2/" >HPL+Openmpi+GOTOBLAS2</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/Bug-Blog/" >Bug Blog</a>
         </li>
     
     
@@ -1180,9 +1151,9 @@ i 为快指针， j 为慢指针
     
         <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
     
-        <span class="sidebar-tag-name" data-tags="Math"><span class="iconfont-archer">&#xe606;</span>Math</span>
-    
         <span class="sidebar-tag-name" data-tags="BUG"><span class="iconfont-archer">&#xe606;</span>BUG</span>
+    
+        <span class="sidebar-tag-name" data-tags="Math"><span class="iconfont-archer">&#xe606;</span>Math</span>
     
         <span class="sidebar-tag-name" data-tags="Mysql"><span class="iconfont-archer">&#xe606;</span>Mysql</span>
     
@@ -1260,7 +1231,22 @@ jsonContent:
     </div>
     <!-- async load share.js -->
      
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>
 
 

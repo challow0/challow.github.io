@@ -272,7 +272,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">718</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">717</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -401,14 +401,11 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="hplopenmpigotoblas2">HPL+Openmpi+GOTOBLAS2</h1>
-<h3 id="终于成功了">终于成功了！！！</h3>
-<blockquote>
-<p>废话:之前mpi安装的有问题，编译完之后不能mpirun真的让人头大。。于是我就卸载了之前安装的mpich和lam4-dev,然后安装了openmpi</p>
+        <h1 id="HPL-Openmpi-GOTOBLAS2"><a href="#HPL-Openmpi-GOTOBLAS2" class="headerlink" title="HPL+Openmpi+GOTOBLAS2"></a>HPL+Openmpi+GOTOBLAS2</h1><h3 id="终于成功了！！！"><a href="#终于成功了！！！" class="headerlink" title="终于成功了！！！"></a>终于成功了！！！</h3><blockquote>
+<p>废话:之前mpi安装的有问题，编译完之后不能mpirun真的让人头大。。于是我就卸载了之前安装的mpich和lam4-dev,然后安装了openmpi    </p>
 </blockquote>
 <p>本篇参照：<a href="https://blog.csdn.net/xiaocxks/article/details/51442603" target="_blank" rel="noopener">这个博客</a></p>
-<h3 id="openmpi的安装">Openmpi的安装</h3>
-<ul>
+<h3 id="Openmpi的安装"><a href="#Openmpi的安装" class="headerlink" title="Openmpi的安装"></a>Openmpi的安装</h3><ul>
 <li>解压<code>tar -zxvf openmpi-3.1.0.tar.gz</code></li>
 <li>系统配置<code>cd openmpi-3.1.0</code></li>
 <li>然后<code>./configure --prefix=/opt/openmpi</code></li>
@@ -422,37 +419,37 @@ height:50vh;
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/openmpi/lib</span><br><span class="line">export PATH=/opt/openmpi/bin:$PATH</span><br><span class="line">export INCLUDE=/opt/openmpi/include:$INCLUDE</span><br></pre></td></tr></table></figure>
 <ul>
-<li>运行以下命令使得修改生效：</li>
-</ul>
+<li><p>运行以下命令使得修改生效：</p>
 <p><code>source /etc/profile(或者source.bashrc)</code></p>
-<h3 id="安装gotoblas2">安装GOTOBLAS2</h3>
-<p>由于官网的安装包找不到了，于是我在github上找到了一个<a href="https://github.com/dagss/gotoblas2" target="_blank" rel="noopener">mirror</a></p>
+</li>
+</ul>
+<h3 id="安装GOTOBLAS2"><a href="#安装GOTOBLAS2" class="headerlink" title="安装GOTOBLAS2"></a>安装GOTOBLAS2</h3><p>由于官网的安装包找不到了，于是我在github上找到了一个<a href="https://github.com/dagss/gotoblas2" target="_blank" rel="noopener">mirror</a></p>
 <ul>
 <li><code>git clone</code>到本地</li>
-<li>进到<code>cd  gotoblas2</code>文件夹中然后执行<code>make BINARY=64 TARGET=NEHALEM</code> 如果编译错误需<code>make clean</code>再<code>make</code> 这里有个bug！！！我最后显示的有些问题，但也编译成功生成了<code>libgoto2_nehalemp-r1.13.a</code></li>
+<li>进到<code>cd  gotoblas2</code>文件夹中然后执行<code>make BINARY=64 TARGET=NEHALEM</code> 如果编译错误需<code>make clean</code>再<code>make</code><br>这里有个bug！！！我最后显示的有些问题，但也编译成功生成了<code>libgoto2_nehalemp-r1.13.a</code></li>
 <li>显示生成<code>libgoto2_nehalemp-r1.13.a</code>便达到了目的。</li>
 </ul>
-<h3 id="安装hpl">安装HPL</h3>
-<p>这里贴一个下载地址：http://www.netlib.org/benchmark/hpl/</p>
+<h3 id="安装HPL"><a href="#安装HPL" class="headerlink" title="安装HPL"></a>安装HPL</h3><p>这里贴一个下载地址：<a href="http://www.netlib.org/benchmark/hpl/" target="_blank" rel="noopener">http://www.netlib.org/benchmark/hpl/</a></p>
 <ul>
-<li><p>解压下载的安装包<code>tar -zxvf hpl-2.3.tar.gz</code></p></li>
-<li><p>进入<code>cd hpl-2.3</code>文件</p></li>
-<li><p>根据机器情况复制Makefile模板<code>cd setup</code>然后<code>cp Make.Linux_PII_CBLAS ../Make.test</code></p></li>
-</ul>
+<li><p>解压下载的安装包<code>tar -zxvf hpl-2.3.tar.gz</code></p>
+</li>
+<li><p>进入<code>cd hpl-2.3</code>文件</p>
+</li>
+<li><p>根据机器情况复制Makefile模板<code>cd setup</code>然后<code>cp Make.Linux_PII_CBLAS ../Make.test</code></p>
 <p>这里把setup文件下的模板复制到上一层文件夹中，并重新命名为<code>Make.test</code></p>
-<ul>
-<li><code>vim Make.test</code>配置文件</li>
+</li>
+<li><p><code>vim Make.test</code>配置文件</p>
+</li>
 </ul>
 <p>这里直接贴上我的配置</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> </span><br><span class="line">SHELL        = /bin/sh</span><br><span class="line"><span class="meta">#</span></span><br><span class="line">CD           = cd</span><br><span class="line">CP           = cp</span><br><span class="line">LN_S         = ln -s</span><br><span class="line">MKDIR        = mkdir</span><br><span class="line">RM           = /bin/rm -f</span><br><span class="line">TOUCH        = touch</span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta">#</span> ----------------------------------------------------------------------</span><br><span class="line"><span class="meta">#</span> - Platform identifier ------------------------------------------------</span><br><span class="line"><span class="meta">#</span> ----------------------------------------------------------------------</span><br><span class="line"><span class="meta">#</span></span><br><span class="line">ARCH         = test</span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta">#</span> ----------------------------------------------------------------------</span><br><span class="line"><span class="meta">#</span> - HPL Directory Structure / HPL library ------------------------------</span><br><span class="line"><span class="meta">#</span> ----------------------------------------------------------------------</span><br><span class="line"><span class="meta">#</span></span><br><span class="line">TOPdir       = /home/challow/nfs/hpl-2.3 # 这里的hpl是你下载的目录</span><br><span class="line">INCdir       = $(TOPdir)/include</span><br><span class="line">BINdir       = $(TOPdir)/bin/$(ARCH)</span><br><span class="line">LIBdir       = $(TOPdir)/lib/$(ARCH)</span><br><span class="line"><span class="meta">#</span></span><br><span class="line">HPLlib       = $(LIBdir)/libhpl.a </span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta">#</span> ----------------------------------------------------------------------</span><br><span class="line"><span class="meta">#</span> - Message Passing library (MPI) --------------------------------------</span><br><span class="line"><span class="meta">#</span> ----------------------------------------------------------------------</span><br><span class="line"><span class="meta">#</span></span><br><span class="line">MPdir        = /opt/openmpi # 如果参照上面的openmpi就安装在这里</span><br><span class="line">MPinc        = -I$(MPdir)/include</span><br><span class="line">MPlib        = $(MPdir)/lib/libmpi.so #!!!!这个东东</span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta">#</span> ----------------------------------------------------------------------</span><br><span class="line"><span class="meta">#</span> - Linear Algebra library (BLAS or VSIPL) -----------------------------</span><br><span class="line"><span class="meta">#</span> ----------------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">LAdir        =  /home/challow/blas/gotoblas2 # gotoblas2下载的路径</span><br><span class="line">LAinc        =  </span><br><span class="line">LAlib        =  $(LAdir)/libgoto2_nehalemp-r1.13.a # 直接引用中间的包</span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta">#</span> ----------------------------------------------------------------------</span><br><span class="line"><span class="meta">#</span> - F77 / C interface --------------------------------------------------</span><br><span class="line"></span><br><span class="line">F2CDEFS      =</span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta">#</span> ----------------------------------------------------------------------</span><br><span class="line"><span class="meta">#</span> - HPL includes / libraries / specifics -------------------------------</span><br><span class="line"><span class="meta">#</span> ----------------------------------------------------------------------</span><br><span class="line"><span class="meta">#</span></span><br><span class="line">HPL_INCLUDES = -I$(INCdir) -I$(INCdir)/$(ARCH) $(LAinc) $(MPinc)</span><br><span class="line">HPL_LIBS     = $(HPLlib) $(LAlib) $(MPlib)</span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta">#</span> - Compile time options -----------------------------------------------</span><br><span class="line"><span class="meta">#</span></span><br><span class="line">HPL_OPTS     = -DHPL_CALL_CBLAS</span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta">#</span> ----------------------------------------------------------------------</span><br><span class="line"><span class="meta">#</span></span><br><span class="line">HPL_DEFS     = $(F2CDEFS) $(HPL_OPTS) $(HPL_INCLUDES)</span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta">#</span> ----------------------------------------------------------------------</span><br><span class="line"><span class="meta">#</span> - Compilers / linkers - Optimization flags ---------------------------</span><br><span class="line"><span class="meta">#</span> ----------------------------------------------------------------------</span><br><span class="line"><span class="meta">#</span></span><br><span class="line">CC           = /opt/openmpi/bin/mpicc  # 这里还是根据openmpi安装的路径</span><br><span class="line">CCNOOPT      = $(HPL_DEFS)</span><br><span class="line">CCFLAGS      = $(HPL_DEFS) -fomit-frame-pointer -O3 -funroll-loops</span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line">LINKER       = /opt/openmpi/bin/mpif77  # 这里也可以是mpicc</span><br><span class="line">LINKFLAGS    = $(CCFLAGS)</span><br><span class="line"><span class="meta">#</span></span><br><span class="line">ARCHIVER     = ar</span><br><span class="line">ARFLAGS      = r</span><br><span class="line">RANLIB       = echo</span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta">#</span> ----------------------------------------------------------------------</span><br></pre></td></tr></table></figure>
-<p>※：上面的操作都是基于openmpi的，如果安装其他版本的MPI道理一样，不过在<code>MPlib = $(MPdir)/lib/libmpi.so</code></p>
-<p>做相应的更改！<code>xxxx/libmpi.a</code>或者<code>xxxx/libmpichxx.a</code>等等文件。</p>
+<p>※：上面的操作都是基于openmpi的，如果安装其他版本的MPI道理一样，不过在<code>MPlib = $(MPdir)/lib/libmpi.so</code> </p>
+<p> 做相应的更改！<code>xxxx/libmpi.a</code>或者<code>xxxx/libmpichxx.a</code>等等文件。</p>
 <ul>
 <li>然后直接<code>make arch=test</code>即可！</li>
 </ul>
 <p>编译完会在bin下面生成test文件夹，里面有<code>HPL.dat  xhpl</code>两个文件。<code>HPL.dat</code>是运行的参数，这里可以自行修改。使用命令<code>mpirun -np 4 ./xhpl</code>就可以成功运行！</p>
-<h4 id="后语">后语</h4>
-<p>这是一个锻炼的过程，安装过程可能各种报错。慢慢来，一个一个调就行！大不了卸载重来，哈哈。</p>
+<h4 id="后语"><a href="#后语" class="headerlink" title="后语"></a>后语</h4><p>这是一个锻炼的过程，安装过程可能各种报错。慢慢来，一个一个调就行！大不了卸载重来，哈哈。</p>
 
     </article>
     <!-- license  -->
@@ -595,7 +592,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hplopenmpigotoblas2"><span class="toc-number">1.</span> <span class="toc-text">HPL+Openmpi+GOTOBLAS2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#终于成功了"><span class="toc-number">1.0.1.</span> <span class="toc-text">终于成功了！！！</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#openmpi的安装"><span class="toc-number">1.0.2.</span> <span class="toc-text">Openmpi的安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装gotoblas2"><span class="toc-number">1.0.3.</span> <span class="toc-text">安装GOTOBLAS2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装hpl"><span class="toc-number">1.0.4.</span> <span class="toc-text">安装HPL</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#后语"><span class="toc-number">1.0.4.1.</span> <span class="toc-text">后语</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HPL-Openmpi-GOTOBLAS2"><span class="toc-number">1.</span> <span class="toc-text">HPL+Openmpi+GOTOBLAS2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#终于成功了！！！"><span class="toc-number">1.0.1.</span> <span class="toc-text">终于成功了！！！</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Openmpi的安装"><span class="toc-number">1.0.2.</span> <span class="toc-text">Openmpi的安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装GOTOBLAS2"><span class="toc-number">1.0.3.</span> <span class="toc-text">安装GOTOBLAS2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装HPL"><span class="toc-number">1.0.4.</span> <span class="toc-text">安装HPL</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#后语"><span class="toc-number">1.0.4.1.</span> <span class="toc-text">后语</span></a></li></ol></li></ol></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -608,6 +605,10 @@ top:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
     
     
     
@@ -966,22 +967,22 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：差分/" >算法基础：差分</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：前缀和（一维和二维）/" >算法基础：前缀和（一维和二维）</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：归并排序/" >算法基础：归并排序</a>
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：差分/" >算法基础：差分</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：快速排序/" >算法基础：快速排序</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：归并排序/" >算法基础：归并排序</a>
         </li>
     
     
@@ -1030,12 +1031,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/Bug-Blog/" >Bug Blog</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/HPL-Openmpi-GOTOBLAS2/" >HPL+Openmpi+GOTOBLAS2</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/HPL-Openmpi-GOTOBLAS2/" >HPL+Openmpi+GOTOBLAS2</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/Bug-Blog/" >Bug Blog</a>
         </li>
     
     
@@ -1064,9 +1065,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
     
-        <span class="sidebar-tag-name" data-tags="Math"><span class="iconfont-archer">&#xe606;</span>Math</span>
-    
         <span class="sidebar-tag-name" data-tags="BUG"><span class="iconfont-archer">&#xe606;</span>BUG</span>
+    
+        <span class="sidebar-tag-name" data-tags="Math"><span class="iconfont-archer">&#xe606;</span>Math</span>
     
         <span class="sidebar-tag-name" data-tags="Mysql"><span class="iconfont-archer">&#xe606;</span>Mysql</span>
     
@@ -1144,9 +1145,24 @@ jsonContent:
     </div>
     <!-- async load share.js -->
     
-        <script src="/scripts/share.js" async></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->    
+        <script src="/scripts/share.js" async></script>    
      
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
 </html>
 
 
