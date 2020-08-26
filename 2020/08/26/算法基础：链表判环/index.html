@@ -11,7 +11,7 @@
 
 
 <head><meta name="generator" content="Hexo 3.9.0">
-    <meta charset="utf-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="author" content="Challow">
     <meta name="renderer" content="webkit">
@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Challow&#39;s Blog</title>
+    <title>算法基础：链表判环 · Challow&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -198,17 +198,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
     <!-- 百度统计  -->
     
-    <!-- 谷歌统计  -->
+    <!-- 谷歌统计  --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 </head>
 
     
+        <body class="post-body">
     
-<header class="header">
+    
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Challow&#39;s Blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">算法基础：链表判环</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Challow's Blog.</a>
 </header>
@@ -220,24 +231,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg1.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            算法基础：链表判环
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "算法基础">算法基础</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">524</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/08/26</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,39 +399,78 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/08/16/Pytorch网络搭建及训练步骤/" >
-            
-                <span>Pytorch网络搭建及训练步骤</span>
-        </a>
-        <div class="abstract-content">
-            一、网络设计123456789101112131415161718192021222324252627282930class Net(nn.Module):    def __init__(self):        super(Net, self).__init__()        # 1 input image channel, 6 output channels, 3x3 square convolution        # kernel        self.conv1 = nn.Conv2d(1, 6, 3)        self.conv2 = nn.Conv2d(6...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/08/16</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Pytorch">Pytorch</a>
-    
-</div>
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <h3 id="链表判环I"><a href="#链表判环I" class="headerlink" title="链表判环I"></a>链表判环I</h3><ul>
+<li>意思也比较明确，判断一个链表是否存在环。这里使用<strong>快慢指针的思想</strong>。</li>
+<li>快指针一次走两步， 慢指针一次走一步。如果环的入口在$X$处,当前慢指针走到入口处，那么快指针一定在环当中。假设他们的距离为$K$那么再走$K$步，慢指针与快指针相遇。</li>
+<li><p>时间复杂度分析</p>
+<ul>
+<li>$o(N)$</li>
+<li>走到入口，慢指针走了$X$步，快指针走了$2X$步，假设链表的长度为$N$，他们之间相差最大的距离为$N-X$,那么慢指针走$N-X$,快指针走$2(N-X)$步，一共$3N$步。</li>
+</ul>
+</li>
+<li><p>实现$Leetcode:141$</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">hasCycle</span><span class="params">(ListNode *head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!head || !head-&gt;next) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">auto</span> s = head, f = head-&gt;next;</span><br><span class="line">        <span class="keyword">while</span>(f)</span><br><span class="line">        &#123;</span><br><span class="line">            s = s-&gt;next, f = f-&gt;next;</span><br><span class="line">            <span class="keyword">if</span>(!f) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            f = f-&gt;next;</span><br><span class="line">            <span class="keyword">if</span>(s == f) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="链表判环II"><a href="#链表判环II" class="headerlink" title="链表判环II"></a>链表判环II</h3><ul>
+<li>判断链表环的入口所在位置</li>
+<li>画出示意图</li>
+</ul>
+<p><img src="https://s1.ax1x.com/2020/08/26/dRHp0f.png" alt="dRHp0f.png"></p>
+<ul>
+<li><p>假设快慢指针的相遇点为 $c$ 点，距离入口 $y$ ，如果从 $c$ 向后退 $y$ 步，慢指针应该在入口位置，快指针退到了 $c’$ 点。（此时的场景对应慢指针到达环的入口处。）<strong>就是从头开始快慢指针一起走，慢指针走到了入口，这时候快指针在 $c’$ 点处</strong>。</p>
+</li>
+<li><p>$c—&gt;b$ 顺时针距离为 $x$ ，此时慢指针回到开头，快指针从 $c$ 点出发，那么相遇点就是入口点</p>
+</li>
+<li><p>实现$Leetcode:142$</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode *<span class="title">detectCycle</span><span class="params">(ListNode *head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!head || !head-&gt;next) <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">        ListNode *s = head;</span><br><span class="line">        ListNode *f = head-&gt;next; </span><br><span class="line">        <span class="keyword">while</span>(f)</span><br><span class="line">        &#123;</span><br><span class="line">            s = s-&gt;next, f = f-&gt;next;</span><br><span class="line">            <span class="keyword">if</span>(!f) <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">            f = f-&gt;next;</span><br><span class="line">            <span class="keyword">if</span>(s == f)</span><br><span class="line">            &#123;</span><br><span class="line">                s = head, f = f -&gt;next; <span class="comment">//注意边界问题，因为f设置的是head-&gt;next</span></span><br><span class="line">                <span class="keyword">while</span>(s != f) s = s-&gt;next, f = f-&gt;next;</span><br><span class="line">                <span class="keyword">return</span> s;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p> 插图来自<a href="https://www.acwing.com/" target="_blank" rel="noopener">$Acwing$</a></p>
+</blockquote>
+
     </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://www.challow.top/child">Challow</a>
+            <p>原文链接：<a href="http://www.challow.top/child/2020/08/26/算法基础：链表判环/">http://www.challow.top/child/2020/08/26/算法基础：链表判环/</a>
+            <p>发表日期：<a href="http://www.challow.top/child/2020/08/26/算法基础：链表判环/">August 26th 2020, 3:23:25 pm</a>
+            <p>更新日期：<a href="http://www.challow.top/child/2020/08/26/算法基础：链表判环/">August 26th 2020, 3:43:00 pm</a>
+            <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2020/08/16/Pytorch网络搭建及训练步骤/" title= "Pytorch网络搭建及训练步骤">
+                    <div class="prevTitle">Pytorch网络搭建及训练步骤</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -452,6 +552,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#链表判环I"><span class="toc-number">1.</span> <span class="toc-text">链表判环I</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#链表判环II"><span class="toc-number">2.</span> <span class="toc-text">链表判环II</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1020,6 +1138,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->    
      
     </body>
 </html>
