@@ -20,8 +20,23 @@
     <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
     
     <meta name="description" content>
+    <meta name="description" content="Linux中使用ShadowSocks+Privoxy代理 ShadowSocks 最近几年大火, 其简单的配置和优秀的速度让大陆地区的墙内用户爱不释手本篇文章不讨论Mac &amp;amp; Windows 等图形界面下的应用, 而是让 linux 在命令行界面下, http/https 访问也能登上梯子, 看一看外面的大千世界  本篇文章就是介绍如何实现 Linux 中的 http/https 请求翻">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux命令行下使用ShadowSocks+Privoxy代理">
+<meta property="og:url" content="http://www.challow.top/child/2019/10/28/Linux命令行下使用ShadowSocks-Privoxy代理/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Linux中使用ShadowSocks+Privoxy代理 ShadowSocks 最近几年大火, 其简单的配置和优秀的速度让大陆地区的墙内用户爱不释手本篇文章不讨论Mac &amp;amp; Windows 等图形界面下的应用, 而是让 linux 在命令行界面下, http/https 访问也能登上梯子, 看一看外面的大千世界  本篇文章就是介绍如何实现 Linux 中的 http/https 请求翻">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://s2.ax1x.com/2019/10/28/Kg6zPH.png">
+<meta property="og:updated_time" content="2019-10-28T14:41:18.749Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux命令行下使用ShadowSocks+Privoxy代理">
+<meta name="twitter:description" content="Linux中使用ShadowSocks+Privoxy代理 ShadowSocks 最近几年大火, 其简单的配置和优秀的速度让大陆地区的墙内用户爱不释手本篇文章不讨论Mac &amp;amp; Windows 等图形界面下的应用, 而是让 linux 在命令行界面下, http/https 访问也能登上梯子, 看一看外面的大千世界  本篇文章就是介绍如何实现 Linux 中的 http/https 请求翻">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/10/28/Kg6zPH.png">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
     <title>Linux命令行下使用ShadowSocks+Privoxy代理 · Challow&#39;s Blog</title>
     <style type="text/css">
     @font-face {
@@ -424,12 +439,12 @@ height:50vh;
 </ul>
 <h3 id="启动privoxy"><a href="#启动privoxy" class="headerlink" title="启动privoxy"></a><strong>启动privoxy</strong></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart privoxy &gt; systemctl enable privoxy</span><br></pre></td></tr></table></figure>
 <h3 id="转发配置"><a href="#转发配置" class="headerlink" title="转发配置"></a><strong>转发配置</strong></h3><p>写在 profile 中</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span> vim /etc/profile</span><br><span class="line">export http_proxy=http://127.0.0.1:8118</span><br><span class="line">export https_proxy=http://127.0.0.1:8118</span><br><span class="line"><span class="meta">&gt;</span> source /etc/profile</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> vim /etc/profile</span></span><br><span class="line">export http_proxy=http://127.0.0.1:8118</span><br><span class="line">export https_proxy=http://127.0.0.1:8118</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> <span class="built_in">source</span> /etc/profile</span></span><br></pre></td></tr></table></figure>
 <p>在当前 session 执行</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export http_proxy=http://127.0.0.1:8118</span><br><span class="line">export https_proxy=http://127.0.0.1:8118</span><br></pre></td></tr></table></figure>
 <h3 id="测试翻墙"><a href="#测试翻墙" class="headerlink" title="测试翻墙"></a><strong>测试翻墙</strong></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl www.google.com</span><br></pre></td></tr></table></figure>
 <h3 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a><strong>问题解决</strong></h3><p>如果不能访问, 请重启机器, 依次打开shadowsocks和privoxy再测试</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span> nohup sslocal -c /etc/shadowsocks.json /dev/null 2&gt;&amp;1 &amp;</span><br><span class="line"><span class="meta">&gt;</span> privoxy --user privoxy /usr/local/etc/privoxy/config</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> nohup sslocal -c /etc/shadowsocks.json /dev/null 2&gt;&amp;1 &amp;</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> privoxy --user privoxy /usr/<span class="built_in">local</span>/etc/privoxy/config</span></span><br></pre></td></tr></table></figure>
 <p><img src="https://s2.ax1x.com/2019/10/28/Kg6zPH.png" alt="Kg6zPH.png"></p>
 <p><a href="https://keer.me/Using-ShadowSocks-and-Privoxy-proxy-in-Linux/" target="_blank" rel="noopener">Linux中使用ShadowSocks+Privoxy代理</a></p>
 <h3 id="写在最后（libsodium-not-found🤔）"><a href="#写在最后（libsodium-not-found🤔）" class="headerlink" title="写在最后（libsodium not found🤔）"></a>写在最后（<strong>libsodium not found</strong>🤔）</h3><ul>
@@ -448,8 +463,8 @@ height:50vh;
 <p><2>github 下载的：</2></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar xzvf libsodium-1.0.10.tar.gz</span><br></pre></td></tr></table></figure>
 <h4 id="4-生成配置文件"><a href="#4-生成配置文件" class="headerlink" title="4.生成配置文件"></a>4.生成配置文件</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd libsodium*</span><br><span class="line"></span><br><span class="line">./configure</span><br></pre></td></tr></table></figure>
-<h4 id="5-编译并安装"><a href="#5-编译并安装" class="headerlink" title="5.编译并安装"></a>5.编译并安装</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">make -j8 &amp;&amp; make install</span><br><span class="line"><span class="meta">#</span>中间可能报错target '/usr/local/include/sodium' is not a directory...</span><br><span class="line"><span class="meta">#</span>这里的原因是没有使用root权限</span><br></pre></td></tr></table></figure>
-<h4 id="6-添加运行库位置并加载运行库："><a href="#6-添加运行库位置并加载运行库：" class="headerlink" title="6.添加运行库位置并加载运行库："></a>6.添加运行库位置并加载运行库：</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo /usr/local/lib &gt; /etc/ld.so.conf.d/usr_local_lib.conf</span><br><span class="line"><span class="meta">#</span> 如果是ubuntu server直接ldconfig</span><br><span class="line">ldconfig</span><br></pre></td></tr></table></figure>
+<h4 id="5-编译并安装"><a href="#5-编译并安装" class="headerlink" title="5.编译并安装"></a>5.编译并安装</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">make -j8 &amp;&amp; make install</span><br><span class="line"><span class="meta">#</span><span class="bash">中间可能报错target <span class="string">'/usr/local/include/sodium'</span> is not a directory...</span></span><br><span class="line"><span class="meta">#</span><span class="bash">这里的原因是没有使用root权限</span></span><br></pre></td></tr></table></figure>
+<h4 id="6-添加运行库位置并加载运行库："><a href="#6-添加运行库位置并加载运行库：" class="headerlink" title="6.添加运行库位置并加载运行库："></a>6.添加运行库位置并加载运行库：</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo /usr/local/lib &gt; /etc/ld.so.conf.d/usr_local_lib.conf</span><br><span class="line"><span class="meta">#</span><span class="bash"> 如果是ubuntu server直接ldconfig</span></span><br><span class="line">ldconfig</span><br></pre></td></tr></table></figure>
 <p>😀😀祝愿大家都能愉快的google~</p>
 
     </article>
@@ -488,6 +503,10 @@ height:50vh;
 <!-- City版安装代码已完成 -->
     
     
+    <!-- gitalk评论 -->
+
+    <!-- utteranc评论 -->
+
     <!-- partial('_partial/comment/changyan') -->
     <!--PC版-->
 
@@ -921,9 +940,48 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 25
+        Total : 26
         </div>
         <!-- search  -->
         
@@ -936,6 +994,11 @@ top:50vh;
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span><a class="archive-post-title" href= "/2020/12/06/JavaWeb登录实例带验证码(mysql+servlet+jsp+idea)/" >[Untitled Post]</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -959,12 +1022,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/03</span><a class="archive-post-title" href= "/2020/06/03/Tensorflow无法使用CUDA-VISIBLE-DEVICES参数进行GPU加速/" >Tensorflow无法使用CUDA_VISIBLE_DEVICES参数进行GPU加速</a>
+            <span class="archive-post-date">06/03</span><a class="archive-post-title" href= "/2020/06/03/Anaconda-Command-Record/" >Anaconda-Command-Record</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/03</span><a class="archive-post-title" href= "/2020/06/03/Anaconda-Command-Record/" >Anaconda-Command-Record</a>
+            <span class="archive-post-date">06/03</span><a class="archive-post-title" href= "/2020/06/03/Tensorflow无法使用CUDA-VISIBLE-DEVICES参数进行GPU加速/" >Tensorflow无法使用CUDA_VISIBLE_DEVICES参数进行GPU加速</a>
         </li>
     
     
@@ -979,7 +1042,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：二分/" >算法基础：二分</a>
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：前缀和（一维和二维）/" >算法基础：前缀和（一维和二维）</a>
         </li>
     
     
@@ -989,7 +1052,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：前缀和（一维和二维）/" >算法基础：前缀和（一维和二维）</a>
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2020/03/01/算法基础：二分/" >算法基础：二分</a>
         </li>
     
     
@@ -1048,12 +1111,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/Bug-Blog/" >Bug Blog</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/Ubuntu-Sever命令行换源/" >Ubuntu Sever 换源</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/Ubuntu-Sever命令行换源/" >Ubuntu Sever 换源</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2019/10/28/Bug-Blog/" >Bug Blog</a>
         </li>
     
     
@@ -1076,23 +1139,23 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
+        <span class="sidebar-tag-name" data-tags="Anaconda"><span class="iconfont-archer">&#xe606;</span>Anaconda</span>
     
         <span class="sidebar-tag-name" data-tags="NLP"><span class="iconfont-archer">&#xe606;</span>NLP</span>
     
-        <span class="sidebar-tag-name" data-tags="Anaconda"><span class="iconfont-archer">&#xe606;</span>Anaconda</span>
+        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
     
-        <span class="sidebar-tag-name" data-tags="BUG"><span class="iconfont-archer">&#xe606;</span>BUG</span>
+        <span class="sidebar-tag-name" data-tags="Math"><span class="iconfont-archer">&#xe606;</span>Math</span>
     
         <span class="sidebar-tag-name" data-tags="Pytorch"><span class="iconfont-archer">&#xe606;</span>Pytorch</span>
+    
+        <span class="sidebar-tag-name" data-tags="BUG"><span class="iconfont-archer">&#xe606;</span>BUG</span>
     
         <span class="sidebar-tag-name" data-tags="Mysql"><span class="iconfont-archer">&#xe606;</span>Mysql</span>
     
         <span class="sidebar-tag-name" data-tags="Django"><span class="iconfont-archer">&#xe606;</span>Django</span>
     
         <span class="sidebar-tag-name" data-tags="算法基础"><span class="iconfont-archer">&#xe606;</span>算法基础</span>
-    
-        <span class="sidebar-tag-name" data-tags="Math"><span class="iconfont-archer">&#xe606;</span>Math</span>
     
         <span class="sidebar-tag-name" data-tags="Java"><span class="iconfont-archer">&#xe606;</span>Java</span>
     
@@ -1164,9 +1227,24 @@ jsonContent:
     </div>
     <!-- async load share.js -->
     
-        <script src="/scripts/share.js" async></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->    
+        <script src="/scripts/share.js" async></script>    
      
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
 </html>
 
 
